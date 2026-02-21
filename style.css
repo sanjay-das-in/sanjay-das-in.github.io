@@ -1,20 +1,186 @@
-/* General Layout */
-body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; max-width: 900px; margin: 0 auto; padding: 40px 20px; color: #333; }
-header { text-align: center; margin-bottom: 40px; }
-.profile-pic { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; border: 4px solid #f0f0f0; }
+/* ============================= */
+/* Global Reset & Base Styling   */
+/* ============================= */
 
-/* Navigation Styling */
-nav { border-bottom: 1px solid #ddd; margin-bottom: 30px; }
-.tabs { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; }
-.tab-link { background: none; border: none; outline: none; cursor: pointer; padding: 10px 20px; font-size: 16px; font-weight: 500; color: #666; transition: 0.3s; border-bottom: 3px solid transparent; }
-.tab-link:hover { color: #007bff; }
-.tab-link.active { color: #007bff; border-bottom: 3px solid #007bff; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-/* Content Visibility */
-.tab-content { display: none; animation: fadeIn 0.5s; }
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f8f9fb;
+    color: #1a1a1a;
+    line-height: 1.65;
+}
 
-/* Mobile Responsiveness */
-@media (max-width: 600px) {
-    .tabs { flex-direction: column; align-items: center; }
+/* ============================= */
+/* Header Section                */
+/* ============================= */
+
+header {
+    text-align: center;
+    padding: 60px 20px 40px 20px;
+    background: linear-gradient(to right, #0f172a, #1e293b);
+    color: white;
+}
+
+.profile-pic {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #ffffff;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2.3rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1rem;
+    opacity: 0.85;
+}
+
+/* ============================= */
+/* Navigation Tabs               */
+/* ============================= */
+
+nav {
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.tab-link {
+    padding: 14px 22px;
+    background: none;
+    border: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    color: #475569;
+    transition: all 0.25s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.tab-link:hover {
+    color: #0f172a;
+}
+
+.tab-link.active {
+    color: #0f172a;
+    border-bottom: 3px solid #2563eb;
+}
+
+/* ============================= */
+/* Main Content Container        */
+/* ============================= */
+
+#content-container {
+    max-width: 950px;
+    margin: 40px auto 80px auto;
+    padding: 0 20px;
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.35s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================= */
+/* Typography Styling            */
+/* ============================= */
+
+h2 {
+    font-size: 1.6rem;
+    margin-bottom: 18px;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 8px;
+}
+
+h3 {
+    font-size: 1.1rem;
+    margin-top: 22px;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+p {
+    margin-bottom: 16px;
+    color: #334155;
+}
+
+ul {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+    color: #334155;
+}
+
+/* ============================= */
+/* Links                         */
+/* ============================= */
+
+a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ============================= */
+/* Responsive Design             */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 40px 15px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .profile-pic {
+        width: 110px;
+        height: 110px;
+    }
+
+    .tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tab-link {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #e2e8f0;
+    }
+
+    .tab-link.active {
+        border-bottom: 3px solid #2563eb;
+    }
 }
