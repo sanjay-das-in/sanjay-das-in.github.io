@@ -184,6 +184,25 @@ a:hover {
         border-bottom: 3px solid #2563eb;
     }
 }
+.pub-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.pub-list li {
+    margin-bottom: 22px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.pub-list strong {
+    font-size: 1rem;
+}
+
+.pub-list em {
+    color: #475569;
+}
+
 /* ============================= */
 /* News Section Styling          */
 /* ============================= */
