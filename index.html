@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name | Research Profile</title>
+    <title>Sanjay Das | Research Profile</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
-        <h1>Your Name</h1>
-        <p>Ph.D. Candidate in [Your Field] @ [University]</p>
+        <img src="profile.jpg" alt="Sanjay Das Profile Picture" class="profile-pic">
+        <h1>Sanjay Das</h1>
+        <p>Post Doctoral Research Associate at Oak Ridge National Laboratory</p>
+        <p> AI for Science & Operations • Reliable AI • LLM Robustness • Accelerator Design • Hardware Security</p>
     </header>
 
     <nav>
@@ -20,64 +21,245 @@
             <button class="tab-link" onclick="openTab(event, 'research')">Research</button>
             <button class="tab-link" onclick="openTab(event, 'pubs')">Publications</button>
             <button class="tab-link" onclick="openTab(event, 'teaching')">Teaching</button>
+            <button class="tab-link" onclick="openTab(event, 'news')">News</button>
             <button class="tab-link" onclick="openTab(event, 'misc')">Misc</button>
             <button class="tab-link" onclick="openTab(event, 'contact')">Contact</button>
         </div>
     </nav>
 
     <main id="content-container">
-        <!-- Default visible section -->
+
+        <!-- ABOUT -->
         <section id="about" class="tab-content" style="display: block;">
             <h2>About Me</h2>
-            <p>Your research journey and background go here.</p>
+            <p>
+                I am a Post Doctoral Research Associate at Oak Ridge National Laboratory with a 
+                focus on investigating AI for Science & Operations, hardware-aware machine learning, 
+                functional safety, and AI system reliability. My work bridges the gap between 
+                circuit-level vulnerabilities and large-scale AI model robustness.
+            </p>
+
+            <p>
+                My research spans hardware fault modeling, quantized neural networks, 
+                LLM adversarial robustness, and AI accelerator architectures. 
+                I am particularly interested in understanding how low-level hardware 
+                effects (bit-flips, quantization noise, timing faults) impact 
+                high-level AI behavior and security.
+            </p>
+
+            <p>
+                I develop optimization-driven and learning-based frameworks for Scientific hypothesis 
+                geneation, enhancing operational safety, improve robustness, detect vulnerabilities, and design 
+                resilient next-generation AI-powered systems.
+            </p>
         </section>
 
+        <!-- RESEARCH -->
         <section id="research" class="tab-content">
             <h2>Current Research</h2>
-            <p>Details about your projects and methodology.</p>
+            <h3>1. AI-Driven Scientific Discovery & Hypothesis Generation</h3>
+            <p>
+                Currently, as a Postdoctoral Researcher, I am developing novel workflows 
+                that leverage state-of-the-art AI tools and foundation models to assist 
+                in scientific hypothesis generation. My work focuses on building structured, 
+                reproducible AI-driven pipelines that augment domain experts in generating 
+                testable scientific insights across interdisciplinary research domains.
+            </p>
+        
+            <h3>2. AI for Workplace Safety in Mission-Critical Environments</h3>
+            <p>
+                Designing intelligent systems that enhance operational safety in 
+                mission-critical work sites. This includes risk-aware AI frameworks, 
+                structured safety knowledge integration, and automated decision-support 
+                systems aimed at reducing hazards and improving situational awareness.
+            </p>
+
+            <h3>3. Hardware-Induced Vulnerability in Large Language Models</h3>
+            <p>
+                Investigating how targeted bit-flips in quantized LLM weights 
+                can induce adversarial behavior. Developing constrained 
+                optimization methods to identify minimal critical weight subsets 
+                for feasible hardware-level attacks.
+            </p>
+
+            <h3>4. Robustness Evaluation & Defense Frameworks</h3>
+            <p>
+                Building production-ready evaluation pipelines to test AI systems 
+                under structured perturbations, adversarial noise, and hardware faults. 
+                Integrating statistical validation and adversarial training mechanisms.
+            </p>
+
+           
         </section>
 
+        <!-- PUBLICATIONS -->
         <section id="pubs" class="tab-content">
-            <h2>Selected Publications</h2>
+        <h2>Selected Publications</h2>
+    
+        <ul class="pub-list">
+    
+            <li>
+                <strong>AttentionBreaker: Adaptive Evolutionary Optimization for Unmasking Vulnerabilities in LLMs through Bit-Flip Attacks</strong><br>
+                Sanjay Das, Swastik Bhattacharya, Souvik Kundu, Shamik Kundu, Anand Menon, 
+                Arnab Raha, and Kanad Basu.<br>
+                <em>Transactions on Machine Learning Research (TMLR)</em>, 2025.
+                [<a href="#" target="_blank">Paper</a>]
+                [<a href="#" target="_blank">DOI</a>]
+            </li>
+    
+            <li>
+                <strong>CONCEAL: Covert NoC Exploitation in In-Memory Computing-Based DNN Accelerators</strong><br>
+                Sanjay Das, Shamik Kundu, Sumit Kumar Mandal, and Kanad Basu.<br>
+                In <em>IEEE International Conference on Omni-layer Intelligent Systems (COINS)</em>, 2025.
+                [<a href="#" target="_blank">Paper</a>]
+            </li>
+    
+            <li>
+                <strong>Machine Learning-Driven STL Generation for Enhancing Functional Safety of E/E Systems</strong><br>
+                Sanjay Das, Swastik Bhattacharya, Anand Menon, Shamik Kundu, 
+                Pooja Madhusoodhanan, Prasanth Viswanathan Pillai, Rubin Parekhji, 
+                Arnab Raha, Suvadeep Banerjee, Suriya Natarajan, and Kanad Basu.<br>
+                In <em>Proceedings of the 62nd ACM/IEEE Design Automation Conference (DAC)</em>, 2025.
+                [<a href="#" target="_blank">Paper</a>]
+            </li>
+    
+            <li>
+                <strong>Enhancing AMS Circuit Reliability: An Anomaly Dataset for Functional Safety Research in Automotive SoCs</strong><br>
+                Sanjay Das, Anand Menon, Omar Abiola Abioye, Afreen Fatimah Khazi-Syed, 
+                Jonathan Edward Lee, Ayush Arunachalam, Shamik Kundu, et al.<br>
+                In <em>Great Lakes Symposium on VLSI (GLSVLSI)</em>, 2025.
+                [<a href="#" target="_blank">Paper</a>]
+            </li>
+    
+            <li>
+                <strong>Bit-by-Bit: Investigating the Vulnerabilities of Binary Neural Networks to Adversarial Bit Flipping</strong><br>
+                Shamik Kundu, Sanjay Das, Sayar Karmakar, Arnab Raha, Y. Makris, and K. Basu.<br>
+                <em>Transactions on Machine Learning Research (TMLR)</em>, 2024.
+                [<a href="#" target="_blank">Paper</a>]
+            </li>
+    
+            <li>
+                <strong>Graph Learning-Based Fault Criticality Analysis for Enhancing Functional Safety of E/E Systems</strong><br>
+                Sanjay Das, Shamik Kundu, Pooja Madhusoodhanan, 
+                Prasanth Viswanathan Pillai, Rubin Parekhji, Arnab Raha, 
+                Suvadeep Banerjee, Suriya Natarajan, and Kanad Basu.<br>
+                In <em>Proceedings of the 61st ACM/IEEE Design Automation Conference (DAC)</em>, 2024.
+                [<a href="#" target="_blank">Paper</a>]
+            </li>
+    
+            <li>
+                <strong>Explainability to the Rescue: A Pattern-Based Approach for Detecting Adversarial Attacks</strong><br>
+                Sanjay Das, Shamik Kundu, and Kanad Basu.<br>
+                In <em>IEEE International Symposium on Hardware Oriented Security and Trust (HOST)</em>, 2024.
+                [<a href="#" target="_blank">Paper</a>]
+            </li>
+    
+            <li>
+                <strong>Analyzing and Mitigating Circuit Aging Effects in Deep Learning Accelerators</strong><br>
+                Sanjay Das, Shamik Kundu, Anand Menon, Yihui Ren, 
+                Shubha Kharel, and Kanad Basu.<br>
+                In <em>IEEE VLSI Test Symposium (VTS)</em>, 2024.
+                [<a href="#" target="_blank">Paper</a>]
+            </li>
+    
+        </ul>
+    
+    </section>
+    <section id="news" class="tab-content">
+    <h2>News & Achievements</h2>
+
+    <ul class="news-list">
+
+        <li>
+            <span class="news-date">2025</span>
+            <div class="news-content">
+                <strong>Paper Accepted at TMLR</strong><br>
+                "AttentionBreaker: Adaptive Evolutionary Optimization for Unmasking Vulnerabilities in LLMs through Bit-Flip Attacks" accepted to <em>Transactions on Machine Learning Research (TMLR)</em>.
+            </div>
+        </li>
+
+        <li>
+            <span class="news-date">2025</span>
+            <div class="news-content">
+                <strong>DAC 2025 Publication</strong><br>
+                Presented work on ML-driven STL generation at the 62nd ACM/IEEE Design Automation Conference.
+            </div>
+        </li>
+
+        <li>
+            <span class="news-date">2025</span>
+            <div class="news-content">
+                <strong>COINS 2025 Presentation</strong><br>
+                Presented "CONCEAL" on covert NoC exploitation in AI accelerators.
+            </div>
+        </li>
+
+        <li>
+            <span class="news-date">2024</span>
+            <div class="news-content">
+                <strong>HOST 2024 Paper Presentation</strong><br>
+                Presented adversarial detection research at IEEE HOST 2024.
+            </div>
+        </li>
+
+        <li>
+            <span class="news-date">2024</span>
+            <div class="news-content">
+                <strong>Research Award / Recognition</strong><br>
+                Recognized for contributions to hardware security and AI reliability research.
+            </div>
+        </li>
+
+    </ul>
+</section>
+        <!-- TEACHING -->
+        <section id="teaching" class="tab-content">
+            <h2>Teaching & Mentorship</h2>
             <ul>
-                <li><strong>Title of Paper</strong>, Journal, 2024. <a href="#">[DOI]</a></li>
+                <li>Teaching Assistant – Digital Logic Design</li>
+                <li>Teaching Assistant – Computer Architecture</li>
+                <li>Mentored undergraduate research projects in hardware security and AI</li>
+                <li>Guided students in Verilog design, fault modeling, and ML-based evaluation</li>
             </ul>
         </section>
 
-        <section id="teaching" class="tab-content">
-            <h2>Teaching & Mentorship</h2>
-            <p>Courses taught and student supervision.</p>
-        </section>
-
+        <!-- MISC -->
         <section id="misc" class="tab-content">
             <h2>Miscellaneous</h2>
-            <p>Awards, hobbies, or outreach work.</p>
+            <ul>
+                <li>Research interests: AI safety, secure hardware, scalable ML systems</li>
+                <li>Reviewer for peer-reviewed conferences and journals</li>
+                <li>Open-source contributions in ML and hardware security tooling</li>
+                <li>Enjoy system design, optimization theory, and scientific writing</li>
+            </ul>
         </section>
 
+        <!-- CONTACT -->
         <section id="contact" class="tab-content">
             <h2>Contact Information</h2>
-            <p>Email: <a href="mailto:your@email.edu">your@email.edu</a></p>
+            <p>Email: <a href="mailto:sanjay.das@utdallas.edu">sanjay.das@utdallas.edu</a></p>
+            <p>Google Scholar: <a href="https://scholar.google.com/citations?user=3ytmxroAAAAJ&hl=en">Google Scholar Profile</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/sanjay-das/">LinkedIn Profile</a></p>
         </section>
+
     </main>
 
     <script>
         function openTab(evt, tabId) {
-            // 1. Hide all tab content
             const tabcontent = document.getElementsByClassName("tab-content");
             for (let i = 0; i < tabcontent.length; i++) {
                 tabcontent[i].style.display = "none";
             }
 
-            // 2. Remove "active" class from all buttons
             const tablinks = document.getElementsByClassName("tab-link");
             for (let i = 0; i < tablinks.length; i++) {
                 tablinks[i].className = tablinks[i].className.replace(" active", "");
             }
 
-            // 3. Show the current tab and add active class to the button
             document.getElementById(tabId).style.display = "block";
             evt.currentTarget.className += " active";
         }
     </script>
+
 </body>
 </html>
