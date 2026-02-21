@@ -27,7 +27,7 @@ header {
       linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(255,255,255,0.7)),
       /* Bottom layer: horizontal green-to-blue shift */
       linear-gradient(to right, #296b29, #1d4a82);
-    color: white;
+    color: black;
 }
 
 .profile-pic {
