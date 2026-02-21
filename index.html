@@ -1,60 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanjay Das | Research Profile</title>
-    <link rel="stylesheet" href="style.css">
-</head>
 <body>
 
-    <header>
-        <img src="profile.jpeg" alt="Sanjay Das Profile Picture" class="profile-pic">
-        <h1>Sanjay Das</h1>
-        <p>Post Doctoral Research Associate at Oak Ridge National Laboratory</p>
-        <p> AI for Science & Operations • Reliable AI • LLM Robustness • Accelerator Design • Hardware Security</p>
-    </header>
+<div class="layout">
 
-    <nav>
-        <div class="tabs">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <img src="profile.jpeg" alt="Sanjay Das" class="profile-pic">
+
+        <h1>Sanjay Das</h1>
+        <p class="title">Postdoctoral Researcher</p>
+
+        <div class="sidebar-contact">
+            <p>Email:<br>
+            <a href="mailto:sanjay.das@utdallas.edu">sanjay.das@utdallas.edu</a></p>
+
+            <p>
+                <a href="https://scholar.google.com/citations?user=3ytmxroAAAAJ&hl=en">Google Scholar</a><br>
+                <a href="https://www.linkedin.com/in/sanjay-das/">LinkedIn</a>
+            </p>
+        </div>
+
+        <nav class="sidebar-nav">
             <button class="tab-link active" onclick="openTab(event, 'about')">About</button>
             <button class="tab-link" onclick="openTab(event, 'research')">Research</button>
             <button class="tab-link" onclick="openTab(event, 'pubs')">Publications</button>
-            <button class="tab-link" onclick="openTab(event, 'teaching')">Teaching</button>
             <button class="tab-link" onclick="openTab(event, 'news')">News</button>
-            <button class="tab-link" onclick="openTab(event, 'misc')">Misc</button>
-            <button class="tab-link" onclick="openTab(event, 'contact')">Contact</button>
-        </div>
-    </nav>
+            <button class="tab-link" onclick="openTab(event, 'community')">Community</button>
+        </nav>
+    </aside>
 
-    <main id="content-container">
 
-        <!-- ABOUT -->
-        <section id="about" class="tab-content" style="display: block;">
+    <!-- MAIN CONTENT -->
+    <main class="content">
+
+        <section id="about" class="tab-content" style="display:block;">
             <h2>About Me</h2>
             <p>
-                I am a Post Doctoral Research Associate at Oak Ridge National Laboratory with a 
-                focus on investigating AI for Science & Operations, hardware-aware machine learning, 
-                functional safety, and AI system reliability. My work bridges the gap between 
-                circuit-level vulnerabilities and large-scale AI model robustness.
+                I am a Postdoctoral Researcher working at the intersection of 
+                AI systems, hardware security, and scientific discovery.
+                My work focuses on building reliable, safe, and interpretable 
+                AI systems for mission-critical environments.
             </p>
 
             <p>
-                My research spans hardware fault modeling, quantized neural networks, 
-                LLM adversarial robustness, and AI accelerator architectures. 
-                I am particularly interested in understanding how low-level hardware 
-                effects (bit-flips, quantization noise, timing faults) impact 
-                high-level AI behavior and security.
-            </p>
-
-            <p>
-                I develop optimization-driven and learning-based frameworks for Scientific hypothesis 
-                geneation, enhancing operational safety, improve robustness, detect vulnerabilities, and design 
-                resilient next-generation AI-powered systems.
+                I develop AI-driven scientific workflows, robustness evaluation 
+                frameworks, and hardware-aware optimization techniques that 
+                bridge low-level system vulnerabilities with large-scale AI behavior.
             </p>
         </section>
 
-        <!-- RESEARCH -->
+
         <section id="research" class="tab-content">
             <h2>Current Research</h2>
             <h3>1. AI-Driven Scientific Discovery & Hypothesis Generation</h3>
@@ -88,13 +82,11 @@
                 under structured perturbations, adversarial noise, and hardware faults. 
                 Integrating statistical validation and adversarial training mechanisms.
             </p>
-
-           
         </section>
 
-        <!-- PUBLICATIONS -->
+
         <section id="pubs" class="tab-content">
-        <h2>Selected Publications</h2>
+            <h2>Selected Publications</h2>
     
         <ul class="pub-list">
     
@@ -163,12 +155,12 @@
             </li>
     
         </ul>
-    
-    </section>
-    <section id="news" class="tab-content">
-    <h2>News & Achievements</h2>
+        </section>
 
-    <ul class="news-list">
+
+        <section id="news" class="tab-content">
+            <h2>News & Achievements</h2>
+            <ul class="news-list">
 
         <li>
             <span class="news-date">2025</span>
@@ -211,7 +203,7 @@
         </li>
 
     </ul>
-</section>
+        </section>
         <!-- TEACHING -->
         <section id="teaching" class="tab-content">
             <h2>Teaching & Mentorship</h2>
@@ -223,43 +215,40 @@
             </ul>
         </section>
 
-        <!-- MISC -->
-        <section id="misc" class="tab-content">
-            <h2>Miscellaneous</h2>
-            <ul>
-                <li>Research interests: AI safety, secure hardware, scalable ML systems</li>
-                <li>Reviewer for peer-reviewed conferences and journals</li>
-                <li>Open-source contributions in ML and hardware security tooling</li>
-                <li>Enjoy system design, optimization theory, and scientific writing</li>
-            </ul>
-        </section>
 
-        <!-- CONTACT -->
-        <section id="contact" class="tab-content">
-            <h2>Contact Information</h2>
-            <p>Email: <a href="mailto:sanjay.das@utdallas.edu">sanjay.das@utdallas.edu</a></p>
-            <p>Google Scholar: <a href="https://scholar.google.com/citations?user=3ytmxroAAAAJ&hl=en">Google Scholar Profile</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/sanjay-das/">LinkedIn Profile</a></p>
+        <section id="community" class="tab-content">
+            <h2>Community Activities</h2>
+
+            <ul>
+                <li>Reviewer – IEEE HOST</li>
+                <li>Reviewer – DAC</li>
+                <li>Reviewer – TMLR</li>
+                <li>Session Chair – COINS 2025</li>
+                <li>Guest Lecturer – Hardware Security & AI Reliability</li>
+                <li>Mentor – Undergraduate Research Projects</li>
+            </ul>
+
         </section>
 
     </main>
 
-    <script>
-        function openTab(evt, tabId) {
-            const tabcontent = document.getElementsByClassName("tab-content");
-            for (let i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
+</div>
 
-            const tablinks = document.getElementsByClassName("tab-link");
-            for (let i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
+<script>
+function openTab(evt, tabId) {
+    const tabcontent = document.getElementsByClassName("tab-content");
+    for (let i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
 
-            document.getElementById(tabId).style.display = "block";
-            evt.currentTarget.className += " active";
-        }
-    </script>
+    const tablinks = document.getElementsByClassName("tab-link");
+    for (let i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove("active");
+    }
+
+    document.getElementById(tabId).style.display = "block";
+    evt.currentTarget.classList.add("active");
+}
+</script>
 
 </body>
-</html>
