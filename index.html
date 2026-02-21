@@ -1,91 +1,83 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2868
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name | Research Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-\f0\fs24 \cf0 <!DOCTYPE html>\
-<html lang="en">\
-<head>\
-    <meta charset="UTF-8">\
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
-    <title>Your Name | Research Profile</title>\
-    <link rel="stylesheet" href="style.css">\
-</head>\
-<body>\
-\
-    <header>\
-        <img src="profile.jpg" alt="Profile Picture" class="profile-pic">\
-        <h1>Your Name</h1>\
-        <p>Ph.D. Candidate in [Your Field] @ [University]</p>\
-    </header>\
-\
-    <nav>\
-        <div class="tabs">\
-            <button class="tab-link active" onclick="openTab(event, 'about')">About</button>\
-            <button class="tab-link" onclick="openTab(event, 'research')">Research</button>\
-            <button class="tab-link" onclick="openTab(event, 'pubs')">Publications</button>\
-            <button class="tab-link" onclick="openTab(event, 'teaching')">Teaching</button>\
-            <button class="tab-link" onclick="openTab(event, 'misc')">Misc</button>\
-            <button class="tab-link" onclick="openTab(event, 'contact')">Contact</button>\
-        </div>\
-    </nav>\
-\
-    <main id="content-container">\
-        <!-- Default visible section -->\
-        <section id="about" class="tab-content" style="display: block;">\
-            <h2>About Me</h2>\
-            <p>Your research journey and background go here.</p>\
-        </section>\
-\
-        <section id="research" class="tab-content">\
-            <h2>Current Research</h2>\
-            <p>Details about your projects and methodology.</p>\
-        </section>\
-\
-        <section id="pubs" class="tab-content">\
-            <h2>Selected Publications</h2>\
-            <ul>\
-                <li><strong>Title of Paper</strong>, Journal, 2024. <a href="#">[DOI]</a></li>\
-            </ul>\
-        </section>\
-\
-        <section id="teaching" class="tab-content">\
-            <h2>Teaching & Mentorship</h2>\
-            <p>Courses taught and student supervision.</p>\
-        </section>\
-\
-        <section id="misc" class="tab-content">\
-            <h2>Miscellaneous</h2>\
-            <p>Awards, hobbies, or outreach work.</p>\
-        </section>\
-\
-        <section id="contact" class="tab-content">\
-            <h2>Contact Information</h2>\
-            <p>Email: <a href="mailto:your@email.edu">your@email.edu</a></p>\
-        </section>\
-    </main>\
-\
-    <script>\
-        function openTab(evt, tabId) \{\
-            // 1. Hide all tab content\
-            const tabcontent = document.getElementsByClassName("tab-content");\
-            for (let i = 0; i < tabcontent.length; i++) \{\
-                tabcontent[i].style.display = "none";\
-            \}\
-\
-            // 2. Remove "active" class from all buttons\
-            const tablinks = document.getElementsByClassName("tab-link");\
-            for (let i = 0; i < tablinks.length; i++) \{\
-                tablinks[i].className = tablinks[i].className.replace(" active", "");\
-            \}\
-\
-            // 3. Show the current tab and add active class to the button\
-            document.getElementById(tabId).style.display = "block";\
-            evt.currentTarget.className += " active";\
-        \}\
-    </script>\
-</body>\
-</html>\
-}
+    <header>
+        <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
+        <h1>Your Name</h1>
+        <p>Ph.D. Candidate in [Your Field] @ [University]</p>
+    </header>
+
+    <nav>
+        <div class="tabs">
+            <button class="tab-link active" onclick="openTab(event, 'about')">About</button>
+            <button class="tab-link" onclick="openTab(event, 'research')">Research</button>
+            <button class="tab-link" onclick="openTab(event, 'pubs')">Publications</button>
+            <button class="tab-link" onclick="openTab(event, 'teaching')">Teaching</button>
+            <button class="tab-link" onclick="openTab(event, 'misc')">Misc</button>
+            <button class="tab-link" onclick="openTab(event, 'contact')">Contact</button>
+        </div>
+    </nav>
+
+    <main id="content-container">
+        <!-- Default visible section -->
+        <section id="about" class="tab-content" style="display: block;">
+            <h2>About Me</h2>
+            <p>Your research journey and background go here.</p>
+        </section>
+
+        <section id="research" class="tab-content">
+            <h2>Current Research</h2>
+            <p>Details about your projects and methodology.</p>
+        </section>
+
+        <section id="pubs" class="tab-content">
+            <h2>Selected Publications</h2>
+            <ul>
+                <li><strong>Title of Paper</strong>, Journal, 2024. <a href="#">[DOI]</a></li>
+            </ul>
+        </section>
+
+        <section id="teaching" class="tab-content">
+            <h2>Teaching & Mentorship</h2>
+            <p>Courses taught and student supervision.</p>
+        </section>
+
+        <section id="misc" class="tab-content">
+            <h2>Miscellaneous</h2>
+            <p>Awards, hobbies, or outreach work.</p>
+        </section>
+
+        <section id="contact" class="tab-content">
+            <h2>Contact Information</h2>
+            <p>Email: <a href="mailto:your@email.edu">your@email.edu</a></p>
+        </section>
+    </main>
+
+    <script>
+        function openTab(evt, tabId) {
+            // 1. Hide all tab content
+            const tabcontent = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            // 2. Remove "active" class from all buttons
+            const tablinks = document.getElementsByClassName("tab-link");
+            for (let i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            // 3. Show the current tab and add active class to the button
+            document.getElementById(tabId).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</body>
+</html>
