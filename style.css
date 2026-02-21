@@ -22,7 +22,7 @@ body {
 header {
     text-align: center;
     padding: 60px 20px 40px 20px;
-    background: linear-gradient(to right, #296b29, #1d4a82);
+    background: linear-gradient(to bottom right, #1d4a82, #296b29, #ffffff);
     color: white;
 }
 
