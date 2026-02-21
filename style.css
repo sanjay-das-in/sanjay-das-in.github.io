@@ -10,42 +10,40 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background: linear-gradient(135deg, #0f2027, #134e4a, #0ea5a4);
-    color: #0f172a;
-    line-height: 1.7;
+    background-color: #f8f9fb;
+    color: #1a1a1a;
+    line-height: 1.65;
 }
 
 /* ============================= */
-/* Header Section (Slim + Bold)  */
+/* Header Section                */
 /* ============================= */
 
 header {
     text-align: center;
-    padding: 35px 20px 25px 20px;  /* reduced height */
-    background: linear-gradient(135deg, #0ea5a4, #2563eb);
+    padding: 60px 20px 40px 20px;
+    background: linear-gradient(to right, #0f172a, #1e293b);
     color: white;
 }
 
 .profile-pic {
-    width: 190px;   /* bigger profile */
-    height: 190px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
     object-fit: cover;
-    border: 5px solid white;
-    margin-bottom: 15px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+    border: 4px solid #ffffff;
+    margin-bottom: 20px;
 }
 
 header h1 {
-    font-size: 2.4rem;
-    font-weight: 700;
-    margin-bottom: 6px;
-    letter-spacing: 0.5px;
+    font-size: 2.3rem;
+    font-weight: 600;
+    margin-bottom: 10px;
 }
 
 header p {
     font-size: 1rem;
-    opacity: 0.95;
+    opacity: 0.85;
 }
 
 /* ============================= */
@@ -54,36 +52,36 @@ header p {
 
 nav {
     background: white;
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .tabs {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    max-width: 1100px;
+    max-width: 1000px;
     margin: auto;
 }
 
 .tab-link {
-    padding: 16px 26px;
+    padding: 14px 22px;
     background: none;
     border: none;
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 0.95rem;
+    font-weight: 500;
     cursor: pointer;
-    color: #0f766e;
+    color: #475569;
     transition: all 0.25s ease;
     border-bottom: 3px solid transparent;
 }
 
 .tab-link:hover {
-    color: #2563eb;
+    color: #0f172a;
 }
 
 .tab-link.active {
-    color: #2563eb;
-    border-bottom: 3px solid #0ea5a4;
+    color: #0f172a;
+    border-bottom: 3px solid #2563eb;
 }
 
 /* ============================= */
@@ -91,21 +89,18 @@ nav {
 /* ============================= */
 
 #content-container {
-    max-width: 1000px;
-    margin: 35px auto 70px auto;
-    padding: 30px 40px;
-    background: white;
-    border-radius: 14px;
-    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.08);
+    max-width: 950px;
+    margin: 40px auto 80px auto;
+    padding: 0 20px;
 }
 
 .tab-content {
     display: none;
-    animation: fadeIn 0.3s ease-in-out;
+    animation: fadeIn 0.35s ease-in-out;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(8px); }
+    from { opacity: 0; transform: translateY(6px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
@@ -114,33 +109,31 @@ nav {
 /* ============================= */
 
 h2 {
-    font-size: 1.7rem;
-    margin-bottom: 20px;
-    border-left: 6px solid #0ea5a4;
-    padding-left: 12px;
-    color: #0f172a;
+    font-size: 1.6rem;
+    margin-bottom: 18px;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 8px;
 }
 
 h3 {
-    font-size: 1.15rem;
-    margin-top: 24px;
-    margin-bottom: 8px;
+    font-size: 1.1rem;
+    margin-top: 22px;
+    margin-bottom: 6px;
     font-weight: 600;
-    color: #134e4a;
 }
 
 p {
-    margin-bottom: 18px;
+    margin-bottom: 16px;
     color: #334155;
 }
 
 ul {
-    padding-left: 22px;
+    padding-left: 20px;
     margin-bottom: 20px;
 }
 
 li {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     color: #334155;
 }
 
@@ -151,14 +144,46 @@ li {
 a {
     color: #2563eb;
     text-decoration: none;
-    font-weight: 500;
 }
 
 a:hover {
     text-decoration: underline;
-    color: #0ea5a4;
 }
 
+/* ============================= */
+/* Responsive Design             */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 40px 15px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .profile-pic {
+        width: 110px;
+        height: 110px;
+    }
+
+    .tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tab-link {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #e2e8f0;
+    }
+
+    .tab-link.active {
+        border-bottom: 3px solid #2563eb;
+    }
+}
 /* ============================= */
 /* News Section Styling          */
 /* ============================= */
@@ -177,9 +202,9 @@ a:hover {
 }
 
 .news-date {
-    min-width: 70px;
-    font-weight: 700;
-    color: #0ea5a4;
+    min-width: 60px;
+    font-weight: 600;
+    color: #2563eb;
 }
 
 .news-content strong {
@@ -188,44 +213,4 @@ a:hover {
 
 .news-content {
     color: #334155;
-}
-
-/* ============================= */
-/* Responsive Design             */
-/* ============================= */
-
-@media (max-width: 768px) {
-
-    header {
-        padding: 30px 15px;
-    }
-
-    header h1 {
-        font-size: 2rem;
-    }
-
-    .profile-pic {
-        width: 150px;
-        height: 150px;
-    }
-
-    #content-container {
-        padding: 25px 20px;
-        margin: 25px 15px;
-    }
-
-    .tabs {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .tab-link {
-        width: 100%;
-        text-align: center;
-        border-bottom: 1px solid #e2e8f0;
-    }
-
-    .tab-link.active {
-        border-bottom: 3px solid #0ea5a4;
-    }
 }
