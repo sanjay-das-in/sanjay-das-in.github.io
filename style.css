@@ -1,29 +1,31 @@
-/* ============================= */
-/* Global Reset & Base Styling   */
-/* ============================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* =============== */
+/* GLOBAL STYLE    */
+/* =============== */
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background-color: #f8f9fb;
-    color: #1a1a1a;
-    line-height: 1.65;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #1f2937;
 }
 
-/* ============================= */
-/* Header Section                */
-/* ============================= */
+/* Layout */
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
 
-header {
-    text-align: center;
-    padding: 60px 20px 40px 20px;
-    background: linear-gradient(to right, #0f172a, #1e293b);
+/* =============== */
+/* SIDEBAR         */
+/* =============== */
+
+.sidebar {
+    width: 280px;
+    background: linear-gradient(180deg, #0d9488, #0ea5a4);
     color: white;
+    padding: 40px 25px;
+    position: fixed;
+    height: 100%;
 }
 
 .profile-pic {
@@ -31,186 +33,133 @@ header {
     height: 140px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid #ffffff;
+    border: 4px solid white;
+    display: block;
+    margin: 0 auto 20px auto;
+}
+
+.sidebar h1 {
+    text-align: center;
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+}
+
+.title {
+    text-align: center;
+    font-size: 0.95rem;
+    opacity: 0.9;
     margin-bottom: 20px;
 }
 
-header h1 {
-    font-size: 2.3rem;
-    font-weight: 600;
-    margin-bottom: 10px;
+.sidebar-contact {
+    font-size: 0.85rem;
+    margin-bottom: 30px;
 }
 
-header p {
-    font-size: 1rem;
-    opacity: 0.85;
+.sidebar a {
+    color: white;
+    text-decoration: none;
 }
 
-/* ============================= */
-/* Navigation Tabs               */
-/* ============================= */
-
-nav {
-    background: white;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+.sidebar a:hover {
+    text-decoration: underline;
 }
 
-.tabs {
+/* Sidebar nav */
+.sidebar-nav {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    max-width: 1000px;
-    margin: auto;
+    flex-direction: column;
 }
 
 .tab-link {
-    padding: 14px 22px;
-    background: none;
+    background: transparent;
     border: none;
-    font-size: 0.95rem;
-    font-weight: 500;
+    color: white;
+    padding: 10px 0;
+    text-align: left;
     cursor: pointer;
-    color: #475569;
-    transition: all 0.25s ease;
-    border-bottom: 3px solid transparent;
+    font-size: 0.95rem;
+    transition: 0.2s ease;
 }
 
 .tab-link:hover {
-    color: #0f172a;
+    padding-left: 5px;
 }
 
 .tab-link.active {
-    color: #0f172a;
-    border-bottom: 3px solid #2563eb;
+    font-weight: 600;
+    border-left: 3px solid white;
+    padding-left: 8px;
 }
 
-/* ============================= */
-/* Main Content Container        */
-/* ============================= */
+/* =============== */
+/* MAIN CONTENT    */
+/* =============== */
 
-#content-container {
-    max-width: 950px;
-    margin: 40px auto 80px auto;
-    padding: 0 20px;
+.content {
+    margin-left: 280px;
+    padding: 60px 80px;
+    background: #f9fafb;
+    flex: 1;
 }
-
-.tab-content {
-    display: none;
-    animation: fadeIn 0.35s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(6px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* ============================= */
-/* Typography Styling            */
-/* ============================= */
 
 h2 {
-    font-size: 1.6rem;
-    margin-bottom: 18px;
-    border-bottom: 2px solid #e2e8f0;
-    padding-bottom: 8px;
-}
-
-h3 {
-    font-size: 1.1rem;
-    margin-top: 22px;
-    margin-bottom: 6px;
-    font-weight: 600;
+    border-bottom: 3px solid #0ea5a4;
+    padding-bottom: 6px;
+    margin-bottom: 20px;
+    color: #0f172a;
 }
 
 p {
+    line-height: 1.7;
     margin-bottom: 16px;
-    color: #334155;
 }
 
 ul {
     padding-left: 20px;
-    margin-bottom: 20px;
 }
 
 li {
     margin-bottom: 8px;
-    color: #334155;
 }
 
-/* ============================= */
-/* Links                         */
-/* ============================= */
-
-a {
-    color: #2563eb;
-    text-decoration: none;
+/* Smooth transition */
+.tab-content {
+    display: none;
+    animation: fadeIn 0.3s ease-in-out;
 }
 
-a:hover {
-    text-decoration: underline;
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* ============================= */
-/* Responsive Design             */
-/* ============================= */
-
-@media (max-width: 768px) {
-
-    header {
-        padding: 40px 15px;
-    }
-
-    header h1 {
-        font-size: 1.8rem;
-    }
-
-    .profile-pic {
-        width: 110px;
-        height: 110px;
-    }
-
-    .tabs {
+/* Responsive */
+@media (max-width: 900px) {
+    .layout {
         flex-direction: column;
-        align-items: center;
+    }
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        text-align: center;
+    }
+
+    .content {
+        margin-left: 0;
+        padding: 40px 20px;
+    }
+
+    .sidebar-nav {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
     }
 
     .tab-link {
-        width: 100%;
-        text-align: center;
-        border-bottom: 1px solid #e2e8f0;
+        border-left: none;
     }
-
-    .tab-link.active {
-        border-bottom: 3px solid #2563eb;
-    }
-}
-/* ============================= */
-/* News Section Styling          */
-/* ============================= */
-
-.news-list {
-    list-style: none;
-    padding-left: 0;
-}
-
-.news-list li {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 24px;
-    padding-bottom: 18px;
-    border-bottom: 1px solid #e2e8f0;
-}
-
-.news-date {
-    min-width: 60px;
-    font-weight: 600;
-    color: #2563eb;
-}
-
-.news-content strong {
-    font-weight: 600;
-}
-
-.news-content {
-    color: #334155;
 }
