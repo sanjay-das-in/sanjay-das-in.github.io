@@ -21,7 +21,7 @@ body {
 
 header {
     text-align: center;
-    padding: 30px 20px 30px 20px;
+    padding: 40px 20px 30px 20px;
     background: 
       linear-gradient(to bottom, #001842, #2a63ab, #87cefb, #afc6d9, #dbe9f5);
       /* Top layer: vertical dark-to-light fade */
