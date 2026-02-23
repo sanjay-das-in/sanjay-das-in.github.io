@@ -23,15 +23,7 @@ header {
     text-align: center;
     padding: 30px 20px 30px 20px;
     background: 
-        linear-gradient(
-          to bottom, 
-          #001842, /* Dark Blue */
-          #2a63ab, /* Medium Blue */
-          #87cefb, /* Light Blue */
-          #afc6d9, /* Slightly Blue */
-          #dbe9f5 /* Almost White (Bluish) */
-          
-        );
+      linear-gradient(to bottom, #001842, #2a63ab, #87cefb, #afc6d9, #dbe9f5);
       /* Top layer: vertical dark-to-light fade */
       /* linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(255,255,255,0.7)), */
       /* Bottom layer: horizontal green-to-blue shift */
