@@ -248,6 +248,8 @@ a:hover {
 .edu-item {
     margin-bottom: 40px;
     padding: 20px 0;
+    background: rgba(0, 150, 136, 0.05);
+    border-left: 4px solid #00b3a4; /* vibrant green-blue accent */
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
