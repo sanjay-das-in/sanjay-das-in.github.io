@@ -279,3 +279,11 @@ a:hover {
     margin-bottom: 12px;
     color: #0f4c5c;
 }
+
+.teach-block {
+    margin-bottom: 35px;
+    padding: 18px 22px;
+    background: rgba(0, 150, 136, 0.05);
+    border-left: 4px solid #00b3a4; /* vibrant green-blue accent */
+    border-radius: 8px;
+}
