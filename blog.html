@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Notebook — Your Name</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #faf8f5;
+  --surface: #ffffff;
+  --text: #2c2a28;
+  --text-secondary: #8a8580;
+  --text-light: #b5afa8;
+  --accent: #c45d3e;
+  --accent-soft: rgba(196,93,62,0.08);
+  --accent-hover: #a84a2f;
+  --border: #e8e4df;
+  --border-light: #f0ece7;
+  --warm-bg: #f5f0ea;
+  --serif: 'Source Serif 4', Georgia, serif;
+  --display: 'Fraunces', Georgia, serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
+  --max-w: 720px;
+  --wide-w: 960px;
+  --transition: 0.3s ease;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:var(--serif); background:var(--bg); color:var(--text); line-height:1.8; font-size:17px; }
+
+/* ====== HEADER ====== */
+.site-header {
+  padding:28px 40px; display:flex; align-items:center; justify-content:space-between;
+  border-bottom:1px solid var(--border); background:var(--surface);
+  position:sticky; top:0; z-index:50; backdrop-filter:blur(16px);
+  background:rgba(255,255,255,0.85);
+}
+.site-logo {
+  font-family:var(--display); font-size:1.4rem; font-weight:700;
+  color:var(--text); text-decoration:none; letter-spacing:-0.5px;
+}
+.site-logo span { color:var(--accent); }
+.site-nav { display:flex; gap:28px; align-items:center; }
+.site-nav a {
+  font-family:var(--sans); font-size:0.88rem; font-weight:500;
+  color:var(--text-secondary); text-decoration:none;
+  transition:color var(--transition); position:relative;
+}
+.site-nav a:hover { color:var(--accent); }
+.site-nav a.active { color:var(--accent); }
+.site-nav a.active::after {
+  content:''; position:absolute; bottom:-4px; left:0; right:0; height:2px;
+  background:var(--accent); border-radius:2px;
+}
+.back-link {
+  font-family:var(--sans); font-size:0.82rem; font-weight:500;
+  color:var(--text-secondary); text-decoration:none; display:inline-flex;
+  align-items:center; gap:6px; padding:6px 14px; border:1px solid var(--border);
+  border-radius:8px; transition:all var(--transition);
+}
+.back-link:hover { border-color:var(--accent); color:var(--accent); }
+
+/* ====== HERO ====== */
+.hero {
+  max-width:var(--wide-w); margin:0 auto; padding:80px 40px 60px;
+  text-align:center;
+}
+.hero h1 {
+  font-family:var(--display); font-size:3.2rem; font-weight:700;
+  letter-spacing:-1.5px; line-height:1.15; margin-bottom:16px;
+  color:var(--text);
+}
+.hero p {
+  font-size:1.1rem; color:var(--text-secondary); max-width:520px;
+  margin:0 auto; font-style:italic; font-weight:300;
+}
+
+/* ====== CATEGORY FILTER ====== */
+.filter-bar {
+  max-width:var(--wide-w); margin:0 auto; padding:0 40px 40px;
+  display:flex; gap:10px; justify-content:center; flex-wrap:wrap;
+}
+.filter-btn {
+  font-family:var(--sans); font-size:0.82rem; font-weight:500;
+  padding:7px 18px; border:1px solid var(--border); border-radius:24px;
+  background:transparent; color:var(--text-secondary); cursor:pointer;
+  transition:all var(--transition);
+}
+.filter-btn:hover { border-color:var(--accent); color:var(--accent); }
+.filter-btn.active { background:var(--accent); color:#fff; border-color:var(--accent); }
+
+/* ====== POST GRID ====== */
+.posts-grid {
+  max-width:var(--wide-w); margin:0 auto; padding:0 40px 60px;
+  display:grid; grid-template-columns:repeat(auto-fill, minmax(280px,1fr));
+  gap:28px;
+}
+.post-card {
+  background:var(--surface); border:1px solid var(--border-light);
+  border-radius:12px; overflow:hidden; transition:all var(--transition);
+  cursor:pointer; position:relative;
+}
+.post-card:hover { transform:translateY(-3px); box-shadow:0 12px 40px rgba(0,0,0,0.06); border-color:var(--border); }
+.post-card-img {
+  width:100%; height:180px; object-fit:cover; display:block;
+  background:var(--warm-bg);
+}
+.post-card-body { padding:22px 24px 26px; }
+.post-card-cat {
+  font-family:var(--sans); font-size:0.7rem; font-weight:600;
+  text-transform:uppercase; letter-spacing:1.5px; color:var(--accent);
+  margin-bottom:10px;
+}
+.post-card-body h2 {
+  font-family:var(--display); font-size:1.2rem; font-weight:600;
+  line-height:1.3; margin-bottom:8px; letter-spacing:-0.3px;
+}
+.post-card-body .excerpt {
+  font-size:0.9rem; color:var(--text-secondary); line-height:1.6;
+  margin-bottom:12px;
+}
+.post-card-footer {
+  display:flex; justify-content:space-between; align-items:center;
+  font-family:var(--sans); font-size:0.78rem; color:var(--text-light);
+}
+.read-time { display:flex; align-items:center; gap:4px; }
+
+/* ====== SINGLE POST VIEW ====== */
+.post-view { display:none; }
+.post-view.active { display:block; }
+.posts-listing.hidden { display:none; }
+
+.post-header {
+  max-width:var(--max-w); margin:0 auto; padding:60px 40px 32px; text-align:center;
+}
+.post-header .post-cat {
+  font-family:var(--sans); font-size:0.72rem; font-weight:600;
+  text-transform:uppercase; letter-spacing:2px; color:var(--accent);
+  margin-bottom:16px; display:inline-block;
+}
+.post-header h1 {
+  font-family:var(--display); font-size:2.4rem; font-weight:700;
+  letter-spacing:-1px; line-height:1.2; margin-bottom:12px;
+}
+.post-header .post-meta {
+  font-family:var(--sans); font-size:0.85rem; color:var(--text-secondary);
+}
+.post-header .post-meta span { margin:0 8px; color:var(--border); }
+
+.post-cover {
+  max-width:var(--wide-w); margin:0 auto 40px; padding:0 40px;
+}
+.post-cover img { width:100%; border-radius:12px; display:block; }
+
+.post-content {
+  max-width:var(--max-w); margin:0 auto; padding:0 40px 80px;
+}
+.post-content p { margin-bottom:20px; }
+.post-content h2 {
+  font-family:var(--display); font-size:1.5rem; font-weight:600;
+  margin:40px 0 16px; letter-spacing:-0.5px;
+}
+.post-content h3 {
+  font-family:var(--display); font-size:1.2rem; font-weight:600;
+  margin:32px 0 12px;
+}
+.post-content blockquote {
+  border-left:3px solid var(--accent); margin:28px 0; padding:4px 0 4px 24px;
+  font-style:italic; color:var(--text-secondary);
+}
+.post-content img { width:100%; border-radius:8px; margin:24px 0; }
+.post-content .gallery {
+  display:grid; grid-template-columns:repeat(auto-fill, minmax(200px,1fr));
+  gap:12px; margin:28px 0;
+}
+.post-content .gallery img { height:200px; object-fit:cover; margin:0; cursor:pointer; transition:transform 0.3s; }
+.post-content .gallery img:hover { transform:scale(1.02); }
+.post-content .poem {
+  font-style:italic; line-height:2.2; padding:24px 32px; margin:28px 0;
+  background:var(--warm-bg); border-radius:10px; border-left:3px solid var(--accent);
+}
+
+.post-back-btn {
+  font-family:var(--sans); font-size:0.88rem; font-weight:500;
+  color:var(--accent); text-decoration:none; display:inline-flex;
+  align-items:center; gap:6px; cursor:pointer; border:none;
+  background:none; padding:0;
+  transition:color var(--transition);
+}
+.post-back-btn:hover { color:var(--accent-hover); }
+
+/* ====== FOOTER ====== */
+.site-footer {
+  border-top:1px solid var(--border); padding:40px;
+  text-align:center; font-family:var(--sans); font-size:0.82rem;
+  color:var(--text-light);
+}
+.site-footer a { color:var(--accent); text-decoration:none; }
+.site-footer a:hover { text-decoration:underline; }
+
+/* ====== RESPONSIVE ====== */
+@media (max-width:700px) {
+  .site-header { padding:16px 20px; }
+  .site-nav { gap:16px; }
+  .hero { padding:50px 20px 40px; }
+  .hero h1 { font-size:2.2rem; }
+  .filter-bar, .posts-grid, .post-header, .post-content, .post-cover { padding-left:20px; padding-right:20px; }
+  .post-header h1 { font-size:1.8rem; }
+  .posts-grid { grid-template-columns:1fr; }
+}
+
+/* ====== FADE IN ANIMATION ====== */
+.post-card { opacity:0; animation:fadeUp 0.5s ease forwards; }
+.post-card:nth-child(1) { animation-delay:0.05s; }
+.post-card:nth-child(2) { animation-delay:0.1s; }
+.post-card:nth-child(3) { animation-delay:0.15s; }
+.post-card:nth-child(4) { animation-delay:0.2s; }
+.post-card:nth-child(5) { animation-delay:0.25s; }
+.post-card:nth-child(6) { animation-delay:0.3s; }
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(16px); }
+  to { opacity:1; transform:translateY(0); }
+}
+</style>
+</head>
+<body>
+
+<!-- ====== HEADER ====== -->
+<header class="site-header">
+  <a href="#" class="site-logo" onclick="showListing();return false;">The <span>Notebook</span></a>
+  <nav class="site-nav">
+    <a href="#" class="active" onclick="showListing();return false;">All Posts</a>
+    <a href="#" onclick="filterAndShow('essay');return false;">Essays</a>
+    <a href="#" onclick="filterAndShow('photography');return false;">Photography</a>
+    <a href="#" onclick="filterAndShow('poetry');return false;">Poetry</a>
+    <a href="https://yourusername.github.io" class="back-link">← Academic Site</a>
+  </nav>
+</header>
+
+<!-- ====== LISTING VIEW ====== -->
+<div class="posts-listing" id="posts-listing">
+  <section class="hero">
+    <h1>Words, Images &<br>Wanderings</h1>
+    <p>A collection of essays, photographs, poems, and creative explorations beyond the research lab.</p>
+  </section>
+
+  <div class="filter-bar" id="filter-bar">
+    <button class="filter-btn active" onclick="filterPosts('all')">All</button>
+    <button class="filter-btn" onclick="filterPosts('essay')">Essays</button>
+    <button class="filter-btn" onclick="filterPosts('photography')">Photography</button>
+    <button class="filter-btn" onclick="filterPosts('poetry')">Poetry</button>
+    <button class="filter-btn" onclick="filterPosts('creative')">Creative</button>
+  </div>
+
+  <div class="posts-grid" id="posts-grid">
+    <!-- Populated by JS -->
+  </div>
+</div>
+
+<!-- ====== SINGLE POST VIEW ====== -->
+<div class="post-view" id="post-view">
+  <div class="post-header">
+    <button class="post-back-btn" onclick="showListing()">← Back to all posts</button>
+    <div class="post-cat" id="pv-cat"></div>
+    <h1 id="pv-title"></h1>
+    <div class="post-meta"><span id="pv-date"></span> <span>·</span> <span id="pv-read"></span></div>
+  </div>
+  <div class="post-cover" id="pv-cover-wrap"></div>
+  <article class="post-content" id="pv-body"></article>
+</div>
+
+<!-- ====== FOOTER ====== -->
+<footer class="site-footer">
+  <p>&copy; 2024 Your Name · <a href="https://yourusername.github.io">Academic Portfolio</a> · Made with care</p>
+</footer>
+
+<script>
+// ==========================================
+// BLOG DATA — Add your posts here
+// ==========================================
+const blogPosts = [
+  {
+    id: "why-research",
+    title: "Why I Chose Research Over Industry",
+    category: "essay",
+    date: "April 15, 2024",
+    readTime: "5 min read",
+    excerpt: "The decision wasn't straightforward. After two rewarding internships, I found myself drawn back to the open-ended nature of academic research.",
+    cover: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800",
+    body: `
+      <p>The decision wasn't straightforward. After two rewarding internships at tech companies, I found myself drawn back to the open-ended nature of academic research. The pull wasn't purely intellectual — it was existential.</p>
+      <p>What ultimately tipped the scale was the freedom to ask my own questions. In industry, the problems are defined by product needs — important, but bounded. In academia, I could chase the ideas that kept me up at night, the questions that had no guarantee of a clean answer.</p>
+      <blockquote>The best research doesn't come from knowing what you're looking for. It comes from being comfortable with not knowing.</blockquote>
+      <p>That's not to say industry is lesser — it's profoundly different. And I'm grateful for the time I spent there. It taught me to think about impact, scalability, and real users in ways that make my research stronger today.</p>
+      <h2>What I Miss About Industry</h2>
+      <p>Speed. The pace at which ideas become products is intoxicating. You write code on Monday and real humans use it by Friday. In research, the feedback loop stretches across months, sometimes years.</p>
+      <p>But I've come to appreciate that slower rhythm. The best ideas need time to breathe, to be wrong, to be revised. And the joy of a genuine discovery — one that shifts your understanding of what's possible — is worth every slow month.</p>
+      <h2>Advice for Those Deciding</h2>
+      <p>Try both if you can. Do at least one serious internship, and do at least one serious research project. Pay attention to when you feel most alive. The answer is usually in the doing, not the deliberating.</p>
+    `
+  },
+  {
+    id: "reading-ml-papers",
+    title: "A Beginner's Guide to Reading ML Papers",
+    category: "essay",
+    date: "February 20, 2024",
+    readTime: "7 min read",
+    excerpt: "When I started my PhD, reading papers felt like deciphering ancient scrolls. Here's the system I developed.",
+    cover: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800",
+    body: `
+      <p>When I started my PhD, reading papers felt like deciphering ancient scrolls. Dense notation, assumed background knowledge, results that seemed to appear from thin air. Here's the three-pass system I developed that might help you too.</p>
+      <h2>First Pass — 10 Minutes</h2>
+      <p>Read the title, abstract, introduction, section headings, and conclusion. Skip everything else. You should now know what the paper claims and roughly how it gets there. If the paper isn't relevant to your work, you can stop here guilt-free.</p>
+      <h2>Second Pass — 30 Minutes</h2>
+      <p>Read the whole thing but skip proofs and dense math. Focus on figures and tables — they're the real story. A good figure caption tells you more than three paragraphs of setup. Mark things you don't understand, but don't stop to look them up yet.</p>
+      <h2>Third Pass — 1-2 Hours</h2>
+      <p>Only if you need to deeply understand or reproduce the work. Now engage with every equation and assumption. Try to mentally re-derive the key results. This is where real understanding happens, and where most people give up too early.</p>
+      <blockquote>Reading a paper is not the same as understanding it. Understanding requires actively reconstructing the argument in your own words.</blockquote>
+      <p>Over time, you'll develop intuition for which papers deserve which level of attention. Most papers only need the first pass. A few deserve the second. Very few earn the third.</p>
+    `
+  },
+  {
+    id: "street-photography",
+    title: "Light Between Buildings",
+    category: "photography",
+    date: "March 8, 2024",
+    readTime: "2 min read",
+    excerpt: "A photo essay on finding extraordinary light in ordinary urban spaces.",
+    cover: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=800",
+    body: `
+      <p>There's a particular quality of light that appears in cities between 4 and 5 PM — when the sun drops low enough to thread through the gaps between buildings, casting long golden corridors across pavement and faces.</p>
+      <p>These are some of my favorite captures from the past year, all taken within a few blocks of my apartment.</p>
+      <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=400" alt="Urban light 1">
+        <img src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=400" alt="Urban light 2">
+        <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400" alt="Urban light 3">
+        <img src="https://images.unsplash.com/photo-1514565131-fce0801e5785?w=400" alt="Urban light 4">
+        <img src="https://images.unsplash.com/photo-1444723121867-7a241cacace9?w=400" alt="Urban light 5">
+        <img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=400" alt="Urban light 6">
+      </div>
+      <p>I shoot exclusively on a Fuji X100V — its fixed lens forces me to move, to get closer, to commit to a frame rather than zooming from a comfortable distance. Constraints breed creativity.</p>
+    `
+  },
+  {
+    id: "gradient-descent-poem",
+    title: "Gradient Descent — A Poem",
+    category: "poetry",
+    date: "March 1, 2024",
+    readTime: "1 min read",
+    excerpt: "A poem about optimization, uncertainty, and the search for something good enough.",
+    cover: null,
+    body: `
+      <div class="poem">
+        We step, uncertain, down the slope,<br>
+        each iteration a quiet hope<br>
+        that loss will shrink, that weights will learn,<br>
+        that somewhere past the noise, a turn<br>
+        reveals the minimum we seek —<br>
+        not global, maybe, but unique.<br><br>
+        The learning rate — too bold, too shy —<br>
+        determines if we soar or die<br>
+        in oscillations, stuck in place,<br>
+        or overshoot with too much grace.<br><br>
+        And yet we trust the algorithm's way:<br>
+        that small corrections, day by day,<br>
+        will bring us closer to the ground<br>
+        where something beautiful is found.
+      </div>
+      <p>I wrote this during a particularly frustrating hyperparameter search at 2 AM. Sometimes the best way to understand an algorithm is to feel it.</p>
+    `
+  },
+  {
+    id: "debugging-3am",
+    title: "On Debugging at 3 AM",
+    category: "creative",
+    date: "January 12, 2024",
+    readTime: "3 min read",
+    excerpt: "There's a peculiar clarity that arrives at 3 AM, after the coffee has worn off and the office has emptied.",
+    cover: "https://images.unsplash.com/photo-1515879218367-8466d910auj7?w=800",
+    body: `
+      <p>There's a peculiar clarity that arrives at 3 AM, after the coffee has worn off and the office has emptied. The bug you've been chasing all day suddenly feels less like an adversary and more like a puzzle left by a previous version of yourself.</p>
+      <p>You read the stack trace one more time. And there it is — line 247, an off-by-one error hiding in plain sight. You fix it, run the tests, and watch them pass in a cascade of green.</p>
+      <p>The relief is disproportionate to the fix. But that's the thing about debugging: the victory isn't in the solution, it's in the search.</p>
+      <blockquote>Every bug is a lesson in humility. The code is doing exactly what you told it to do. The mistake was always yours.</blockquote>
+      <p>I've started keeping a debugging journal — a log of the bugs I find and how I found them. Patterns emerge. I tend to make the same three or four types of mistakes. Knowing this doesn't prevent them, but it shortens the search.</p>
+      <p>And there's something meditative about 3 AM debugging that I've never found in daytime work. The world shrinks to you and the code. No Slack messages. No meetings. Just the quiet satisfaction of making something work.</p>
+    `
+  },
+  {
+    id: "nature-walks",
+    title: "Quiet Hours — Nature Photography",
+    category: "photography",
+    date: "December 5, 2023",
+    readTime: "2 min read",
+    excerpt: "Early morning walks in forests and fields, before anyone else is awake.",
+    cover: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800",
+    body: `
+      <p>I started taking early morning walks during the pandemic, when the world felt too loud even in silence. What began as a coping mechanism became a practice — one I now protect fiercely in my schedule.</p>
+      <p>These photos are from walks between 5:30 and 7 AM, when the light is soft and the world feels like it belongs to you alone.</p>
+      <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400" alt="Forest path">
+        <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=400" alt="Misty morning">
+        <img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=400" alt="Trees">
+        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=400" alt="Lake morning">
+        <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400" alt="Sunlit trail">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400" alt="Valley view">
+      </div>
+      <p>There's no agenda on these walks. No podcasts, no music. Just footsteps and whatever the forest offers that morning.</p>
+    `
+  }
+];
+
+// ==========================================
+// APPLICATION CODE
+// ==========================================
+
+let activeFilter = 'all';
+
+function renderPostCards(filter) {
+  const grid = document.getElementById('posts-grid');
+  const filtered = filter === 'all' ? blogPosts : blogPosts.filter(p => p.category === filter);
+
+  grid.innerHTML = filtered.map(post => `
+    <article class="post-card" onclick="viewPost('${post.id}')">
+      ${post.cover ? `<img class="post-card-img" src="${post.cover}" alt="${post.title}">` :
+        `<div class="post-card-img" style="display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:2rem;color:var(--text-light);font-style:italic;">✦</div>`}
+      <div class="post-card-body">
+        <div class="post-card-cat">${post.category}</div>
+        <h2>${post.title}</h2>
+        <p class="excerpt">${post.excerpt}</p>
+        <div class="post-card-footer">
+          <span>${post.date}</span>
+          <span class="read-time">${post.readTime}</span>
+        </div>
+      </div>
+    </article>
+  `).join('');
+}
+
+function filterPosts(cat) {
+  activeFilter = cat;
+  document.querySelectorAll('.filter-btn').forEach(b =>
+    b.classList.toggle('active', b.textContent.toLowerCase() === cat || (cat === 'all' && b.textContent === 'All'))
+  );
+  renderPostCards(cat);
+}
+
+function filterAndShow(cat) {
+  showListing();
+  filterPosts(cat);
+  // Update nav active
+  document.querySelectorAll('.site-nav a').forEach(a => a.classList.remove('active'));
+}
+
+function viewPost(id) {
+  const post = blogPosts.find(p => p.id === id);
+  if(!post) return;
+
+  document.getElementById('pv-cat').textContent = post.category;
+  document.getElementById('pv-title').textContent = post.title;
+  document.getElementById('pv-date').textContent = post.date;
+  document.getElementById('pv-read').textContent = post.readTime;
+  document.getElementById('pv-body').innerHTML = post.body;
+
+  const coverWrap = document.getElementById('pv-cover-wrap');
+  coverWrap.innerHTML = post.cover ? `<img src="${post.cover}" alt="${post.title}">` : '';
+
+  document.getElementById('posts-listing').classList.add('hidden');
+  document.getElementById('post-view').classList.add('active');
+  window.scrollTo(0,0);
+}
+
+function showListing() {
+  document.getElementById('posts-listing').classList.remove('hidden');
+  document.getElementById('post-view').classList.remove('active');
+  document.querySelectorAll('.site-nav a').forEach(a => a.classList.remove('active'));
+  document.querySelector('.site-nav a:first-child').classList.add('active');
+  window.scrollTo(0,0);
+}
+
+// Init
+window.addEventListener('DOMContentLoaded', () => {
+  renderPostCards('all');
+});
+</script>
+</body>
+</html>
