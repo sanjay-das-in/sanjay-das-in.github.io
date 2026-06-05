@@ -184,66 +184,66 @@ body{font-family:var(--serif);background:var(--bg);color:var(--text);line-height
 /* ============ BLOG DATA ============ */
 /* Add / edit posts here. Each post = one object. */
 var blogPosts = [
-  {
-    id: "why-research",
-    title: "Why I Chose Research Over Industry",
-    category: "essay",
-    date: "April 15, 2024",
-    readTime: "5 min read",
-    excerpt: "The decision wasn\u2019t straightforward. After two rewarding internships, I found myself drawn back to academia.",
-    cover: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800",
-    body: '<p>The decision wasn\u2019t straightforward. After two rewarding internships at tech companies, I found myself drawn back to the open-ended nature of academic research.</p><p>What ultimately tipped the scale was the freedom to ask my own questions. In industry, the problems are defined by product needs. In academia, I could chase ideas that kept me up at night.</p><blockquote>The best research doesn\u2019t come from knowing what you\u2019re looking for. It comes from being comfortable with not knowing.</blockquote><p>That\u2019s not to say industry is lesser \u2014 it\u2019s profoundly different. It taught me to think about impact, scalability, and real users in ways that strengthen my research today.</p><h2>Advice for Those Deciding</h2><p>Try both if you can. Do at least one serious internship and one serious research project. Pay attention to when you feel most alive. The answer is usually in the doing, not the deliberating.</p>'
-  },
-  {
-    id: "reading-ml-papers",
-    title: "A Beginner\u2019s Guide to Reading ML Papers",
-    category: "essay",
-    date: "February 20, 2024",
-    readTime: "7 min read",
-    excerpt: "When I started my PhD, reading papers felt like deciphering ancient scrolls. Here\u2019s the system I developed.",
-    cover: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800",
-    body: '<p>When I started my PhD, reading papers felt like deciphering ancient scrolls. Here\u2019s the three-pass system I developed.</p><h2>First Pass \u2014 10 Minutes</h2><p>Read the title, abstract, intro, section headings, and conclusion. You should now know what the paper claims and roughly how.</p><h2>Second Pass \u2014 30 Minutes</h2><p>Read the whole thing but skip proofs and dense math. Focus on figures and tables \u2014 they\u2019re the real story.</p><h2>Third Pass \u2014 1-2 Hours</h2><p>Only if you need to reproduce the work. Engage with every equation and assumption. This is where real understanding happens.</p><blockquote>Reading a paper is not the same as understanding it. Understanding requires actively reconstructing the argument in your own words.</blockquote>'
-  },
-  {
-    id: "street-photography",
-    title: "Light Between Buildings",
-    category: "photography",
-    date: "March 8, 2024",
-    readTime: "2 min read",
-    excerpt: "A photo essay on finding extraordinary light in ordinary urban spaces.",
-    cover: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=800",
-    body: '<p>There\u2019s a particular quality of light in cities between 4 and 5 PM \u2014 when the sun threads through gaps between buildings, casting long golden corridors across pavement and faces.</p><div class="gallery"><img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=400" alt="Urban light"><img src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=400" alt="City"><img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400" alt="Street"><img src="https://images.unsplash.com/photo-1514565131-fce0801e5785?w=400" alt="Architecture"><img src="https://images.unsplash.com/photo-1444723121867-7a241cacace9?w=400" alt="Skyline"><img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=400" alt="Urban"></div><p>I shoot exclusively on a Fuji X100V \u2014 its fixed lens forces me to move, to commit to a frame. Constraints breed creativity.</p>'
-  },
-  {
-    id: "gradient-descent-poem",
-    title: "Gradient Descent \u2014 A Poem",
-    category: "poetry",
-    date: "March 1, 2024",
-    readTime: "1 min read",
-    excerpt: "A poem about optimization, uncertainty, and the search for something good enough.",
-    cover: null,
-    body: '<div class="poem">We step, uncertain, down the slope,<br>each iteration a quiet hope<br>that loss will shrink, that weights will learn,<br>that somewhere past the noise, a turn<br>reveals the minimum we seek \u2014<br>not global, maybe, but unique.<br><br>The learning rate \u2014 too bold, too shy \u2014<br>determines if we soar or die<br>in oscillations, stuck in place,<br>or overshoot with too much grace.<br><br>And yet we trust the algorithm\u2019s way:<br>that small corrections, day by day,<br>will bring us closer to the ground<br>where something beautiful is found.</div><p>Written during a frustrating hyperparameter search at 2 AM. Sometimes the best way to understand an algorithm is to feel it.</p>'
-  },
-  {
-    id: "debugging-3am",
-    title: "On Debugging at 3 AM",
-    category: "creative",
-    date: "January 12, 2024",
-    readTime: "3 min read",
-    excerpt: "There\u2019s a peculiar clarity that arrives at 3 AM, after the coffee has worn off.",
-    cover: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800",
-    body: '<p>There\u2019s a peculiar clarity that arrives at 3 AM, after the coffee has worn off and the office has emptied. The bug you\u2019ve been chasing all day suddenly feels less like an adversary and more like a puzzle left by a previous version of yourself.</p><p>You read the stack trace one more time. And there it is \u2014 line 247, an off-by-one error. You fix it, run the tests, and watch them pass in a cascade of green.</p><blockquote>Every bug is a lesson in humility. The code is doing exactly what you told it to do.</blockquote><p>There\u2019s something meditative about 3 AM debugging. The world shrinks to you and the code. No Slack. No meetings. Just the quiet satisfaction of making something work.</p>'
-  },
-  {
-    id: "nature-walks",
-    title: "Quiet Hours \u2014 Nature Photography",
-    category: "photography",
-    date: "December 5, 2023",
-    readTime: "2 min read",
-    excerpt: "Early morning walks in forests and fields, before anyone else is awake.",
-    cover: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800",
-    body: '<p>I started taking early morning walks during the pandemic. What began as a coping mechanism became a practice I now protect fiercely.</p><div class="gallery"><img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400" alt="Forest"><img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=400" alt="Misty morning"><img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=400" alt="Trees"><img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=400" alt="Lake"><img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400" alt="Trail"><img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400" alt="Valley"></div><p>No podcasts, no music. Just footsteps and whatever the forest offers that morning.</p>'
-  }
+  // {
+  //   id: "why-research",
+  //   title: "Why I Chose Research Over Industry",
+  //   category: "essay",
+  //   date: "April 15, 2024",
+  //   readTime: "5 min read",
+  //   excerpt: "The decision wasn\u2019t straightforward. After two rewarding internships, I found myself drawn back to academia.",
+  //   cover: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800",
+  //   body: '<p>The decision wasn\u2019t straightforward. After two rewarding internships at tech companies, I found myself drawn back to the open-ended nature of academic research.</p><p>What ultimately tipped the scale was the freedom to ask my own questions. In industry, the problems are defined by product needs. In academia, I could chase ideas that kept me up at night.</p><blockquote>The best research doesn\u2019t come from knowing what you\u2019re looking for. It comes from being comfortable with not knowing.</blockquote><p>That\u2019s not to say industry is lesser \u2014 it\u2019s profoundly different. It taught me to think about impact, scalability, and real users in ways that strengthen my research today.</p><h2>Advice for Those Deciding</h2><p>Try both if you can. Do at least one serious internship and one serious research project. Pay attention to when you feel most alive. The answer is usually in the doing, not the deliberating.</p>'
+  // },
+  // {
+  //   id: "reading-ml-papers",
+  //   title: "A Beginner\u2019s Guide to Reading ML Papers",
+  //   category: "essay",
+  //   date: "February 20, 2024",
+  //   readTime: "7 min read",
+  //   excerpt: "When I started my PhD, reading papers felt like deciphering ancient scrolls. Here\u2019s the system I developed.",
+  //   cover: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800",
+  //   body: '<p>When I started my PhD, reading papers felt like deciphering ancient scrolls. Here\u2019s the three-pass system I developed.</p><h2>First Pass \u2014 10 Minutes</h2><p>Read the title, abstract, intro, section headings, and conclusion. You should now know what the paper claims and roughly how.</p><h2>Second Pass \u2014 30 Minutes</h2><p>Read the whole thing but skip proofs and dense math. Focus on figures and tables \u2014 they\u2019re the real story.</p><h2>Third Pass \u2014 1-2 Hours</h2><p>Only if you need to reproduce the work. Engage with every equation and assumption. This is where real understanding happens.</p><blockquote>Reading a paper is not the same as understanding it. Understanding requires actively reconstructing the argument in your own words.</blockquote>'
+  // },
+  // {
+  //   id: "street-photography",
+  //   title: "Light Between Buildings",
+  //   category: "photography",
+  //   date: "March 8, 2024",
+  //   readTime: "2 min read",
+  //   excerpt: "A photo essay on finding extraordinary light in ordinary urban spaces.",
+  //   cover: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=800",
+  //   body: '<p>There\u2019s a particular quality of light in cities between 4 and 5 PM \u2014 when the sun threads through gaps between buildings, casting long golden corridors across pavement and faces.</p><div class="gallery"><img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=400" alt="Urban light"><img src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=400" alt="City"><img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400" alt="Street"><img src="https://images.unsplash.com/photo-1514565131-fce0801e5785?w=400" alt="Architecture"><img src="https://images.unsplash.com/photo-1444723121867-7a241cacace9?w=400" alt="Skyline"><img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=400" alt="Urban"></div><p>I shoot exclusively on a Fuji X100V \u2014 its fixed lens forces me to move, to commit to a frame. Constraints breed creativity.</p>'
+  // },
+  // {
+  //   id: "gradient-descent-poem",
+  //   title: "Gradient Descent \u2014 A Poem",
+  //   category: "poetry",
+  //   date: "March 1, 2024",
+  //   readTime: "1 min read",
+  //   excerpt: "A poem about optimization, uncertainty, and the search for something good enough.",
+  //   cover: null,
+  //   body: '<div class="poem">We step, uncertain, down the slope,<br>each iteration a quiet hope<br>that loss will shrink, that weights will learn,<br>that somewhere past the noise, a turn<br>reveals the minimum we seek \u2014<br>not global, maybe, but unique.<br><br>The learning rate \u2014 too bold, too shy \u2014<br>determines if we soar or die<br>in oscillations, stuck in place,<br>or overshoot with too much grace.<br><br>And yet we trust the algorithm\u2019s way:<br>that small corrections, day by day,<br>will bring us closer to the ground<br>where something beautiful is found.</div><p>Written during a frustrating hyperparameter search at 2 AM. Sometimes the best way to understand an algorithm is to feel it.</p>'
+  // },
+  // {
+  //   id: "debugging-3am",
+  //   title: "On Debugging at 3 AM",
+  //   category: "creative",
+  //   date: "January 12, 2024",
+  //   readTime: "3 min read",
+  //   excerpt: "There\u2019s a peculiar clarity that arrives at 3 AM, after the coffee has worn off.",
+  //   cover: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800",
+  //   body: '<p>There\u2019s a peculiar clarity that arrives at 3 AM, after the coffee has worn off and the office has emptied. The bug you\u2019ve been chasing all day suddenly feels less like an adversary and more like a puzzle left by a previous version of yourself.</p><p>You read the stack trace one more time. And there it is \u2014 line 247, an off-by-one error. You fix it, run the tests, and watch them pass in a cascade of green.</p><blockquote>Every bug is a lesson in humility. The code is doing exactly what you told it to do.</blockquote><p>There\u2019s something meditative about 3 AM debugging. The world shrinks to you and the code. No Slack. No meetings. Just the quiet satisfaction of making something work.</p>'
+  // },
+  // {
+  //   id: "nature-walks",
+  //   title: "Quiet Hours \u2014 Nature Photography",
+  //   category: "photography",
+  //   date: "December 5, 2023",
+  //   readTime: "2 min read",
+  //   excerpt: "Early morning walks in forests and fields, before anyone else is awake.",
+  //   cover: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800",
+  //   body: '<p>I started taking early morning walks during the pandemic. What began as a coping mechanism became a practice I now protect fiercely.</p><div class="gallery"><img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400" alt="Forest"><img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=400" alt="Misty morning"><img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=400" alt="Trees"><img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=400" alt="Lake"><img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400" alt="Trail"><img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400" alt="Valley"></div><p>No podcasts, no music. Just footsteps and whatever the forest offers that morning.</p>'
+  // }
 ];
 
 /* ============ APP ============ */
