@@ -578,7 +578,7 @@ const creativeItems = [
       images: [
         "photos/PXL_20260502_224810347.jpg",
         "photos/PXL_20260502_182856655.jpg",
-        "photos/PXL_20260321_195242617.jpg,
+        "photos/PXL_20260321_195242617.jpg",
       ]
     }
   },
@@ -780,8 +780,8 @@ document.addEventListener('keydown', e => {
   if(e.key === 'Escape') { closeModal(); closeAdmin(); }
 });
 
-let adminUnlocked = false;
-const ADMIN_PW = "admin"; // Change this!
+let adminUnlocked = true;
+const ADMIN_PW = "pqowie"; // Change this!
 
 function openAdmin() {
   document.getElementById('admin-overlay').classList.add('open');
