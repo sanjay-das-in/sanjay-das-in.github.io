@@ -327,7 +327,10 @@ html, body { height:100%; overflow:hidden; font-family:'Outfit',sans-serif; back
       <a href="https://www.linkedin.com/in/sanjay-das/" title="LinkedIn" id="link-linkedin"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.26 2.37 4.26 5.44v6.3zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
       <a href="#" title="Twitter / X" id="link-twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.24 2.25h3.31l-7.24 8.26 8.52 11.24h-6.67l-5.22-6.82-5.98 6.82H1.65l7.74-8.84L1.17 2.25h6.84l4.72 6.24zm-1.16 17.52h1.84L7.08 4.13H5.12z"/></svg></a>
     </div>
-    <button class="sidebar-resume-btn" onclick="generateResume()">⬇ Download CV / Resume</button>
+    <!-- <button class="sidebar-resume-btn" onclick="generateResume()">⬇ Download CV / Resume</button> -->
+    <button class="sidebar-resume-btn" onclick="const a = document.createElement('a'); a.href='resume_1page.pdf'; a.download='Sanjay_Das_Resume.pdf'; a.click();">
+      ⬇ Download CV / Resume
+    </button>
   </aside>
 
   <!-- ====== MAIN ====== -->
@@ -343,6 +346,7 @@ html, body { height:100%; overflow:hidden; font-family:'Outfit',sans-serif; back
       <button class="tab-btn" data-tab="community">Community</button>
       <button class="tab-btn" data-tab="activities">Activities</button>
       <button class="tab-btn" data-tab="creative">Creative</button>
+      <button class="tab-btn" data-tab="CV/Resume">Creative</button>
       <div class="tab-line"></div>
     </nav>
 
@@ -505,6 +509,13 @@ incidents to enhance safety.</p></div>
         </div>
       </div>
 
+      <!-- ====== CV ====== -->
+      <div class="tab-panel" data-panel="creative">
+        <div style="width: 100%; height: 600px;">
+          <embed src="resume_1page.pdf" width="100%" height="100%" type="application/pdf">
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
@@ -563,7 +574,8 @@ const creativeItems = [
         "photos/PXL_20260502_224810347.jpg",
         "photos/PXL_20260502_182856655.jpg",
         "photos/PXL_20260321_195242617.jpg",
-        "photos/PXL_20251205_020409476.jpg"
+        "photos/PXL_20251205_020409476.jpg",
+        "photos/PXL_20251016_201454557.jpg"
       ]
     }
   },
@@ -776,87 +788,6 @@ function exportAllData() {
   showToast('Data exported!');
 }
 
-// ====== RESUME GENERATOR ======
-function generateResume() {
-  const { jsPDF } = window.jspdf;
-  const doc = new jsPDF({unit:'mm',format:'a4'});
-  const W=210, m=20;
-  let y=20;
-
-  doc.setFontSize(22); doc.setFont('helvetica','bold');
-  doc.text(SITE_DATA.name, m, y); y+=8;
-  doc.setFontSize(11); doc.setFont('helvetica','normal'); doc.setTextColor(100);
-  doc.text(SITE_DATA.title, m, y); y+=6;
-  doc.text([SITE_DATA.email, SITE_DATA.phone, SITE_DATA.location].filter(Boolean).join('  |  '), m, y); y+=2;
-  doc.setDrawColor(79,110,247); doc.setLineWidth(0.5);
-  doc.line(m, y+2, W-m, y+2); y+=10;
-
-  function addSection(title) {
-    if(y>260){doc.addPage();y=20;}
-    doc.setTextColor(79,110,247); doc.setFontSize(13); doc.setFont('helvetica','bold');
-    doc.text(title, m, y); y+=2;
-    doc.line(m, y, W-m, y); y+=6;
-    doc.setTextColor(40); doc.setFontSize(10); doc.setFont('helvetica','normal');
-  }
-  function addWrapped(text) {
-    const lines = doc.splitTextToSize(text, W-m-m);
-    lines.forEach(line => { if(y>275){doc.addPage();y=20;} doc.text(line,m,y); y+=5; });
-  }
-
-  addSection('ABOUT');
-  addWrapped(document.querySelector('[data-panel="about"] .section-body')?.innerText?.substring(0,500)||'');
-  y+=4;
-
-  addSection('EDUCATION');
-  document.querySelectorAll('[data-panel="education"] .timeline-item').forEach(it => {
-    doc.setFont('helvetica','bold');
-    doc.text(it.querySelector('h3')?.textContent||'', m, y); y+=5;
-    doc.setFont('helvetica','normal'); doc.setTextColor(100);
-    doc.text(it.querySelector('.tl-meta')?.textContent||'', m, y); y+=5;
-    doc.setTextColor(40);
-    addWrapped(it.querySelector('p')?.textContent||''); y+=3;
-  });
-
-  addSection('RESEARCH');
-  document.querySelectorAll('[data-panel="research"] .card').forEach(c => {
-    doc.setFont('helvetica','bold');
-    doc.text((c.querySelector('h3')?.textContent||'')+' ('+(c.querySelector('.card-meta')?.textContent||'')+')', m, y); y+=5;
-    doc.setFont('helvetica','normal');
-    addWrapped(c.querySelector('p')?.textContent||''); y+=3;
-  });
-
-  addSection('PUBLICATIONS');
-  document.querySelectorAll('[data-panel="publications"] .pub-item').forEach(p => {
-    doc.setFont('helvetica','bold');
-    addWrapped(p.querySelector('h3')?.textContent||'');
-    doc.setFont('helvetica','normal'); doc.setTextColor(100);
-    addWrapped((p.querySelector('.pub-authors')?.textContent||'')+' — '+(p.querySelector('.pub-venue')?.textContent||''));
-    doc.setTextColor(40); y+=3;
-  });
-
-  addSection('TEACHING');
-  document.querySelectorAll('[data-panel="teaching"] .card').forEach(c => {
-    doc.setFont('helvetica','bold');
-    doc.text(c.querySelector('h3')?.textContent||'', m, y); y+=5;
-    doc.setFont('helvetica','normal');
-    doc.text(c.querySelector('.card-meta')?.textContent||'', m, y); y+=6;
-  });
-
-  addSection('COMMUNITY & ACTIVITIES');
-  ['community','activities'].forEach(sec => {
-    document.querySelectorAll(`[data-panel="${sec}"] .card`).forEach(c => {
-      doc.setFont('helvetica','bold');
-      doc.text((c.querySelector('h3')?.textContent||'')+' ('+(c.querySelector('.card-meta')?.textContent||'')+')', m, y); y+=5;
-      doc.setFont('helvetica','normal');
-      addWrapped(c.querySelector('p')?.textContent||''); y+=2;
-    });
-  });
-
-  doc.setFontSize(8); doc.setTextColor(160);
-  doc.text('Generated on '+new Date().toLocaleDateString(), m, 290);
-  doc.save((SITE_DATA.name||'resume').replace(/\s+/g,'_')+'_CV.pdf');
-  showToast('Resume downloaded!');
-}
 
 // ====== TOAST ======
 function showToast(msg) {
