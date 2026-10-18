@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sanjay Das — Portfolio</title>
+<title>Sanjay Das — Research</title>
+<meta name="description" content="Sanjay Das, Postdoctoral Research Associate at Oak Ridge National Laboratory. Research in AI for science, operational safety, and AI reliability.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <style>
 :root {
   --bg: #f4f5f8;
@@ -295,224 +295,205 @@ html, body { height:100%; overflow:hidden; font-family:'Outfit',sans-serif; back
   .tab-panel { padding:20px; }
   .modal-container { width:95vw; max-height:90vh; }
 }
+
+/* Small refinements to the original portfolio layout. */
+:root { --accent-glow:rgba(79,110,247,.08); --accent2-glow:rgba(0,160,140,.08); }
+.bg-grid { animation:none; opacity:.35; }
+.bg-orb { display:none; }
+.portrait-pulse { display:none; }
+.portrait-wrap { box-shadow:none; }
+.sidebar::after { display:none; }
+.tab-btn.active { box-shadow:none; }
+.section-title { background:none; -webkit-text-fill-color:initial; color:var(--text); }
+.section-body { max-width:800px; }
+.section-body a { color:var(--accent); text-underline-offset:3px; }
+.research-profiles { display:flex; gap:16px; margin-bottom:18px; font-size:.8rem; }
+.research-profiles a { color:var(--accent); text-decoration:none; }
+.blog-nav { text-decoration:none; display:inline-block; }
+.tab-nav { flex-wrap:wrap; }
+.card:hover,.highlight-card:hover { box-shadow:0 3px 12px rgba(26,28,46,.06); }
+:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+@media(max-width:900px) {
+ html,body { height:auto; overflow:auto; }
+ .app { height:auto; min-height:100vh; }
+ .sidebar { gap:12px; }
+ .sidebar .social-row,.sidebar .research-profiles { margin-bottom:0; }
+ .sidebar-resume-btn { max-width:240px; }
+ .main { height:auto; overflow:visible; }
+ .content-area { overflow:visible; }
+ .tab-panel { display:none; position:static; overflow:visible; transform:none; }
+ .tab-panel.active { display:block; }
+ .tab-nav { padding-bottom:6px; }
+}
+@media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition:none!important; } }
+
 </style>
+<link rel="stylesheet" href="assets/modern.css">
+<link rel="stylesheet" href="assets/consistency.css">
 </head>
 <body>
+<svg xmlns="http://www.w3.org/2000/svg" class="icon-definitions" aria-hidden="true"><defs><symbol id="icon-about" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/></symbol><symbol id="icon-education" viewBox="0 0 24 24"><path d="m2 8 10-5 10 5-10 5L2 8Zm4 2v7c4 3 8 3 12 0v-7M22 8v8"/></symbol><symbol id="icon-experience" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V4h8v3M3 12c5 4 13 4 18 0M10 14h4"/></symbol><symbol id="icon-research" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6L4 19a1 1 0 0 0 1 2h14a1 1 0 0 0 1-2L14 9V3M7 15h10"/><circle cx="11" cy="17" r=".7"/></symbol><symbol id="icon-publications" viewBox="0 0 24 24"><path d="M5 3h11l4 4v14H5V3Zm10 0v5h5M8 12h9M8 16h7"/></symbol><symbol id="icon-teaching" viewBox="0 0 24 24"><path d="M3 3h18v13h-9M8 21v-3a4 4 0 0 0-8 0v3M8 10l7-3"/><circle cx="4" cy="12" r="3"/></symbol><symbol id="icon-awards" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="m7 14-1 8 6-3 6 3-1-8m-7-5 2 2 3-4"/></symbol><symbol id="icon-news" viewBox="0 0 24 24"><rect x="3" y="3" width="16" height="18" rx="2"/><path d="M19 7h3v12a2 2 0 0 1-2 2M7 7h8M7 11h3v4H7v-4Zm6 0h2m-2 4h2M7 18h8"/></symbol><symbol id="icon-community" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M2 21v-2a7 7 0 0 1 14 0v2m1-16a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 5"/></symbol><symbol id="icon-creative" viewBox="0 0 24 24"><path d="M3 7h4l2-3h6l2 3h4v14H3V7Z"/><circle cx="12" cy="13" r="4"/></symbol><symbol id="icon-blog" viewBox="0 0 24 24"><path d="M5 21h14M5 16 16 5l3 3L8 19H5v-3Zm9-9 3 3"/></symbol></defs></svg>
 
 <div class="bg-grid"></div>
 <div class="bg-orb a"></div>
 <div class="bg-orb b"></div>
 
 <div class="app">
-  <!-- ====== SIDEBAR ====== -->
-  <aside class="sidebar">
-    <div class="portrait-wrap">
-      <div class="portrait-pulse"></div>
-      <img id="portrait-img" src="profile.jpeg" alt="Portrait">
-    </div>
-    <h1 id="sb-name">Sanjay Das</h1>
-    <div class="title-label" id="sb-title">Post-doctoral Research Associate · Researcher</div>
-    <ul class="contact-list">
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 4 10 8 10-8"/></svg><a href="mailto:dass3@ornl.gov" id="sb-email">dass3@ornl.gov</a></li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span id="sb-location">Knoxville, USA</span></li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07A19.5 19.5 0 0 1 5.15 13 19.8 19.8 0 0 1 2.08 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.68 2.34a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.74-1.25a2 2 0 0 1 2.11-.45c.74.32 1.53.55 2.34.68a2 2 0 0 1 1.72 2z"/></svg><span id="sb-phone">+1 (000) 000-0000</span></li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-2a5 5 0 1 0 0-10 5 5 0 0 0 0 10zM1 8l11-6 11 6v2H1z"/></svg><div class="pub-links"><a href="https://scholar.google.com/citations?user=3ytmxroAAAAJ&hl=en">Google Scholar</a></div></li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11.996 21.003c-5.523 0-10-4.477-10-10s4.477-10 10-10 10 4.477 10 10-4.477 10-10 10zm4.244-14.733c-2.344 0-4.244 1.9-4.244 4.244 0 2.344 1.9 4.244 4.244 4.244s4.244-1.9 4.244-4.244c0-2.344-1.9-4.244-4.244-4.244z"/></svg><div class="pub-links"><a href="https://www.semanticscholar.org/author/Sanjay-Das/2276012822">Semantic Scholar</a></div></li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.367 4.379c.528 0 .949.43.949.945 0 .516-.421.949-.949.949s-.945-.433-.945-.949c0-.516.417-.945.945-.945zm-.72 3.035h1.442v10.043H6.647V7.414zm3.562 0h3.898c3.712 0 5.344 2.656 5.344 5.027 0 2.579-2.016 5.024-5.324 5.024h-3.918V7.414zm1.441 1.305v7.445h2.297c3.273 0 4.023-2.484 4.023-3.723 0-2.016-1.285-3.723-4.098-3.723h-2.222z"/></svg><div class="pub-links"><a href="https://orcid.org/0009-0005-4259-1915">ORCID Profile</a></div></li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M0 0v24h24V0H0zm4.5 4.5h6v6h-6v-6zm9 0h6v6h-6v-6zm-9 9h6v6h-6v-6zm9 0h6v6h-6v-6z"/></svg><div class="pub-links"><a href="https://dblp.org/pid/56/6267">DBLP Profile</a></div></li>
-    </ul>
-    <div class="social-row">
-      <a href="https://scholar.google.com/citations?user=3ytmxroAAAAJ&hl=en" title="Google Scholar" id="link-scholar"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-2a5 5 0 1 0 0-10 5 5 0 0 0 0 10zM1 8l11-6 11 6v2H1z"/></svg></a>
-      <a href="#" title="GitHub" id="link-github"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.37.5 0 5.78 0 12.3c0 5.21 3.44 9.65 8.2 11.22.6.1.82-.26.82-.57v-2.18c-3.34.72-4.04-1.41-4.04-1.41-.55-1.37-1.33-1.74-1.33-1.74-1.09-.73.08-.72.08-.72 1.2.09 1.84 1.22 1.84 1.22 1.07 1.8 2.8 1.28 3.49.98.1-.76.42-1.28.76-1.58-2.67-.3-5.47-1.31-5.47-5.83 0-1.29.47-2.34 1.24-3.17-.13-.3-.54-1.5.11-3.13 0 0 1-.32 3.3 1.21A11.5 11.5 0 0 1 12 6.8c1.02.01 2.05.14 3.01.4 2.3-1.53 3.3-1.21 3.3-1.21.65 1.63.24 2.83.12 3.13.77.83 1.24 1.88 1.24 3.17 0 4.54-2.81 5.53-5.49 5.82.43.37.82 1.1.82 2.22v3.29c0 .31.22.68.83.57C20.57 21.94 24 17.5 24 12.3 24 5.78 18.63.5 12 .5z"/></svg></a>
-      <a href="https://www.linkedin.com/in/sanjay-das/" title="LinkedIn" id="link-linkedin"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.26 2.37 4.26 5.44v6.3zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
-      <a href="#" title="Twitter / X" id="link-twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.24 2.25h3.31l-7.24 8.26 8.52 11.24h-6.67l-5.22-6.82-5.98 6.82H1.65l7.74-8.84L1.17 2.25h6.84l4.72 6.24zm-1.16 17.52h1.84L7.08 4.13H5.12z"/></svg></a>
-    </div>
-    <!-- <button class="sidebar-resume-btn" onclick="generateResume()">⬇ Download CV / Resume</button> -->
-    <button class="sidebar-resume-btn" onclick="const a = document.createElement('a'); a.href='resume_1page.pdf'; a.download='Sanjay_Das_Resume.pdf'; a.click();">
-      ⬇ Download CV / Resume
-    </button>
-  </aside>
 
   <!-- ====== MAIN ====== -->
   <div class="main">
+    <header class="portfolio-header"><a class="portfolio-name" href="#about" onclick="switchToTab('about');return false;">Sanjay Das<span>Postdoctoral Research Associate · ORNL</span></a><div class="header-links"><a href="mailto:dass3@ornl.gov">dass3@ornl.gov</a><a class="cv-link" href="resume_1page.pdf" download="Sanjay_Das_Resume.pdf">Download CV ↗</a></div></header>
     <nav class="tab-nav" id="tab-nav">
-      <button class="tab-btn active" data-tab="about">About</button>
-      <button class="tab-btn" data-tab="education">Education</button>
-      <button class="tab-btn" data-tab="experience">Experience</button>
-      <button class="tab-btn" data-tab="research">Research</button>
-      <button class="tab-btn" data-tab="publications">Publications</button>
-      <button class="tab-btn" data-tab="teaching">Teaching</button>
-      <button class="tab-btn" data-tab="news">News</button>
-      <button class="tab-btn" data-tab="community">Community</button>
-      <button class="tab-btn" data-tab="activities">Activities</button>
-      <button class="tab-btn" data-tab="creative">Creative</button>
+      <button class="tab-btn active" data-tab="about"><svg class="ui-icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-about"/></svg><span>About</span></button>
+      <button class="tab-btn" data-tab="education"><svg class="ui-icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-education"/></svg><span>Education</span></button>
+      <button class="tab-btn" data-tab="experience"><svg class="ui-icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-experience"/></svg><span>Experience</span></button>
+      <button class="tab-btn" data-tab="research"><svg class="ui-icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-research"/></svg><span>Research</span></button>
+      <button class="tab-btn" data-tab="publications"><svg class="ui-icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-publications"/></svg><span>Publications</span></button>
+      <button class="tab-btn" data-tab="teaching"><svg class="ui-icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-teaching"/></svg><span>Teaching</span></button>
+      <button class="tab-btn" data-tab="awards"><svg class="ui-icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-awards"/></svg><span>Awards</span></button>
+      <button class="tab-btn" data-tab="news"><svg class="ui-icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-news"/></svg><span>News</span></button>
+      <button class="tab-btn" data-tab="community"><svg class="ui-icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-community"/></svg><span>Community</span></button>
+      <a class="tab-btn blog-nav" data-section="blog" href="blog/"><svg class="ui-icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-blog"/></svg><span>Blog ↗</span></a>
+      <button class="tab-btn" data-tab="creative"><svg class="ui-icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-creative"/></svg><span>Creative</span></button>
       <div class="tab-line"></div>
     </nav>
 
     <div class="content-area">
       <!-- ====== ABOUT ====== -->
       <div class="tab-panel active" data-panel="about">
-        <h2 class="section-title">About Me</h2>
-        <p class="section-subtitle">Welcome to my corner of the internet</p>
-        <div class="section-body" id="about-content">
-          <p>Hello! I am a researcher passionate about pushing the boundaries of knowledge. I am a Postdoctoral Research Associate at Oak Ridge National Laboratory working at the intersection of 
-        <strong>AI for Science &amp; Operations</strong>, <strong>AI system reliability</strong>, and 
-        <strong>hardware-aware machine learning</strong>. My research focuses on building 
-        <strong>robust, trustworthy, and safety-aware AI systems</strong> that can be reliably deployed 
-        in mission-critical environments.</p>
-          <p>I believe in open science, collaborative research, and using technology to make the world a better place. When I am not in the lab, you will find me exploring creative outlets and contributing to the community.</p>
-          <div class="tag-list" style="margin-top:20px">
-            <span class="tag">Machine Learning</span><span class="tag">Data Science</span>
-            <span class="tag">Computer Vision</span><span class="tag">NLP</span><span class="tag">Open Source</span>
+        <div class="about-intro">
+          <div class="about-copy">
+            <p class="about-kicker">Research · Oak Ridge National Laboratory</p>
+            <h2 class="about-title">Hi, I’m Sanjay.</h2>
+            <p class="about-lead">I work on making AI useful for science—and reliable enough for the decisions around it.</p>
+            <p>I’m a Postdoctoral Research Associate at <a href="https://www.ornl.gov/staff-profile/sanjay-das">Oak Ridge National Laboratory</a>. My work brings together scientific discovery, agentic AI, and operational safety.</p>
+            <p>Some of the questions I study: Can AI help us evaluate a scientific hypothesis? Can a conversation between agents improve hazard analysis? What happens when the hardware behind a model goes wrong?</p>
+            <p>My background is in AI and hardware reliability, with a Ph.D. from <a href="https://www.utdallas.edu/">UT Dallas</a>. Outside the lab, I enjoy photography and sharing what I learn.</p>
+            <div class="about-actions"><button class="primary-action" onclick="switchToTab('research')">Explore my research</button><a href="mailto:dass3@ornl.gov">Get in touch ↗</a></div>
           </div>
+          <figure class="about-photo"><img src="profile.jpeg" alt="Sanjay Das" width="480" height="560"><figcaption>Sanjay Das · Knoxville, USA</figcaption></figure>
         </div>
-        <!-- Latest Highlights -->
-        <div class="highlights-strip">
-          <h3>Latest Highlights</h3>
-          <div class="highlight-cards" id="highlight-cards">
-            <!-- Populated by JS -->
-          </div>
-        </div>
+        <div class="about-bottom"><div class="about-updates"><h3>Recently</h3><button onclick="switchToTab('awards')"><span>October 2026</span> ORPA All-Around Excellence Award ↗</button><a href="blog/hypothesis-ranking/"><span>Research note</span> How should AI rank a scientific hypothesis? ↗</a></div><div class="about-connect"><h3>Find my work</h3><div><a href="https://scholar.google.com/citations?hl=en&amp;user=3ytmxroAAAAJ&amp;view_op=list_works&amp;sortby=pubdate">Google Scholar ↗</a><a href="https://openreview.net/profile?id=~Sanjay_Das1">OpenReview ↗</a><a href="https://www.researchgate.net/profile/Sanjay-Das-20">ResearchGate ↗</a><a href="https://www.ornl.gov/staff-profile/sanjay-das">ORNL profile ↗</a><a href="https://www.semanticscholar.org/author/Sanjay-Das/2276012822">Semantic Scholar ↗</a><a href="https://orcid.org/0009-0005-4259-1915">ORCID ↗</a><a href="https://dblp.org/pid/56/6267">DBLP ↗</a><a href="https://github.com/sanjay-das-in">GitHub ↗</a><a href="https://www.linkedin.com/in/sanjay-das/">LinkedIn ↗</a></div></div></div>
       </div>
 
       <!-- ====== EDUCATION ====== -->
-      <div class="tab-panel" data-panel="education">
+      <div class="tab-panel" data-panel="education"><div class="section-eyebrow"><span class="section-symbol"><svg class="ui-icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-education"/></svg></span>Academic background</div>
         <h2 class="section-title">Education</h2>
-        <p class="section-subtitle">Academic journey</p>
+        <p class="section-subtitle">Degrees, institutions, advisors, and thesis research.</p>
         <div class="timeline" id="education-content">
-          <div class="timeline-item"><div class="tl-meta">Aug 2022 – Dec 2025</div><h3>Ph.D. in Computer Science</h3><p>The University of Texas at Dallas, Richardson, USA.</p>
+          <div class="timeline-item"><span class="institution-badge">UTD</span><div class="tl-meta">August 2022 – December 2025</div><h3>Ph.D. in Computer Engineering</h3><p><a href="https://www.utdallas.edu/">The University of Texas at Dallas</a> · Richardson, Texas, USA</p>
             <p>Advisor: Dr. Kanad Basu</p>
-            <p>Thesis: "Functional Safety of Mission-Critical Hardware" - Research focus on Fucntional Safety of deep learning models/accelerators.</p></div>
-          <div class="timeline-item"><div class="tl-meta">Aug 2021 – Aug 2022</div><h3>M.S. in Electrical & Computer Engineering</h3><p>North Dakota State University, Fargo, USA</p>
+            <p><strong>Thesis:</strong> Functional Safety of Mission-Critical Hardware</p><p>Research on the functional safety of deep learning models and accelerators.</p></div>
+          <div class="timeline-item"><span class="institution-badge">NDSU</span><div class="tl-meta">August 2021 – August 2022</div><h3>M.S. in Electrical & Computer Engineering</h3><p><a href="https://www.ndsu.edu/">North Dakota State University</a> · Fargo, North Dakota, USA</p>
             <p>Advisor: Dr. Sumitha George</p>
-            <p>Thesis: "Exploration of Multi-Threshold Ferro-Electric Field Effect Transistor Based Designs"</p></div>
-          <div class="timeline-item"><div class="tl-meta">2015 — 2019</div><h3>B.Tech. in Electrical Engineering</h3><p>RCC Institute of Information Technology, Kolkata, India</p></div>
+            <p><strong>Thesis:</strong> Exploration of Multi-Threshold Ferro-Electric Field Effect Transistor Based Designs</p></div>
+          <div class="timeline-item"><span class="institution-badge">RCC</span><div class="tl-meta">2015 – 2019</div><h3>B.Tech. in Electrical Engineering</h3><p><a href="https://rcciit.org/">RCC Institute of Information Technology</a> · Kolkata, India</p></div>
         </div>
       </div>
 
       <!-- ====== Experience ====== -->
-      <div class="tab-panel" data-panel="experience">
+      <div class="tab-panel" data-panel="experience"><div class="section-eyebrow"><span class="section-symbol"><svg class="ui-icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-experience"/></svg></span>Research & industry</div>
         <h2 class="section-title">Experience</h2>
-        <p class="section-subtitle">Work experience</p>
-        <div class="timeline" id="education-content">
-          <div class="timeline-item"><div class="tl-meta">Jan 2026 – Present</div><h3>Post-doctoral Research Associate</h3><p>UT-Battle - Oak Ridge National Laboratory, Oak Ridge, USA.</p>
-          <p>Enhancing Operational Safety via Agentic Dialogue Hazard Identification Analysis (SIGDIAL’26).</p>
-          <p>Exploring Agentic orchestration for scientific hypothesis generation, verification and feedback loop for automated scientific discovery.</p>
-          </div>
-          <div class="timeline-item"><div class="tl-meta">Aug 2022 – Dec 2025</div><h3>Graduate Research Assistant</h3><p>TIES Research Lab, University of Texas at Dallas.</p>
-           <p>Investigated the vulnerabilities of Lareg Language Models to Adversarial Bit Flipping (TMLR’25).</p>
-            <p>Devised Fault mitigation in DNNs using uncertainty quantification and multi-exit networks (DAC’24).</p>
-<p>Enhanced the Security of DNNs by creating high-quality functional test patterns for detecting attacks (HOST’24).</p>
-<p>Investigated the vulnerabilities of Binary Neural Networks to Adversarial Bit Flipping (TMLR’24).</p>
-<p>Developed a novel graph learning-based approach for fault criticality analysis in E/E systems (DAC’24, DAC’25).</p></div>
-          <div class="timeline-item"><div class="tl-meta">Jan 2025 – July 2025</div><h3>ORISE Fellow (Internship)</h3><p>Oak Ridge National Laboratory, Oak Ridge, TN, USA.</p>
-          <p>Leverage AI techniques, including GenAI and reasoning LLMs, to develop a semi-automated Human-in-the-Loop (HITL)
-system for high-risk property identification.</p>
-<p>Build an agentic AI workflow, towards forecasting hazardous events at DOE sites, conducting risk analysis based on past
-incidents to enhance safety.</p></div>
-          <div class="timeline-item"><div class="tl-meta">Aug. 2021 – July 2022</div><h3>Graduate Research Assistant</h3><p>North Dakota State University, Fargo, USA</p>
-          <p>Designed a binary converter using FeFETs, binary, and ternary In-Memory Computing algorithms using QAHE memories.</p></div>
-          <div class="timeline-item"><div class="tl-meta">Sep. 2019 – July 2021</div><h3>System Engineering</h3><p>Tata Consultancy Services, Bhubaneswar, India</p>
-          <p>Developed tailored IFS application customizations, optimizing using C#, Azure, PL/SQL, and Oracle Database expertise.</p></div>
+        <p class="section-subtitle">Research appointments and industry experience.</p>
+        <div class="timeline" id="experience-content">
+          <div class="timeline-item"><span class="institution-badge">ORNL</span><div class="tl-meta">January 2026 – Present</div><h3>Postdoctoral Research Associate</h3><p>Oak Ridge National Laboratory · UT-Battelle · Oak Ridge, Tennessee, USA</p>
+          <details class="role-details"><summary>Work &amp; contributions</summary><p>Enhancing Operational Safety via Agentic Dialogue Hazard Identification Analysis (SIGDIAL 2026).</p>
+          <p>Developing agentic workflows for scientific hypothesis generation, verification, and feedback.</p>
+          </details></div>
+          <div class="timeline-item"><span class="institution-badge">UTD</span><div class="tl-meta">August 2022 – December 2025</div><h3>Graduate Research Assistant</h3><p><a href="https://labs.utdallas.edu/ties/">TIES Research Lab</a> · The University of Texas at Dallas</p>
+           <details class="role-details"><summary>Work &amp; contributions</summary><p>Investigated large language model vulnerabilities to adversarial bit flips (TMLR 2025).</p>
+            <p>Studied fault mitigation in deep neural networks using uncertainty quantification and multi-exit networks (DAC 2024).</p>
+<p>Developed functional test patterns for detecting adversarial attacks on deep neural networks (HOST 2024).</p>
+<p>Investigated binary neural network vulnerabilities to adversarial bit flips (TMLR 2024).</p>
+<p>Developed graph-learning methods for fault criticality analysis in electrical and electronic systems (DAC 2024, DAC 2025).</p></details></div>
+          <div class="timeline-item"><span class="institution-badge">ORNL</span><div class="tl-meta">January 2025 – July 2025</div><h3>ORISE Fellow (Internship)</h3><p>Oak Ridge National Laboratory, Oak Ridge, TN, USA.</p>
+          <details class="role-details"><summary>Work &amp; contributions</summary><p>Developed a human-in-the-loop workflow using generative AI and reasoning language models for high-risk property identification.</p>
+<p>Built an agentic workflow to study hazardous events at Department of Energy sites using historical incidents and risk analysis.</p></details></div>
+          <div class="timeline-item"><span class="institution-badge">NDSU</span><div class="tl-meta">August 2021 – July 2022</div><h3>Graduate Research Assistant</h3><p><a href="https://www.ndsu.edu/">North Dakota State University</a> · Fargo, North Dakota, USA</p>
+          <details class="role-details"><summary>Work &amp; contributions</summary><p>Designed a binary converter using ferroelectric field-effect transistors (FeFETs) and studied binary and ternary in-memory computing algorithms using QAHE memories.</p></details></div>
+          <div class="timeline-item"><span class="institution-badge">TCS</span><div class="tl-meta">September 2019 – July 2021</div><h3>Systems Engineer</h3><p><a href="https://www.tcs.com/">Tata Consultancy Services</a> · Bhubaneswar, India</p>
+          <details class="role-details"><summary>Work &amp; contributions</summary><p>Developed IFS application customizations using C#, Azure, PL/SQL, and Oracle Database.</p></details></div>
         </div>
       </div>
 
       <!-- ====== RESEARCH ====== -->
-      <div class="tab-panel" data-panel="research">
-        <h2 class="section-title">Research</h2>
-        <p class="section-subtitle">Current and past research projects</p>
-        <div class="card-grid" id="research-content">
-          <div class="card"><h3>AI-Driven Scientific Discovery & Hypothesis Generation</h3><div class="card-meta">2026 — Present</div><p>Developing novel workflows 
-                that leverage state-of-the-art AI tools and foundation models to assist 
-                in scientific hypothesis generation. The investigation focuses on building structured, 
-                reproducible AI-driven pipelines that augment domain experts in generating 
-                testable scientific insights across interdisciplinary research domains.</p><div class="tag-list"><span class="tag">Deep Learning</span><span class="tag">NLP</span><span class="tag">AI for Science</span></div></div>
-          <div class="card"><h3>AI for Workplace Safety in Mission-Critical Environments</h3><div class="card-meta">2025 — Present</div><p>Designing intelligent systems that enhance operational safety in 
-                mission-critical work sites. This includes risk-aware AI frameworks, 
-                structured safety knowledge integration, and automated decision-support 
-                systems aimed at reducing hazards and improving situational awareness.</p><div class="tag-list"><span class="tag">NLP</span><span class="tag">LLM</span><span class="tag">AI for Operations</span></div></div>
-        </div>
+      <div class="tab-panel" data-panel="research"><div class="section-eyebrow"><span class="section-symbol"><svg class="ui-icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-research"/></svg></span>Research directions</div>
+        <h2 class="section-title">Research</h2><p class="section-subtitle">Connecting scientific reasoning, operational safety, and the systems underneath AI.</p>
+        <div class="research-overview">
+          <article class="research-project"><div class="project-category">01 / AI for science</div><img src="assets/figures/knowledge-graphs-paper.webp" alt="A knowledge graph provides compact scientific context for a generated hypothesis." width="800" height="280"><div class="project-body"><h3>Scientific discovery &amp; hypothesis generation</h3><p>Developing structured, reproducible workflows that help researchers generate and evaluate testable hypotheses. Current questions include knowledge-graph context, intrinsic model scoring, and scientific reasoning.</p><div class="project-tags"><span>Knowledge graphs</span><span>Scientific reasoning</span></div><div class="project-links"><a href="blog/knowledge-graphs/">Graph context ↗</a><a href="blog/hypothesis-ranking/">Hypothesis evaluation ↗</a></div></div></article>
+          <article class="research-project"><div class="project-category">02 / AI for operations</div><img src="assets/figures/hazdial-paper.webp" alt="Task context, structured agent dialogue, and hazard analysis." width="800" height="280"><div class="project-body"><h3>Agentic AI for operational safety</h3><p>Studying dialogue, retrieved evidence, and human feedback for hazard identification and risk analysis. This includes HAZDIAL, HARNESS, and human-guided high-risk property classification with ORCHID.</p><div class="project-tags"><span>Agentic AI</span><span>Human oversight</span></div><div class="project-links"><a href="blog/hazdial/">HAZDIAL ↗</a><a href="blog/harness/">HARNESS ↗</a><a href="https://arxiv.org/abs/2511.04956">ORCHID ↗</a></div></div></article>
+          <article class="research-project"><div class="project-category">03 / Reliable AI systems</div><img src="assets/figures/attentionbreaker-paper.webp" alt="Stored weights, sensitive bits, and evaluation in a model reliability study." width="800" height="280"><div class="project-body"><h3>Model reliability &amp; hardware safety</h3><p>Investigating adversarial bit flips, hardware-induced faults, and fault mitigation. The work connects model behavior with its computing substrate, from binary networks and LLMs to compute-in-memory accelerators.</p><div class="project-tags"><span>Functional safety</span><span>Hardware-aware ML</span></div><div class="project-links"><a href="blog/attentionbreaker/">AttentionBreaker ↗</a><a href="https://arxiv.org/abs/2512.00059">SafeCiM ↗</a></div></div></article>
+        </div><p class="research-caption">Figures reproduced from the original papers. Follow the project links for methods, results, and full author lists.</p>
       </div>
 
       <!-- ====== PUBLICATIONS ====== -->
-      <div class="tab-panel" data-panel="publications">
+      <div class="tab-panel" data-panel="publications"><div class="section-eyebrow"><span class="section-symbol"><svg class="ui-icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-publications"/></svg></span>Papers & preprints</div>
         <h2 class="section-title">Publications</h2>
-        <p class="section-subtitle">Selected peer-reviewed works</p>
+        <p class="section-subtitle">Selected papers &amp; preprints · <a href="https://scholar.google.com/citations?hl=en&amp;user=3ytmxroAAAAJ&amp;view_op=list_works&amp;sortby=pubdate">Full list on Scholar ↗</a></p><label class="paper-search">Find a paper <input id="paper-search" type="search" placeholder="Title, author, or venue…"></label>
         <div id="publications-content">
-          <div class="pub-item"><h3>Enhancing Operational Safety via Agentic Dialogue Hazard Identification Analysis</h3><div class="pub-authors"><strong>Sanjay Das</strong> et. al.</div><div class="pub-venue">SIGDIAL, 2026</div><div class="pub-links"><a href="https://arxiv.org/abs/2606.03812">Go to paper</a></div></div>
-          <div class="pub-item"><h3>AttentionBreaker: Adaptive Evolutionary Optimization for Unmasking Vulnerabilities in LLMs through Bit-Flip Attacks,</h3><div class="pub-authors"><strong>Sanjay Das</strong> et. al.</div><div class="pub-venue">TMLR, 2025</div><div class="pub-links"><a href="https://openreview.net/forum?id=2ekgTdBOZo">Go to paper</a><a href="https://github.com/TIES-Lab/attnbreaker">Code</a></div></div>
-          <div class="pub-item"><h3>Bit-by-Bit: Investigating the Vulnerabilities of Binary Neural Networks to Adversarial Bit Flipping</h3><div class="pub-authors"> <strong>Sanjay Das</strong>et. al.</div><div class="pub-venue">TMLR, 2024</div><div class="pub-links"><a href="https://openreview.net/pdf?id=nB8foAclpo">Go to paper</a></div></div>
-          <div class="pub-item"><h3>HARNESS: Human-Agent Risk Navigation and Event Safety System for Proactive Hazard Forecasting in High-Risk DOE Environments</h3><div class="pub-authors">Kundu, Shamik, <strong>Sanjay Das</strong>, et. al.</div><div class="pub-venue">RAG for Report Generation @ ACL 2026</div><div class="pub-links"><a href="https://arxiv.org/pdf/2511.10810">Go to paper</a><a href="https://colostate-my.sharepoint.com/personal/eseefrie_colostate_edu/_layouts/15/stream.aspx?id=%2Fpersonal%2Feseefrie%5Fcolostate%5Fedu%2FDocuments%2Fchiir%5Fdemo%2Emov&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2Ec29b8915%2Dd604%2D4208%2D8008%2D38635cf3e87c">Demo</a></div></div>
-           <div class="pub-item"><h3>“MENDNet: Just-in-time Fault Detection and Mitigation in AI Systems with Uncertainty Quantification and Multi-Exit Networks.</h3><div class="pub-authors"> Kundu, Shamik, <strong>Sanjay Das</strong> et. al.</div><div class="pub-venue">ACM/IEEE Design Automation Conference, 2024</div><div class="pub-links"><a href="https://dl.acm.org/doi/pdf/10.1145/3649329.3656506">Go to paper</a></div></div>
-          <div class="pub-item"><h3>“Explainability to the Rescue: A Pattern-Based Approach for Detecting Adversarial Attacks.</h3><div class="pub-authors"> <strong>Sanjay Das</strong> et. al.</div><div class="pub-venue">IEEE International Symposium on Hardware Oriented Security and Trust (HOST), 2024</div><div class="pub-links"><a href="https://ieeexplore.ieee.org/abstract/document/10545413">Go to paper</a></div></div>
-        </div>
+<div class="pub-item"><h3>Rethinking Domain Specialization for Open-Ended Scientific Reasoning in Astronomy Language Models</h3><div class="pub-authors">Vanessa Lama, <strong>Sanjay Das</strong>, et al.</div><div class="pub-venue">Preprint · 2026</div><div class="pub-links"><a href="https://arxiv.org/abs/2609.17644">Paper ↗</a></div></div>
+<div class="pub-item"><h3>Do LLMs Know a Good Hypothesis When They See One? Logit-Based Energy Scoring Outperforms Prompted LLM-as-Judge for Scientific Hypothesis Ranking</h3><div class="pub-authors">Swati Rajwal, <strong>Sanjay Das</strong>, Tirthankar Ghosal</div><div class="pub-venue">Preprint · 2026</div><div class="pub-links"><a href="https://arxiv.org/abs/2608.17270">Paper ↗</a></div></div>
+<div class="pub-item"><h3>Visualizing Graph-to-Answer Mechanism Recovery in Materials-Science Hypothesis Generation</h3><div class="pub-authors">Shashwat Sourav, Subhadeep Pal, Markus J. Buehler, <strong>Sanjay Das</strong>, et al.</div><div class="pub-venue">Preprint · 2026</div><div class="pub-links"><a href="https://arxiv.org/abs/2608.04170">Paper ↗</a></div></div>
+<div class="pub-item"><h3>The Compressive Knowledge Graph Hypothesis: Which Graph Facts Matter for Scientific Hypothesis Generation?</h3><div class="pub-authors">Shashwat Sourav, Viktoriia Baibakova, <strong>Sanjay Das</strong>, et al.</div><div class="pub-venue">Preprint · 2026</div><div class="pub-links"><a href="https://arxiv.org/abs/2605.27176">Paper ↗</a></div></div>
+<div class="pub-item"><h3>ORCHID: Orchestrated Retrieval-Augmented Classification with Human-in-the-Loop Intelligent Decision-Making for High-Risk Property</h3><div class="pub-authors">Maria Mahbub, Vanessa Lama, <strong>Sanjay Das</strong>, et al.</div><div class="pub-venue">RAG4Reports at ACL · 2026</div><div class="pub-links"><a href="https://arxiv.org/abs/2511.04956">Paper ↗</a></div></div>
+<div class="pub-item"><h3>Enhancing Operational Safety via Agentic Dialogue Hazard Identification Analysis</h3><div class="pub-authors"><strong>Sanjay Das</strong> et al.</div><div class="pub-venue">SIGDIAL · 2026</div><div class="pub-links"><a href="https://arxiv.org/abs/2606.03812">Paper ↗</a></div></div>
+<div class="pub-item"><h3>HARNESS: Human-Agent Risk Navigation and Event Safety System for Proactive Hazard Forecasting in High-Risk DOE Environments</h3><div class="pub-authors">Ran Elgedawy, <strong>Sanjay Das</strong>, et al.</div><div class="pub-venue">RAG4Reports at ACL · 2026</div><div class="pub-links"><a href="https://arxiv.org/pdf/2511.10810">Paper ↗</a><a href="https://colostate-my.sharepoint.com/personal/eseefrie_colostate_edu/_layouts/15/stream.aspx?id=%2Fpersonal%2Feseefrie%5Fcolostate%5Fedu%2FDocuments%2Fchiir%5Fdemo%2Emov&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2Ec29b8915%2Dd604%2D4208%2D8008%2D38635cf3e87c">Demo ↗</a></div></div>
+<div class="pub-item"><h3>Accelerating Compact UWB Fractal Antenna Design Using Interpretable Machine Learning with Forward and Inverse Prediction</h3><div class="pub-authors">N. Sarker, <strong>Sanjay Das</strong>, Kanad Basu, Ifana Mahbub</div><div class="pub-venue">Results in Engineering · 2026</div><div class="pub-links"><a href="https://doi.org/10.1016/j.rineng.2026.111464">Paper ↗</a></div></div>
+<div class="pub-item"><h3>SafeCiM: Investigating Resilience of Hybrid Floating-Point Compute-in-Memory Deep Learning Accelerators</h3><div class="pub-authors">Swastik Bhattacharya, <strong>Sanjay Das</strong>, et al.</div><div class="pub-venue">Preprint · 2025</div><div class="pub-links"><a href="https://arxiv.org/abs/2512.00059">Paper ↗</a></div></div>
+<div class="pub-item"><h3>AttentionBreaker: Adaptive Evolutionary Optimization for Unmasking Vulnerabilities in LLMs through Bit-Flip Attacks</h3><div class="pub-authors"><strong>Sanjay Das</strong> et al.</div><div class="pub-venue">TMLR · 2025</div><div class="pub-links"><a href="https://openreview.net/forum?id=2ekgTdBOZo">Paper ↗</a><a href="https://github.com/TIES-Lab/attnbreaker">Code ↗</a></div></div>
+<div class="pub-item"><h3>Bit-by-Bit: Investigating the Vulnerabilities of Binary Neural Networks to Adversarial Bit Flipping</h3><div class="pub-authors"> <strong>Sanjay Das</strong> et al.</div><div class="pub-venue">TMLR · 2024</div><div class="pub-links"><a href="https://openreview.net/pdf?id=nB8foAclpo">Paper ↗</a></div></div>
+<div class="pub-item"><h3>MENDNet: Just-in-time Fault Detection and Mitigation in AI Systems with Uncertainty Quantification and Multi-Exit Networks.</h3><div class="pub-authors"> Shamik Kundu, <strong>Sanjay Das</strong>, et al.</div><div class="pub-venue">ACM/IEEE DAC · 2024</div><div class="pub-links"><a href="https://dl.acm.org/doi/pdf/10.1145/3649329.3656506">Paper ↗</a></div></div>
+<div class="pub-item"><h3>Explainability to the Rescue: A Pattern-Based Approach for Detecting Adversarial Attacks.</h3><div class="pub-authors"> <strong>Sanjay Das</strong> et al.</div><div class="pub-venue">IEEE HOST · 2024</div><div class="pub-links"><a href="https://ieeexplore.ieee.org/abstract/document/10545413">Paper ↗</a></div></div>
+</div>
+<p id="papers-status" class="paper-count" aria-live="polite"></p>
       </div>
 
       <!-- ====== TEACHING ====== -->
-      <div class="tab-panel" data-panel="teaching">
+      <div class="tab-panel" data-panel="teaching"><div class="section-eyebrow"><span class="section-symbol"><svg class="ui-icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-teaching"/></svg></span>Teaching & mentorship</div>
         <h2 class="section-title">Teaching</h2>
-        <p class="section-subtitle">Courses & mentorship</p>
+        <p class="section-subtitle">Guest lectures, graduate mentorship, and undergraduate laboratory instruction.</p>
         <div class="card-grid" id="teaching-content">
-          <div class="card"><h3>DSE 697: Foundations and Applications of Large Language Models</h3><div class="card-meta">Guest Lecture · University of Tennessee, Knoxville · Spring 2026</div><p>Delivered a graduate-level lecture on foundational concepts of deep learning, 
-                convolutional Neural networks, recurrent neural networks and transformer concepts.</p></div>
-          <div class="card"><h3>CE 6303 — Testing & Testable Design</h3><div class="card-meta">Graduate Mentorship · University of Texas at Dallas  · Spring 2024, 2025, Fall 2025</div><p>Mentored graduate student in circuit fault analysis research.</p></div>
-          <div class="card"><h3>ECE 173 – Introduction to Computing - Lab Instructor</h3><div class="card-meta">Graduate Teaching Assistant · North Dakota State University  · Aug 2021 – May 2022</div><p>Guided undergraduate students in developing strong foundations in programming. Emphasized clean coding 
+          <div class="card"><h3>DSE 697: Foundations and Applications of Large Language Models</h3><div class="card-meta">Guest Lecture · University of Tennessee, Knoxville · Spring 2026</div><p>Delivered a graduate-level lecture on foundational concepts of deep learning,
+                convolutional neural networks, recurrent neural networks, and transformers.</p></div>
+          <div class="card"><h3>CE 6303 — Testing & Testable Design</h3><div class="card-meta">Graduate Mentorship · University of Texas at Dallas  · Spring 2024, 2025, Fall 2025</div><p>Mentored graduate research in circuit fault analysis.</p></div>
+          <div class="card"><h3>ECE 173 – Introduction to Computing - Lab Instructor</h3><div class="card-meta">Graduate Teaching Assistant · North Dakota State University  · August 2021 – May 2022</div><p>Guided undergraduate students in developing strong foundations in programming. Emphasized clean coding
                 practices, debugging strategies. Provided hands-on mentoring throughout implementation projects.</p></div>
-          <div class="card"><h3>ECE 375 – Digital Design II - Lab Instructor</h3><div class="card-meta">Graduate Teaching Assistant · North Dakota State University  · Aug 2021 – May 2022</div><p>Guided undergraduate students in understanding 
-                digital systems, and structured design methodology. Discussed verification techniques, and disciplined 
-                engineering workflows. Provided hands-on mentoring throughout multi-stage 
+          <div class="card"><h3>ECE 375 – Digital Design II - Lab Instructor</h3><div class="card-meta">Graduate Teaching Assistant · North Dakota State University  · August 2021 – May 2022</div><p>Guided undergraduate students in understanding
+                digital systems, and structured design methodology. Discussed verification techniques, and disciplined
+                engineering workflows. Provided hands-on mentoring throughout multi-stage
                 design and implementation.</p></div>
-          
+
         </div>
       </div>
 
+<div class="tab-panel" data-panel="awards"><div class="section-eyebrow"><span class="section-symbol"><svg class="ui-icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-awards"/></svg></span>Recognition</div><h2 class="section-title">Awards &amp; fellowships</h2><p class="section-subtitle">Awards, fellowships, and research recognition</p><section id="certificate-gallery" class="certificate-gallery" aria-label="Award certificates" hidden></section><div class="awards-grid"><article class="award-row"><svg class="ui-icon award-symbol" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-awards"/></svg><time datetime="2026-10">October 2026</time><h3>ORPA All-Around Excellence Award</h3><span>Oak Ridge Postdoctoral Association</span></article><article class="award-row"><svg class="ui-icon award-symbol" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-awards"/></svg><time datetime="2026-09-24">September 24, 2026</time><h3>ORPEX President’s Award</h3><span>Oak Ridge National Laboratory</span></article><article class="award-row"><svg class="ui-icon award-symbol" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-awards"/></svg><time datetime="2026-08">August 2026</time><h3>Selected Participant, SC26 Early Career Program</h3><span>SC26 Early Career Program</span></article><article class="award-row"><svg class="ui-icon award-symbol" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-awards"/></svg><time datetime="2026-05-06">May 6–7, 2026</time><h3>First Place Poster Award</h3><span>14th Annual ORPA Research Symposium</span><p class="award-detail">AI-Powered cosmological simulations for dark energy signatures.</p></article><article class="award-row"><svg class="ui-icon award-symbol" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-awards"/></svg><time datetime="2025-05">May 2025</time><h3>Mary and Richard Templeton Graduate Fellowship</h3><span>The University of Texas at Dallas</span></article><article class="award-row"><svg class="ui-icon award-symbol" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-awards"/></svg><time datetime="2024-05">May 2024</time><h3>Jonsson School IAC Graduate Fellowship</h3><span>The University of Texas at Dallas</span></article><article class="award-row"><svg class="ui-icon award-symbol" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-awards"/></svg><time datetime="2022-07-05">July 5, 2022</time><h3>Nagarajan Ranganathan Best Paper Award</h3><span>IEEE ISVLSI 2022 · Pafos, Cyprus</span><p class="award-detail">For “Adaptable Multi-L Voltage to Binary Converter Using Ferroelectric FETs,” with Arun Govindankutty, Shan Deng, Kai Ni, and Sumitha George.</p></article></div></div>
       <!-- ====== NEWS ====== -->
-      <div class="tab-panel" data-panel="news">
-        <h2 class="section-title">News</h2>
-        <p class="section-subtitle">Latest updates & announcements</p>
-        <div class="timeline" id="news-content">
-          <div class="timeline-item"><div class="tl-meta">August 2026</div><h3>Accepted to SC26 Early Career Program</h3></div>
-          <div class="timeline-item"><div class="tl-meta">July 2026</div><h3>Paper accepted in Visual Analytics in the Age of Autonomous Science) at IEEE VIS 2026</h3></div>
-          <div class="timeline-item"><div class="tl-meta">June 2026</div><h3>Reviewed a paper for IEEE Design & Test.</h3></div>
-          <div class="timeline-item"><div class="tl-meta">June 2026</div><h3>Invited Speaker, Agentic AI Systems Tutorial. CCSD Summer Intern Summit, Oak Ridge National Laboratory (ORNL).</h3></div>
-          <div class="timeline-item"><div class="tl-meta">June 2026</div><h3>Reviewed a paper for IEEE Transactions on Very Large Scale Integration Systems.</h3></div>
-          <div class="timeline-item"><div class="tl-meta">June 2026</div><h3>Received Best poster award at 14th ORPA Research Symposium for the work "Intelligent Parameter Space Exploration for Enabling Agentic Cosmological Simulations."</h3></div>
-          <div class="timeline-item"><div class="tl-meta">June 2026</div><h3>Paper accepted in Results in Engineering Journal</h3><p>"Accelerating Compact UWB Fractal Antenna Design Using Interpretable Machine Learning with Forward and Inverse Prediction".</p></div>
-          <div class="timeline-item"><div class="tl-meta">June 2026</div><h3>Paper accepted in Workshop on Retrieval Augmented Generation for Report Generation(RAG4Reports), ACL 2026</h3><p>"HARNESS: Human-Agent Risk Navigation and Event Safety System for Proactive Hazard Forecasting in High-Risk DOE Environments".</p></div>
-          <div class="timeline-item"><div class="tl-meta">June 2026</div><h3>Paper accepted in Workshop on Retrieval Augmented Generation for Report Generation(RAG4Reports), ACL 2026</h3><p>"ORCHID: Orchestrated Retrieval-Augmented Classification with Human-in-the-Loop Intelligent Decision-Making for High-Risk Property".</p></div>
-          <div class="timeline-item"><div class="tl-meta">May 2026</div><h3>Paper Accepted at premere NLP conference SIGDIAL, 2026</h3><p>Our paper "Enhancing Operational Safety via Agentic Dialogue Hazard Identification Analysis" has been accepted! Looking forward to presenting this Fall at Atlanta.</p></div>
-          </div>
+      <div class="tab-panel" data-panel="news"><div class="section-eyebrow"><span class="section-symbol"><svg class="ui-icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-news"/></svg></span>Updates</div>
+        <div class="news-heading"><div><h2 class="section-title">News</h2><p class="section-subtitle">Recent papers, awards, talks, and service.</p></div><a href="https://scholar.google.com/citations?hl=en&amp;user=3ytmxroAAAAJ&amp;view_op=list_works&amp;sortby=pubdate">Latest on Scholar ↗</a></div>
+        <div class="news-filters" role="group" aria-label="Filter news"><button data-news-filter="all" aria-pressed="true">All updates</button><button data-news-filter="papers" aria-pressed="false">Papers</button><button data-news-filter="awards" aria-pressed="false">Awards</button><button data-news-filter="talks" aria-pressed="false">Talks</button><button data-news-filter="service" aria-pressed="false">Service</button></div><p class="news-count" id="news-count" aria-live="polite">16 updates</p>
+        <div class="news-feed"><article class="news-entry" data-news-category="awards"><div class="news-date"><time datetime="2026-10">October 2026</time><span class="news-kind awards">Award & recognition</span></div><div class="news-copy"><h3>ORPA All-Around Excellence Award</h3><p>Received the ORPA All-Around Excellence Award.</p><button onclick="switchToTab('awards')">View awards →</button></div></article><article class="news-entry" data-news-category="awards"><div class="news-date"><time datetime="2026-09-24">September 24, 2026</time><span class="news-kind awards">Award & recognition</span></div><div class="news-copy"><h3>ORPEX President’s Award</h3><p>Received the ORPEX President’s Award.</p><button onclick="switchToTab('awards')">View awards →</button></div></article><article class="news-entry" data-news-category="papers"><div class="news-date"><time datetime="2026-09-15">September 15, 2026</time><span class="news-kind papers">Paper</span></div><div class="news-copy"><h3>Astronomy language models: when does specialization help?</h3><p>New preprint: “Rethinking Domain Specialization for Open-Ended Scientific Reasoning in Astronomy Language Models.”</p><a href="https://arxiv.org/abs/2609.17644">Read preprint ↗</a></div></article><article class="news-entry" data-news-category="papers"><div class="news-date"><time datetime="2026-08-18">August 18, 2026</time><span class="news-kind papers">Paper</span></div><div class="news-copy"><h3>Evaluating scientific hypotheses with model confidence</h3><p>New preprint: “Do LLMs Know a Good Hypothesis When They See One?” The study compares intrinsic model scoring with prompted hypothesis ranking.</p><a href="https://arxiv.org/abs/2608.17270">Read preprint ↗</a></div></article><article class="news-entry" data-news-category="awards"><div class="news-date"><time datetime="2026-08">August 2026</time><span class="news-kind awards">Award & recognition</span></div><div class="news-copy"><h3>Selected for the SC26 Early Career Program</h3><p>Selected participant in the SC26 Early Career Program.</p><button onclick="switchToTab('awards')">View awards →</button></div></article><article class="news-entry" data-news-category="papers"><div class="news-date"><time datetime="2026-08-04">August 4, 2026</time><span class="news-kind papers">Paper</span></div><div class="news-copy"><h3>Tracing mechanisms from graphs to scientific answers</h3><p>New preprint: “Visualizing Graph-to-Answer Mechanism Recovery in Materials-Science Hypothesis Generation.”</p><a href="https://arxiv.org/abs/2608.04170">Read preprint ↗</a></div></article><article class="news-entry" data-news-category="papers"><div class="news-date"><time datetime="2026-07">July 2026</time><span class="news-kind papers">Paper</span></div><div class="news-copy"><h3>Paper accepted at the IEEE VIS 2026 workshop</h3><p>Paper accepted at Visual Analytics in the Age of Autonomous Science, held with IEEE VIS 2026.</p><button onclick="switchToTab('publications')">View publications →</button></div></article><article class="news-entry" data-news-category="talks"><div class="news-date"><time datetime="2026-06">June 2026</time><span class="news-kind talks">Talk</span></div><div class="news-copy"><h3>Invited speaker: Agentic AI Systems Tutorial</h3><p>Presented at the CCSD Summer Intern Summit, Oak Ridge National Laboratory.</p><a href="https://www.ornl.gov/staff-profile/sanjay-das">ORNL profile ↗</a></div></article><article class="news-entry" data-news-category="papers"><div class="news-date"><time datetime="2026-06">June 2026</time><span class="news-kind papers">Paper</span></div><div class="news-copy"><h3>Interpretable machine learning for antenna design</h3><p>“Accelerating Compact UWB Fractal Antenna Design Using Interpretable Machine Learning with Forward and Inverse Prediction” accepted in Results in Engineering.</p><a href="https://doi.org/10.1016/j.rineng.2026.111464">Paper ↗</a></div></article><article class="news-entry" data-news-category="papers"><div class="news-date"><time datetime="2026-06">June 2026</time><span class="news-kind papers">Paper</span></div><div class="news-copy"><h3>HARNESS accepted at RAG4Reports at ACL 2026</h3><p>Research on human-guided hazard forecasting using work information and historical incidents.</p><a href="https://arxiv.org/abs/2511.10810">Read paper ↗</a></div></article><article class="news-entry" data-news-category="papers"><div class="news-date"><time datetime="2026-06">June 2026</time><span class="news-kind papers">Paper</span></div><div class="news-copy"><h3>ORCHID accepted at RAG4Reports at ACL 2026</h3><p>Research on retrieval-augmented, human-guided high-risk property classification.</p><a href="https://arxiv.org/abs/2511.04956">Read paper ↗</a></div></article><article class="news-entry" data-news-category="service"><div class="news-date"><time datetime="2026-06">June 2026</time><span class="news-kind service">Service</span></div><div class="news-copy"><h3>Journal reviewing</h3><p>Reviewed papers for IEEE Design &amp; Test and IEEE Transactions on Very Large Scale Integration Systems.</p><button onclick="switchToTab('community')">View community →</button></div></article><article class="news-entry" data-news-category="papers"><div class="news-date"><time datetime="2026-06-02">June 2, 2026</time><span class="news-kind papers">Paper</span></div><div class="news-copy"><h3>HAZDIAL preprint released</h3><p>“Enhancing Operational Safety via Agentic Dialogue Hazard Identification Analysis” is available on arXiv.</p><a href="https://arxiv.org/abs/2606.03812">Read preprint ↗</a></div></article><article class="news-entry" data-news-category="papers"><div class="news-date"><time datetime="2026-05-26">May 26, 2026</time><span class="news-kind papers">Paper</span></div><div class="news-copy"><h3>Which knowledge graph facts matter for scientific hypotheses?</h3><p>New preprint: “The Compressive Knowledge Graph Hypothesis,” examining compact graph context for battery-materials hypothesis generation.</p><a href="https://arxiv.org/abs/2605.27176">Read preprint ↗</a></div></article><article class="news-entry" data-news-category="papers"><div class="news-date"><time datetime="2026-05">May 2026</time><span class="news-kind papers">Paper</span></div><div class="news-copy"><h3>HAZDIAL accepted at SIGDIAL 2026</h3><p>“Enhancing Operational Safety via Agentic Dialogue Hazard Identification Analysis” accepted at SIGDIAL 2026.</p><a href="https://arxiv.org/abs/2606.03812">Read paper ↗</a></div></article><article class="news-entry" data-news-category="awards"><div class="news-date"><time datetime="2026-05-06">May 6–7, 2026</time><span class="news-kind awards">Award & recognition</span></div><div class="news-copy"><h3>First Place Poster Award at the 14th ORPA Research Symposium</h3><p>Awarded for “AI-Powered cosmological simulations for dark energy signatures.” The symposium took place on May 6–7, 2026.</p><button onclick="switchToTab('awards')">View awards →</button></div></article></div>
       </div>
 
       <!-- ====== COMMUNITY ====== -->
-      <div class="tab-panel" data-panel="community">
+      <div class="tab-panel" data-panel="community"><div class="section-eyebrow"><span class="section-symbol"><svg class="ui-icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-community"/></svg></span>Service & outreach</div>
         <h2 class="section-title">Community</h2>
-        <p class="section-subtitle">Service, outreach & involvement</p>
+        <p class="section-subtitle">Research community service, volunteer organizing, and educational outreach.</p>
         <div class="card-grid" id="community-content">
-          <div class="card"><h3>Volunteer Organizer</h3><div class="card-meta">2026</div><p> Oak Ridge National Laboratory (ORNL) 
+          <div class="card"><h3>Volunteer Organizer</h3><div class="card-meta">2026</div><p> Oak Ridge National Laboratory (ORNL)
                         Postdoctoral Association Research Symposium 2026</p></div>
-          <div class="card"><h3>Conference Reviewer</h3><div class="card-meta">2022 — Present</div><p>Regular reviewer for IJCNLP-AACL, ASP-DAC, SOCC, ICPADS, ICCAD, VTS, DAC, DCAS, CVPR, D&T, EACL etc.</p></div>
-          <div class="card"><h3>Guest Tutor (Grades 5–10)</h3><div class="card-meta">Community Teaching · Maninathpur Village Education Center, India  · 2013 – 2019</div><p>Volunteered as a tutor in mathematics, physical sciences, and English, 
-                supporting students from rural backgrounds in building strong academic 
+          <div class="card"><h3>Conference Reviewer</h3><div class="card-meta">2022 – Present</div><p>Reviewer for IJCNLP-AACL, ASP-DAC, SOCC, ICPADS, ICCAD, VTS, DAC, DCAS, CVPR, IEEE Design &amp; Test, and EACL.</p></div>
+          <div class="card"><h3>Guest Tutor (Grades 5–10)</h3><div class="card-meta">Community Teaching · Maninathpur Village Education Center, India  · 2013 – 2019</div><p>Volunteered as a tutor in mathematics, physical sciences, and English,
+                supporting students from rural backgrounds in building strong academic
                 foundations and improving access to STEM education.</p></div>
-          <div class="card"><h3>CE 6303 — Testing & Testable Design</h3><div class="card-meta">Graduate Mentorship · University of Texas at Dallas  · Spring 2024, 2025, Fall 2025</div><p>Mentored graduate student in circuit fault analysis research.</p></div>
-        </div>
-      </div>
-
-      <!-- ====== ACTIVITIES ====== -->
-      <div class="tab-panel" data-panel="activities">
-        <h2 class="section-title">Activities</h2>
-        <p class="section-subtitle">Professional development & engagement</p>
-        <div class="card-grid" id="activities-content">
-          <!-- <div class="card"><h3>Hackathon Winner</h3><div class="card-meta">HackMIT 2023</div><p>Built an AI-powered accessibility tool, winning first place.</p></div>
-          <div class="card"><h3>Workshop Organizer</h3><div class="card-meta">AI4Good · ICML 2023</div><p>Co-organized a workshop on AI for social good with 150+ attendees.</p></div> -->
+          <div class="card"><h3>Graduate mentorship</h3><div class="card-meta">The University of Texas at Dallas · 2024–2025</div><p>Graduate mentorship in circuit fault analysis through CE 6303: Testing &amp; Testable Design.</p><button class="inline-section-link" onclick="switchToTab('teaching')">See teaching &amp; mentorship →</button></div>
         </div>
       </div>
 
       <!-- ====== CREATIVE ====== -->
-      <div class="tab-panel" data-panel="creative">
+      <div class="tab-panel" data-panel="creative"><div class="section-eyebrow"><span class="section-symbol"><svg class="ui-icon " viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-creative"/></svg></span>Outside the lab</div>
         <h2 class="section-title">Creative</h2>
-        <p class="section-subtitle">Beyond the lab — click any card to explore</p>
+        <p class="section-subtitle">Photography and writing outside the lab. Open any photograph to see the original.</p>
+        <div class="photo-contact-sheet"><a href="photos/PXL_20251016_201454557.jpg" aria-label="Open photograph 1"><img src="photos/PXL_20251016_201454557.jpg" alt="Photograph by Sanjay Das, 1" loading="lazy"><span>View photograph ↗</span></a><a href="photos/PXL_20251205_020409476.jpg" aria-label="Open photograph 2"><img src="photos/PXL_20251205_020409476.jpg" alt="Photograph by Sanjay Das, 2" loading="lazy"><span>View photograph ↗</span></a><a href="photos/PXL_20260321_195242617.jpg" aria-label="Open photograph 3"><img src="photos/PXL_20260321_195242617.jpg" alt="Photograph by Sanjay Das, 3" loading="lazy"><span>View photograph ↗</span></a><a href="photos/PXL_20260502_182856655.jpg" aria-label="Open photograph 4"><img src="photos/PXL_20260502_182856655.jpg" alt="Photograph by Sanjay Das, 4" loading="lazy"><span>View photograph ↗</span></a><a href="photos/PXL_20260502_224810347.jpg" aria-label="Open photograph 5"><img src="photos/PXL_20260502_224810347.jpg" alt="Photograph by Sanjay Das, 5" loading="lazy"><span>View photograph ↗</span></a></div>
         <div class="card-grid" id="creative-content">
           <!-- Cards populated by JS from creativeItems data -->
         </div>
@@ -542,106 +523,24 @@ incidents to enhance safety.</p></div>
 
 const SITE_DATA = {
   name: "Sanjay Das",
-  title: "Postdoctoral Resrach Associate · Researcher",
+  title: "Postdoctoral Research Associate",
   email: "dass3@ornl.gov",
   location: "Knoxville, USA",
-  phone: "+1 (000) 000-0000",
-  links: {scholar:"https://scholar.google.com/citations?user=3ytmxroAAAAJ&hl=en", orcid:"https://orcid.org/my-orcid?orcid=0009-0005-4259-1915", linkedin:"https://www.linkedin.com/in/sanjay-das/", twitter:"#" },
-  blogUrl: "https://sanjay-das-in.github.io/blog"  // Link to standalone blog https://sanjay-das-in.github.io/blog
+  links: {github:"https://github.com/sanjay-das-in", scholar:"https://scholar.google.com/citations?user=3ytmxroAAAAJ&hl=en", orcid:"https://orcid.org/0009-0005-4259-1915", linkedin:"https://www.linkedin.com/in/sanjay-das/", twitter:"#" },
+  blogUrl: "blog/"  // Link to standalone blog https://sanjay-das-in.github.io/blog
 };
 
 // ====== HIGHLIGHTS — newest items from any section, shown on About page ======
 // Add new items at the TOP. Types: pub, news, blog, research
-const highlights = [
-  { type:"pub",  title:"Enhancing Operational Safety via Agentic Dialogue Hazard Identification Analysis", date:"2026-06-01", tab:"publications" },
-  { type:"news", title:"Paper Accepted at SIGDIAL 2026", date:"2026-06-01", tab:"news" },
-  { type:"blog", title:"Thoughts on the Future of AI Ethics", date:"2024-04-20", link: null },
-  { type:"research", title:"AI-Driven Scientific Discovery & Hypothesis Generation", date:"2026-02-01", tab:"research" },
-  { type:"news", title:"Received Best poster award at 14th ORPA Research Symposium", date:"2026-05-27", tab:"news" },
-];
+
 
 // ====== CREATIVE ITEMS — each becomes a clickable card + modal ======
 
 const creativeItems = [
-  {
-    id: "photography",
-    title: "Photography",
-    subtitle: "Street & Nature",
-    description: "Capturing the beauty of everyday life through the lens.",
-    type: "gallery", // gallery | blog | writing
-    cta: "View Gallery",
-    content: {
-      text: "A selection of my favorite shots from travels and everyday wandering.",
-      images: [
-        "photos/PXL_20260502_224810347.jpg",
-        "photos/PXL_20260502_182856655.jpg",
-        "photos/PXL_20260321_195242617.jpg",
-        "photos/PXL_20251205_020409476.jpg",
-        "photos/PXL_20251016_201454557.jpg"
-      ]
-    }
-  },
-  {
-    id: "blog-writing",
-    title: "Blog Writing",
-    subtitle: "Technical & Personal",
-    description: "Thoughts on research, career, and the intersection of technology and life.",
-    type: "blog",
-    cta: "Read Posts",
-    content: {
-      posts: [
-        // {
-        //   title: "Why I Chose Research Over Industry",
-        //   date: "April 2024",
-        //   body: "<p>The decision wasn't straightforward. After two rewarding internships at tech companies, I found myself drawn back to the open-ended nature of academic research...</p><p>What ultimately tipped the scale was the freedom to ask my own questions. In industry, the problems are defined by product needs. In academia, I could chase the ideas that kept me up at night.</p><p>That's not to say industry is lesser — it's different. And I'm grateful for the time I spent there. It taught me to think about impact, scalability, and real users in ways that make my research stronger today.</p>"
-        // },
-        // {
-        //   title: "A Beginner's Guide to Reading ML Papers",
-        //   date: "February 2024",
-        //   body: "<p>When I started my PhD, reading papers felt like deciphering ancient scrolls. Here's the system I developed that might help you too...</p><p><strong>First pass (10 min):</strong> Read the title, abstract, intro, section headings, and conclusion. Skip everything else. You should now know what the paper claims and roughly how.</p><p><strong>Second pass (30 min):</strong> Read the whole thing but skip proofs and dense math. Focus on figures and tables — they're the real story.</p><p><strong>Third pass (1-2 hrs):</strong> Only if you need to deeply understand or reproduce the work. Now engage with every equation and assumption.</p>"
-        // }
-      ]
-    }
-  },
-  {
-    id: "poetry",
-    title: "Poetry & Writing",
-    subtitle: "Creative Expression",
-    description: "Occasional poems and short-form creative writing.",
-    type: "writing",
-    cta: "Read Pieces",
-    content: {
-      pieces: [
-        // {
-        //   title: "Gradient Descent",
-        //   date: "March 2024",
-        //   body: "<p style='font-style:italic;line-height:2.2;'>We step, uncertain, down the slope,<br>each iteration a quiet hope<br>that loss will shrink, that weights will learn,<br>that somewhere past the noise, a turn<br>reveals the minimum we seek —<br>not global, maybe, but unique.</p>"
-        // },
-        // {
-        //   title: "On Debugging at 3 AM",
-        //   date: "January 2024",
-        //   body: "<p>There's a peculiar clarity that arrives at 3 AM, after the coffee has worn off and the office has emptied. The bug you've been chasing all day suddenly feels less like an adversary and more like a puzzle left by a previous version of yourself.</p><p>You read the stack trace one more time. And there it is — line 247, an off-by-one error hiding in plain sight. You fix it, run the tests, and watch them pass in a cascade of green. The relief is disproportionate to the fix. But that's the thing about debugging: the victory isn't in the solution, it's in the search.</p>"
-        // }
-      ]
-    }
-  },
-  // {
-  //   id: "music",
-  //   title: "Music",
-  //   subtitle: "Piano & Guitar",
-  //   description: "Self-taught musician blending classical and modern genres.",
-  //   type: "writing",
-  //   cta: "Read More",
-    // content: {
-      // pieces: [
-      //   {
-      //     title: "My Musical Journey",
-      //     date: "2024",
-      //     body: "<p>I started playing piano at age 12, teaching myself from YouTube tutorials and sheer stubbornness. The guitar came later, in college, when a roommate left one behind after moving out.</p><p>These days I mostly play for myself — late evenings after long research days. There's something about music that resets the brain in a way nothing else can. I occasionally record short pieces and share them with friends.</p>"
-      //   }
-      // ]
-    // }
-  // }
+  { id: "photography", title: "Photography", subtitle: "Outside the lab", description: "Photographs from travels and everyday life.", type: "gallery", cta: "View photographs", content: { text: "A selection of photographs from travels and everyday life.", images: ["photos/PXL_20260502_224810347.jpg", "photos/PXL_20260502_182856655.jpg", "photos/PXL_20260321_195242617.jpg", "photos/PXL_20251205_020409476.jpg", "photos/PXL_20251016_201454557.jpg"] } },
+  { id: "blog-writing", title: "Research notes & photographs", subtitle: "The notebook", description: "Short explanations of my research, alongside photography.", type: "blog", cta: "Read the notebook", content: { posts: [] } },
+  { id: "the-path", title: "The Path", subtitle: "Poetry", description: "Walking on a path no one took,", type: "blog", url: "blog/the-path/", cta: "Read the poem", content: { posts: [] } },
+  {"id": "prachiner-gourob", "title": "প্রাচীনের গৌরব", "subtitle": "Poetry · বাংলা", "description": "তব বিশাল প্রাসাদের / পূর্ব দিকের ছোট্ট জানালাখানি…", "type": "blog", "url": "blog/prachiner-gourob/", "cta": "কবিতাটি পড়ুন", "content": {"posts": []}}
 ];
 
 // ==========================================
@@ -652,58 +551,41 @@ const creativeItems = [
 let currentTab = 'about';
 
 window.addEventListener('DOMContentLoaded', () => {
-  applySidebarData();
   renderCreativeCards();
-  renderHighlights();
   initTabs();
+  initPublicationList();
+  initNewsFilters();
+  initCertificateGallery();
+  document.querySelectorAll('.tab-panel').forEach(panel => { panel.inert = !panel.classList.contains('active'); });
 });
-
-function applySidebarData() {
-  document.getElementById('sb-name').textContent = SITE_DATA.name;
-  document.getElementById('sb-title').textContent = SITE_DATA.title;
-  document.getElementById('sb-email').textContent = SITE_DATA.email;
-  document.getElementById('sb-email').href = 'mailto:' + SITE_DATA.email;
-  document.getElementById('sb-location').textContent = SITE_DATA.location;
-  document.getElementById('sb-phone').textContent = SITE_DATA.phone;
-  if(SITE_DATA.links.scholar !== '#') document.getElementById('link-scholar').href = SITE_DATA.links.scholar;
-  if(SITE_DATA.links.github !== '#') document.getElementById('link-github').href = SITE_DATA.links.github;
-  if(SITE_DATA.links.linkedin !== '#') document.getElementById('link-linkedin').href = SITE_DATA.links.linkedin;
-  if(SITE_DATA.links.twitter !== '#') document.getElementById('link-twitter').href = SITE_DATA.links.twitter;
-}
 
 // ====== TABS ======
 function initTabs() {
-  document.querySelectorAll('.tab-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const tab = btn.dataset.tab;
-      if(!tab || tab === currentTab) return;
-      document.querySelector('.tab-btn.active').classList.remove('active');
-      const oldPanel = document.querySelector('.tab-panel.active');
-      oldPanel.classList.add('exit-up');
-      oldPanel.classList.remove('active');
-      btn.classList.add('active');
-      setTimeout(() => {
-        oldPanel.classList.remove('exit-up');
-        document.querySelector(`[data-panel="${tab}"]`).classList.add('active');
-        currentTab = tab;
-      }, 200);
+  const buttons = [...document.querySelectorAll('.tab-btn[data-tab]')];
+  document.getElementById('tab-nav').setAttribute('aria-label', 'Portfolio sections');
+  function select(tab, updateAddress) {
+    if (!buttons.some(button => button.dataset.tab === tab)) tab = 'about';
+    buttons.forEach(button => {
+      const selected = button.dataset.tab === tab;
+      button.classList.toggle('active', selected);
+      button.setAttribute('aria-pressed', String(selected));
+      button.setAttribute('aria-controls', 'panel-' + button.dataset.tab);
     });
-  });
-}
-
-// ====== HIGHLIGHTS ======
-function renderHighlights() {
-  const container = document.getElementById('highlight-cards');
-  // Sort by date descending, take top 5
-  const sorted = [...highlights].sort((a,b) => new Date(b.date) - new Date(a.date)).slice(0,5);
-  container.innerHTML = sorted.map(h => {
-    const dateStr = new Date(h.date).toLocaleDateString('en-US',{month:'short',year:'numeric'});
-    return `<div class="highlight-card" onclick="${h.tab ? `switchToTab('${h.tab}')` : (h.link ? `window.open('${h.link}')` : '')}">
-      <span class="hl-source ${h.type}">${h.type}</span>
-      <h4>${h.title}</h4>
-      <div class="hl-date">${dateStr}</div>
-    </div>`;
-  }).join('');
+    document.querySelectorAll('.tab-panel').forEach(panel => {
+      const selected = panel.dataset.panel === tab;
+      panel.id = 'panel-' + panel.dataset.panel;
+      panel.classList.toggle('active', selected);
+      panel.inert = !selected;
+      panel.setAttribute('aria-label', panel.dataset.panel === 'about' ? 'About Sanjay Das' : buttons.find(button => button.dataset.tab === panel.dataset.panel)?.textContent.trim() || panel.dataset.panel);
+      panel.setAttribute('role', 'region');
+    });
+    currentTab = tab;
+    if (updateAddress && location.hash !== '#' + tab) history.pushState(null, '', '#' + tab);
+  }
+  buttons.forEach(button => button.addEventListener('click', () => select(button.dataset.tab, true)));
+  window.addEventListener('popstate', () => select(location.hash.slice(1), false));
+  window.addEventListener('hashchange', () => select(location.hash.slice(1), false));
+  select(location.hash.slice(1) || 'about', false);
 }
 
 function switchToTab(tab) {
@@ -713,14 +595,9 @@ function switchToTab(tab) {
 
 // ====== CREATIVE CARDS ======
 function renderCreativeCards() {
-  const grid = document.getElementById('creative-content');
-  grid.innerHTML = creativeItems.map(item => `
-    <div class="card clickable" onclick="openCreativeModal('${item.id}')">
-      <h3>${item.title}</h3>
-      <div class="card-meta">${item.subtitle}</div>
-      <p>${item.description}</p>
-      <div class="card-cta">${item.cta}</div>
-    </div>
+  document.getElementById('creative-content').innerHTML = creativeItems.map(item => `
+    <div class="card"><h3>${item.title}</h3><div class="card-meta">${item.subtitle}</div><p>${item.description}</p>
+    ${item.type === 'blog' ? '<a class="inline-section-link" href="'+(item.url || 'blog/')+'">'+item.cta+' ↗</a>' : '<button class="inline-section-link" onclick="openCreativeModal(\'photography\')">View photographs →</button>'}</div>
   `).join('');
 }
 
@@ -770,25 +647,8 @@ function closeModal() {
   document.getElementById('modal-container').classList.remove('open');
 }
 
-function saveEdits() {
-  SITE_DATA.name = document.getElementById('ed-name').value;
-  SITE_DATA.title = document.getElementById('ed-title').value;
-  SITE_DATA.email = document.getElementById('ed-email').value;
-  SITE_DATA.location = document.getElementById('ed-location').value;
-  SITE_DATA.phone = document.getElementById('ed-phone').value;
-  const portrait = document.getElementById('ed-portrait').value;
-  if(portrait) document.getElementById('portrait-img').src = portrait;
-  applySidebarData();
-  showToast('Changes applied!');
-}
 
-function exportAllData() {
-  const data = { siteData:SITE_DATA, highlights, creativeItems };
-  const blob = new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
-  const a = document.createElement('a'); a.href=URL.createObjectURL(blob);
-  a.download='site-data-export.json'; a.click();
-  showToast('Data exported!');
-}
+
 
 
 // ====== TOAST ======
@@ -797,6 +657,66 @@ function showToast(msg) {
   t.textContent = msg; t.style.opacity='1';
   t.style.transform='translateX(-50%) translateY(0)';
   setTimeout(()=>{ t.style.opacity='0'; t.style.transform='translateX(-50%) translateY(80px)'; }, 2400);
+}
+
+function initPublicationList() {
+  const papers = [...document.querySelectorAll('#publications-content .pub-item')];
+  const input = document.getElementById('paper-search');
+  function render() {
+    const query = input.value.trim().toLowerCase();
+    let matches = 0;
+    papers.forEach(paper => {
+      const visible = paper.textContent.toLowerCase().includes(query);
+      paper.hidden = !visible;
+      if (visible) matches++;
+    });
+    document.getElementById('papers-status').textContent = matches ? `${matches} of ${papers.length} papers` : 'No matching papers';
+  }
+  input.addEventListener('input', render);
+  render();
+}
+
+function initNewsFilters() {
+  const buttons = [...document.querySelectorAll('[data-news-filter]')];
+  const entries = [...document.querySelectorAll('[data-news-category]')];
+  buttons.forEach(button => button.addEventListener('click', () => {
+    const filter = button.dataset.newsFilter;
+    buttons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+    let count = 0;
+    entries.forEach(entry => {
+      entry.hidden = filter !== 'all' && entry.dataset.newsCategory !== filter;
+      if (!entry.hidden) count++;
+    });
+    document.getElementById('news-count').textContent = `${count} ${count === 1 ? 'update' : 'updates'}`;
+  }));
+}
+
+function initCertificateGallery() {
+  const gallery = document.getElementById('certificate-gallery');
+  const certificates = [{"title": "ORPEX President\u2019s Award", "file": "orpex-presidents-award.jpg", "date": "September 24, 2026", "sideways": true}, {"title": "ORPA First Place Poster Award", "file": "orpa-poster-award.jpg", "date": "May 6\u20137, 2026", "sideways": false}, {"title": "Nagarajan Ranganathan Best Paper Award", "file": "isvlsi-best-paper-award.jpg", "date": "July 5, 2022", "sideways": false}];
+  certificates.forEach(certificate => {
+    const image = new Image();
+    image.alt = certificate.title + ' certificate';
+    image.onload = () => {
+      const figure = document.createElement('figure');
+      const link = document.createElement('a');
+      link.href = image.src;
+      link.className = 'certificate-image' + (certificate.sideways ? ' sideways' : '');
+      link.setAttribute('aria-label', 'Open full image: ' + certificate.title);
+      link.append(image);
+      const caption = document.createElement('figcaption');
+      const title = document.createElement('strong');
+      title.textContent = certificate.title;
+      const date = document.createElement('span');
+      date.textContent = certificate.date + ' · View certificate ↗';
+      caption.append(title, date);
+      figure.append(link, caption);
+      figure.style.order = certificates.indexOf(certificate);
+      gallery.append(figure);
+      gallery.hidden = false;
+    };
+    image.src = 'assets/awards/' + certificate.file;
+  });
 }
 </script>
 </body>

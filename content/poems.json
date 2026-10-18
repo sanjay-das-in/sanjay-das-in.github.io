@@ -1,0 +1,73 @@
+[
+  {
+    "slug": "the-path",
+    "title": "The Path",
+    "author": "Sanjay Das",
+    "stanzas": [
+      [
+        "Walking on a path no one took,",
+        "Mile after mile, I went on",
+        "To get somewhere",
+        "I feel I belong,",
+        "Where I can rest",
+        "with a tiresome smile",
+        "on a proud face",
+        "with my head held high…"
+      ],
+      [
+        "Still, nothing in sight",
+        "except the mysterious path",
+        "engulfed in fog,",
+        "full of walking shadows",
+        "getting thicker and thicker",
+        "as far as the eye goes…"
+      ],
+      [
+        "With trembling legs and",
+        "a fearful heart",
+        "full of hopes and dreams,",
+        "alone, all alone, I went on…"
+      ]
+    ]
+  },
+  {
+    "slug": "prachiner-gourob",
+    "title": "প্রাচীনের গৌরব",
+    "author": "Sanjay Das",
+    "language": "bn",
+    "original_transliteration": "tobo, bishal prasader, purbo diker chotto janalakhani, ashovon lage dekhia amake porda diyacho tani, Shirna bokhhe rugna panjare, dogdho go mor deha , charidike chai khujia na pai, dekhibe je more keha, // tobu dukho nahi mor, asha niye banchi snigdo batase swaopnete bivor, nobu ek gourabe adhitiya ami, a bishal shoudha maje, ushar prothom kiron khani hidoyete mor baje, provater lal roktim avay, panjorer more shotoal , swarna tama rongin hoye , nitya somujjol.",
+    "stanzas": [
+      [
+        "তব বিশাল প্রাসাদের",
+        "পূর্ব দিকের ছোট্ট জানালাখানি,",
+        "অশোভন লাগে দেখিয়া আমাকে",
+        "পর্দা দিয়াছো টানি।",
+        "শীর্ণ বক্ষে রুগ্ণ পাঁজরে,",
+        "দগ্ধ গো মোর দেহ,",
+        "চারিদিকে চাই, খুঁজিয়া না পাই,",
+        "দেখিবে যে মোরে কেহ।"
+      ],
+      [
+        "তবু দুঃখ নাহি মোর,",
+        "আশা নিয়ে বাঁচি স্নিগ্ধ বাতাসে,",
+        "স্বপনেতে বিভোর।"
+      ],
+      [
+        "তবু এক গৌরবে অদ্বিতীয় আমি,",
+        "এ বিশাল সৌধ মাঝে,",
+        "ঊষার প্রথম কিরণখানি",
+        "হৃদয়েতে মোর বাজে।"
+      ],
+      [
+        "প্রভাতের লাল রক্তিম আভায়,",
+        "পাঁজরের মোর শততল,",
+        "স্বর্ণসম রঙিন হয়ে,",
+        "নিত্য সমুজ্জ্বল।"
+      ]
+    ],
+    "transcription_notes": {
+      "shototal": "শততল — author’s explicitly requested spelling: Shototol",
+      "swarna tomo": "স্বর্ণসম — following the author’s clarification: gold-like"
+    }
+  }
+]

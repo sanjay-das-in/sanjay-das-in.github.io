@@ -1,0 +1,37 @@
+{
+  "hazdial": {
+    "source_url": "https://arxiv.org/html/2606.03812v1/figures/ov2.png",
+    "paper_url": "https://arxiv.org/abs/2606.03812",
+    "figure": "Figure 1. Dialogue-driven hazard analysis in HAZDIAL.",
+    "credit": "Reproduced from the linked paper by its authors.",
+    "local_path": "assets/figures/hazdial-paper.png"
+  },
+  "attentionbreaker": {
+    "source_url": "https://arxiv.org/html/2411.13757v1/Genetic_framework.drawioV2.png",
+    "paper_url": "https://arxiv.org/abs/2411.13757",
+    "figure": "Figure 4. Overview of the AttentionBreaker framework.",
+    "credit": "Reproduced from the linked paper by its authors.",
+    "local_path": "assets/figures/attentionbreaker-paper.png"
+  },
+  "harness": {
+    "source_url": "https://arxiv.org/html/2511.10810v1/sys_arch_v4.png",
+    "paper_url": "https://arxiv.org/abs/2511.10810",
+    "figure": "Figure 1. HARNESS system architecture.",
+    "credit": "Reproduced from the linked paper by its authors.",
+    "local_path": "assets/figures/harness-paper.png"
+  },
+  "hypothesis-ranking": {
+    "source_url": "https://arxiv.org/html/2608.17270v1/figures/energy_score_over_view_v2.png",
+    "paper_url": "https://arxiv.org/abs/2608.17270",
+    "figure": "Figure 1. Overview of intrinsic scoring for scientific hypothesis ranking. The highlighted 53% is the best of 14 model-by-scorer combinations.",
+    "credit": "Reproduced from the linked paper by its authors.",
+    "local_path": "assets/figures/hypothesis-ranking-paper.png"
+  },
+  "knowledge-graphs": {
+    "source_url": "https://arxiv.org/html/2605.27176v1/figures/KG_Setup.png",
+    "paper_url": "https://arxiv.org/abs/2605.27176",
+    "figure": "Figure 1. Knowledge-graph-guided generation and evaluation for battery-science hypotheses.",
+    "credit": "Reproduced from the linked paper by its authors.",
+    "local_path": "assets/figures/knowledge-graphs-paper.png"
+  }
+}

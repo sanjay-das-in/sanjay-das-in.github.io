@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Notebook &mdash; Sanjay Das</title>
-<meta name="description" content="Essays, photography, poetry, and creative explorations by Your Name.">
+<meta name="description" content="Essays, photography, poetry, and creative explorations by Sanjay Das.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -132,6 +132,7 @@ body{font-family:var(--serif);background:var(--bg);color:var(--text);line-height
   .mob-menu-btn{display:none !important;}
 }
 </style>
+<link rel="stylesheet" href="../assets/notebook.css">
 </head>
 <body>
 
@@ -142,25 +143,24 @@ body{font-family:var(--serif);background:var(--bg);color:var(--text);line-height
   </button>
   <nav class="site-nav" id="site-nav">
     <a href="#" class="active" onclick="showListing();return false;">All Posts</a>
-    <a href="#" onclick="filterAndShow('essay');return false;">Essays</a>
+    <a href="#" onclick="filterAndShow('research');return false;">Research</a>
     <a href="#" onclick="filterAndShow('photography');return false;">Photography</a>
     <a href="#" onclick="filterAndShow('poetry');return false;">Poetry</a>
     <!-- UPDATE THIS LINK to your actual academic site URL -->
-    <a href="https://sanjay-das-in.github.io/#" class="back-link">&larr; Academic Site</a>
+    <a href="../" class="back-link">&larr; Academic Site</a>
   </nav>
 </header>
 
 <div class="posts-listing" id="posts-listing">
   <section class="hero">
-    <h1>Words, Images &amp;<br>Wanderings</h1>
-    <p>Essays, photographs, poems, and creative explorations beyond the research lab.</p>
+    <h1>Research, photographs &amp; poetry</h1>
+    <p>Research notes, photographs, and poetry from outside the lab.</p>
   </section>
   <div class="filter-bar" id="filter-bar">
-    <button class="filter-btn active" onclick="filterPosts('all')">All</button>
-    <button class="filter-btn" onclick="filterPosts('essay')">Essays</button>
+    <button class="filter-btn" onclick="filterPosts('research')">Research</button>
+  <button class="filter-btn active" onclick="filterPosts('all')">All</button>
     <button class="filter-btn" onclick="filterPosts('photography')">Photography</button>
     <button class="filter-btn" onclick="filterPosts('poetry')">Poetry</button>
-    <button class="filter-btn" onclick="filterPosts('creative')">Creative</button>
   </div>
   <div class="posts-grid" id="posts-grid"></div>
 </div>
@@ -177,13 +177,20 @@ body{font-family:var(--serif);background:var(--bg);color:var(--text);line-height
 </div>
 
 <footer class="site-footer">
-  <p>&copy; 2026 Sanjay Das &middot; <a href="https://sanjay-das-in.github.io/#">Academic Portfolio</a> &middot; Made with care</p>
+  <p>&copy; 2026 Sanjay Das &middot; <a href="../">Academic Portfolio</a> &middot; Research & photography</p>
 </footer>
 
 <script>
 /* ============ BLOG DATA ============ */
 /* Add / edit posts here. Each post = one object. */
 var blogPosts = [
+{"id": "prachiner-gourob", "title": "প্রাচীনের গৌরব", "category": "poetry", "date": "Sanjay Das", "readTime": "1 min read", "excerpt": "তব বিশাল প্রাসাদের / পূর্ব দিকের ছোট্ট জানালাখানি…", "cover": null, "body": "<div class=\"poem-text\" lang=\"bn\"><p>তব বিশাল প্রাসাদের<br>\nপূর্ব দিকের ছোট্ট জানালাখানি,<br>\nঅশোভন লাগে দেখিয়া আমাকে<br>\nপর্দা দিয়াছো টানি।<br>\nশীর্ণ বক্ষে রুগ্ণ পাঁজরে,<br>\nদগ্ধ গো মোর দেহ,<br>\nচারিদিকে চাই, খুঁজিয়া না পাই,<br>\nদেখিবে যে মোরে কেহ।</p><p>তবু দুঃখ নাহি মোর,<br>\nআশা নিয়ে বাঁচি স্নিগ্ধ বাতাসে,<br>\nস্বপনেতে বিভোর।</p><p>তবু এক গৌরবে অদ্বিতীয় আমি,<br>\nএ বিশাল সৌধ মাঝে,<br>\nঊষার প্রথম কিরণখানি<br>\nহৃদয়েতে মোর বাজে।</p><p>প্রভাতের লাল রক্তিম আভায়,<br>\nপাঁজরের মোর শততল,<br>\nস্বর্ণসম রঙিন হয়ে,<br>\nনিত্য সমুজ্জ্বল।</p></div>"},
+{"id": "the-path", "title": "The Path", "category": "poetry", "date": "Sanjay Das", "readTime": "1 min read", "excerpt": "Walking on a path no one took,", "cover": null, "body": "<div class=\"poem-text\"><p>Walking on a path no one took,<br>\nMile after mile, I went on<br>\nTo get somewhere<br>\nI feel I belong,<br>\nWhere I can rest<br>\nwith a tiresome smile<br>\non a proud face<br>\nwith my head held high\u2026</p><p>Still, nothing in sight<br>\nexcept the mysterious path<br>\nengulfed in fog,<br>\nfull of walking shadows<br>\ngetting thicker and thicker<br>\nas far as the eye goes\u2026</p><p>With trembling legs and<br>\na fearful heart<br>\nfull of hopes and dreams,<br>\nalone, all alone, I went on\u2026</p></div>"},
+{"id": "knowledge-graphs", "title": "How much knowledge graph context does a model need?", "category": "research", "date": "Research note", "readTime": "2 min read", "excerpt": "Studying which graph facts influence battery-materials hypotheses.", "cover": "../assets/figures/knowledge-graphs-paper.webp", "body": "<p>A knowledge graph describes entities and their relationships explicitly. For a scientific language model, it can supply structured context alongside a question. But a larger graph also includes more redundant or distracting information. This study asks which graph facts actually affect the generated hypothesis.</p><h2>Changing the context, not just the prompt</h2><p>We study battery-materials hypothesis generation across Mistral-7B, Llama-3.1-70B, and Gemini 2.5 Flash. The experiments vary how many facts are supplied, how detailed the relationships are, and how the graph is connected. Full-graph and no-graph conditions provide important comparison points.</p><p>Imagine giving someone an entire collection of research notes versus a short selection of relevant relationships. If both lead to a similar explanation, that suggests the larger collection contains redundancy. It does not, by itself, prove that the selected relationships are the only important ones.</p><h2>Compact context can preserve much of the signal</h2><p>Compact top-k subgraphs often approximate full-graph behavior. The study examines generated outputs using measures of graph content and semantic similarity, including settings where claimed-outcome facts are withheld. The effect is selective and depends on the model.</p><p>An important control complicates the story: random and topology-based subsets can recover substantial signal too. Models without supplied graphs can also reproduce graph content from their existing knowledge. That makes it difficult to credit every successful answer to a particular fact-selection rule.</p><h2>A practical question for scientific workflows</h2><p>The findings motivate testing whether a smaller context can serve a task as well as a larger one. The appropriate comparison includes alternative subsets and a no-graph baseline. Reproducing graph content is informative, but judging whether a hypothesis is scientifically useful still requires a broader evaluation.</p><p><a href=\"https://arxiv.org/abs/2605.27176\">Read the paper \u2197</a></p>"},
+{"id": "hypothesis-ranking", "title": "Evaluating scientific hypotheses with model confidence", "category": "research", "date": "Research note", "readTime": "2 min read", "excerpt": "Comparing intrinsic model scores with prompted judgments.", "cover": "../assets/figures/hypothesis-ranking-paper.webp", "body": "<p>A model can generate a convincing scientific hypothesis without offering a dependable way to evaluate it. This study asks a narrower, measurable question: given a paper\u2019s background and research question, can a model identify the hypothesis that belongs to that study?</p><h2>Scoring instead of asking for a verdict</h2><p>A prompted judge compares alternatives and returns a choice or ranking. Our alternative scores each candidate using signals from the model\u2019s token predictions. The study examines normalized likelihood and raw target-logit energy, measuring how the model responds to the hypothesis text under the same background context.</p><p>Think of this as comparing two ways to assess an answer: ask the model to explain its preference, or inspect the numerical signal produced while it processes the candidate. These are different measurements, and neither should be confused with an experiment that verifies the scientific claim.</p><h2>Reading the benchmark carefully</h2><p>The evaluation covers seven models and 1,323 papers across 12 disciplines. Each paper has its associated hypothesis and fifteen incorrect alternatives. Pooled intrinsic scoring reaches 33.0% Hit@1, compared with 16.6% for prompted listwise ranking. Hit@1 means the correct hypothesis was placed first.</p><p>The strongest configuration reaches 53.1%, but it is the best result selected from 14 model-by-scorer combinations. It is not the average performance of the method. Reporting that selection context is necessary to interpret the figure fairly.</p><h2>Recognition is not discovery</h2><p>These findings support further work on intrinsic scoring for hypothesis evaluation. They do not establish that a high-scoring new hypothesis is true, original, or experimentally feasible. Selecting an existing hypothesis from alternatives is a useful test, but open-ended scientific discovery asks more of the system.</p><p><a href=\"https://arxiv.org/abs/2608.17270\">Read the paper \u2197</a></p>"},
+{"id": "harness", "title": "HARNESS: using past incidents to study hazards", "category": "research", "date": "Research note", "readTime": "2 min read", "excerpt": "How work information, incident reports, and expert feedback fit together in HARNESS.", "cover": "../assets/figures/harness-paper.webp", "body": "<p>An incident report is useful only if its lessons reach the next person facing a related task. In a large technical organization, that can mean finding relevant evidence across years of reports and connecting it to a new work description. HARNESS studies an AI-assisted workflow for that problem.</p><h2>From a work description to relevant evidence</h2><p>The framework combines structured work information, retrieval of historical events, language models, and risk analysis. Retrieval supplies potentially relevant past incidents, giving the reasoning process evidence beyond the wording of the current task.</p><p>Consider a hypothetical maintenance job involving equipment isolation. A useful system would need to connect the task description with relevant earlier incidents, then explain which hazards deserve review. This example illustrates the retrieval problem; it is not a reported HARNESS deployment case.</p><h2>Experts are part of the workflow</h2><p>HARNESS includes a human-in-the-loop mechanism through which subject matter experts review and refine predictions. Their input can help distinguish a meaningful connection from a superficial similarity between two reports. Feedback also supports an iterative process rather than a one-off answer.</p><p>This distinction matters because historical evidence is incomplete. Reports may describe similar equipment under different conditions, and a past event may be irrelevant to the current procedure. A useful prediction must be evaluated in context, with the available operational information.</p><h2>What the paper establishes\u2014and what comes next</h2><p>The paper presents a modular architecture and describes preliminary deployment as promising. Quantitative prediction accuracy, agreement with subject matter experts, and decision latency remain evaluation priorities. It should be read as an account of the framework and its direction, rather than evidence of a measured reduction in workplace incidents.</p><p><a href=\"https://arxiv.org/abs/2511.10810\">Read the paper \u2197</a></p>"},
+{"id": "attentionbreaker", "title": "AttentionBreaker: when a few bits affect a model", "category": "research", "date": "Research note", "readTime": "2 min read", "excerpt": "A short explanation of model weights, bit flips, and reliability.", "cover": "../assets/figures/attentionbreaker-paper.webp", "body": "<p>When we discuss language-model reliability, we often focus on prompts and generated answers. AttentionBreaker asks about a lower layer: the stored numbers that make the model work. Those numbers are represented by bits, and some bits matter much more than others.</p><h2>Why a bit flip can matter</h2><p>A weight is a numerical parameter learned during training. Its binary representation determines its stored value. Changing a bit can alter that value, sometimes substantially. The effect depends on the representation, the bit position, and where that weight participates in the computation.</p><p>Searching every possible change in a large model is impractical. AttentionBreaker narrows the parameter space and uses GenBFA, an evolutionary optimization method, to find particularly vulnerable bits. The research examines targeted changes, rather than treating every possible hardware fault as equally damaging.</p><h2>A small change with a large measured effect</h2><p>In the reported LLaMA3-8B-Instruct W8 experiment, three targeted bit flips reduce MMLU accuracy from 67.3% to 0%. That is a specific model, quantization setting, attack procedure, and benchmark\u2014not a universal failure rate for language models.</p><p>MMLU measures performance across a collection of question-answering tasks. A collapse there is a strong signal of disrupted model behavior, but it does not describe every possible use of the model. The experimental setup matters as much as the headline number.</p><h2>What this changes about reliability testing</h2><p>The work motivates checking the integrity of model parameters alongside the quality of model outputs. Protection can be considered at multiple levels: storage, memory, hardware, and model execution. AttentionBreaker identifies vulnerabilities; establishing a complete defense requires separate evaluation against an explicit threat model.</p><p><a href=\"https://arxiv.org/abs/2411.13757\">Read the paper \u2197</a></p>"},
+{"id": "hazdial", "title": "HAZDIAL: using dialogue to examine hazards", "category": "research", "date": "Research note", "readTime": "2 min read", "excerpt": "Why safety analysis may need a discussion, rather than a single answer.", "cover": "../assets/figures/hazdial-paper.webp", "body": "<p>A safety review usually involves questions, objections, and revisions. A language model asked to identify hazards in one pass has no comparable review process. HAZDIAL studies whether a structured conversation between agents can improve that analysis.</p><h2>What the agents actually do</h2><p>We compare a single-prompt baseline with two dialogue designs. In debate, a proposer identifies hazards and a critic challenges the suggestions. In constructive discussion, an analyst and reviewer work together to refine the answer. The distinction is practical: challenging an unsupported hazard is different from helping another agent find one it missed.</p><p>The framework also explores evolutionary optimization of the dialogue policy. Instead of assuming one agent configuration works best, the search adjusts aspects of the interaction and scores the resulting behavior. Its recall-oriented objective gives extra weight to avoiding missed hazards.</p><h2>More conversation is not automatically better</h2><p>The evaluation uses a curated hazard dataset and examines precision, recall, and F1. Precision asks how many proposed hazards are correct; recall asks how many relevant hazards were found. In a safety setting, both matter: false alarms consume attention, while omissions leave risks unexplored.</p><p>Results vary with the model and dialogue structure. Debate performs well for the smaller open model, while cooperative discussion can underperform its baseline. With GPT-4.1, discussion improves recall. The lesson is to evaluate the interaction design, rather than treating additional agents as an improvement by themselves.</p><h2>The boundary of the result</h2><p>This is a study of hazard identification under defined evaluation conditions. Matching predicted hazards to reference labels and interpreting dialogue traces introduce limitations. A plausible exchange is still not evidence that an operation is safe; engineering judgment remains necessary.</p><p><a href=\"https://arxiv.org/abs/2606.03812\">Read the paper \u2197</a></p>"},
   {
   id: "park-sculpture",
   title: "The Slowest Race",
@@ -191,7 +198,7 @@ var blogPosts = [
   date: "March 21, 2026",
   readTime: "1 min read",
   excerpt: "A whimsical sculpture of a tortoise, rabbit, and sloth turns a familiar fable into a playful reminder that every journey has its own pace.",
-  cover: "photos/PXL_20260321_195242617.jpg",
+  cover: "../photos/PXL_20260321_195242617.jpg",
   body: `
     <p>During a walk through the park, I stumbled upon a charming sculpture featuring three unlikely companions: a tortoise, a rabbit, and a sloth. Inspired by the classic tale of perseverance, the scene playfully asks a simple question—who really wins the race?</p>
 
@@ -276,12 +283,12 @@ function renderPostCards(filter){
     var post = filtered[i];
     var imgHtml = post.cover
       ? '<img class="post-card-img" src="'+post.cover+'" alt="'+post.title+'" onerror="this.style.display=\'none\'">'
-      : '<div class="post-card-img" style="display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:2rem;color:var(--text-l);font-style:italic">\u2726</div>';
-    html += '<article class="post-card" onclick="viewPost(\''+post.id+'\')" style="animation-delay:'+(.05*(i+1))+'s">'
+      : '<div class="post-card-img" style="display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:2rem;color:var(--text-l);font-style:italic">'+(post.category==='poetry' ? post.title : '\u2726')+'</div>';
+    html += '<article class="post-card" style="animation-delay:'+(.05*(i+1))+'s">'
       + imgHtml
       + '<div class="post-card-body">'
       + '<div class="post-card-cat">'+post.category+'</div>'
-      + '<h2>'+post.title+'</h2>'
+      + '<h2><a href="'+(['research','poetry'].includes(post.category) ? post.id+'/' : '#'+post.id)+'"'+(['research','poetry'].includes(post.category) ? '' : ' onclick="viewPost(\''+post.id+'\');return false;"')+'>'+post.title+'</a></h2>'
       + '<p class="excerpt">'+post.excerpt+'</p>'
       + '<div class="post-card-footer"><span>'+post.date+'</span><span>'+post.readTime+'</span></div>'
       + '</div></article>';

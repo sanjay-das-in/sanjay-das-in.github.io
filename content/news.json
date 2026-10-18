@@ -1,0 +1,146 @@
+[
+  {
+    "date": "2026-10",
+    "date_label": "October 2026",
+    "category": "awards",
+    "title": "ORPA All-Around Excellence Award",
+    "description": "Received the ORPA All-Around Excellence Award.",
+    "url": "",
+    "link_label": "View awards"
+  },
+  {
+    "date": "2026-09-24",
+    "date_label": "September 24, 2026",
+    "category": "awards",
+    "title": "ORPEX President\u2019s Award",
+    "description": "Received the ORPEX President\u2019s Award.",
+    "url": "",
+    "link_label": "View awards"
+  },
+  {
+    "date": "2026-09-15",
+    "date_label": "September 15, 2026",
+    "category": "papers",
+    "title": "Astronomy language models: when does specialization help?",
+    "description": "New preprint: \u201cRethinking Domain Specialization for Open-Ended Scientific Reasoning in Astronomy Language Models.\u201d",
+    "url": "https://arxiv.org/abs/2609.17644",
+    "link_label": "Read preprint"
+  },
+  {
+    "date": "2026-08-18",
+    "date_label": "August 18, 2026",
+    "category": "papers",
+    "title": "Evaluating scientific hypotheses with model confidence",
+    "description": "New preprint: \u201cDo LLMs Know a Good Hypothesis When They See One?\u201d The study compares intrinsic model scoring with prompted hypothesis ranking.",
+    "url": "https://arxiv.org/abs/2608.17270",
+    "link_label": "Read preprint"
+  },
+  {
+    "date": "2026-08",
+    "date_label": "August 2026",
+    "category": "awards",
+    "title": "Selected for the SC26 Early Career Program",
+    "description": "Selected participant in the SC26 Early Career Program.",
+    "url": "",
+    "link_label": "View awards"
+  },
+  {
+    "date": "2026-08-04",
+    "date_label": "August 4, 2026",
+    "category": "papers",
+    "title": "Tracing mechanisms from graphs to scientific answers",
+    "description": "New preprint: \u201cVisualizing Graph-to-Answer Mechanism Recovery in Materials-Science Hypothesis Generation.\u201d",
+    "url": "https://arxiv.org/abs/2608.04170",
+    "link_label": "Read preprint"
+  },
+  {
+    "date": "2026-07",
+    "date_label": "July 2026",
+    "category": "papers",
+    "title": "Paper accepted at the IEEE VIS 2026 workshop",
+    "description": "Paper accepted at Visual Analytics in the Age of Autonomous Science, held with IEEE VIS 2026.",
+    "url": "",
+    "link_label": "View publications"
+  },
+  {
+    "date": "2026-06",
+    "date_label": "June 2026",
+    "category": "talks",
+    "title": "Invited speaker: Agentic AI Systems Tutorial",
+    "description": "Presented at the CCSD Summer Intern Summit, Oak Ridge National Laboratory.",
+    "url": "https://www.ornl.gov/staff-profile/sanjay-das",
+    "link_label": "ORNL profile"
+  },
+  {
+    "date": "2026-06",
+    "date_label": "June 2026",
+    "category": "papers",
+    "title": "Interpretable machine learning for antenna design",
+    "description": "\u201cAccelerating Compact UWB Fractal Antenna Design Using Interpretable Machine Learning with Forward and Inverse Prediction\u201d accepted in Results in Engineering.",
+    "url": "https://doi.org/10.1016/j.rineng.2026.111464",
+    "link_label": "Paper"
+  },
+  {
+    "date": "2026-06",
+    "date_label": "June 2026",
+    "category": "papers",
+    "title": "HARNESS accepted at RAG4Reports at ACL 2026",
+    "description": "Research on human-guided hazard forecasting using work information and historical incidents.",
+    "url": "https://arxiv.org/abs/2511.10810",
+    "link_label": "Read paper"
+  },
+  {
+    "date": "2026-06",
+    "date_label": "June 2026",
+    "category": "papers",
+    "title": "ORCHID accepted at RAG4Reports at ACL 2026",
+    "description": "Research on retrieval-augmented, human-guided high-risk property classification.",
+    "url": "https://arxiv.org/abs/2511.04956",
+    "link_label": "Read paper"
+  },
+  {
+    "date": "2026-06",
+    "date_label": "June 2026",
+    "category": "service",
+    "title": "Journal reviewing",
+    "description": "Reviewed papers for IEEE Design & Test and IEEE Transactions on Very Large Scale Integration Systems.",
+    "url": "",
+    "link_label": "View community"
+  },
+  {
+    "date": "2026-06-02",
+    "date_label": "June 2, 2026",
+    "category": "papers",
+    "title": "HAZDIAL preprint released",
+    "description": "\u201cEnhancing Operational Safety via Agentic Dialogue Hazard Identification Analysis\u201d is available on arXiv.",
+    "url": "https://arxiv.org/abs/2606.03812",
+    "link_label": "Read preprint"
+  },
+  {
+    "date": "2026-05-26",
+    "date_label": "May 26, 2026",
+    "category": "papers",
+    "title": "Which knowledge graph facts matter for scientific hypotheses?",
+    "description": "New preprint: \u201cThe Compressive Knowledge Graph Hypothesis,\u201d examining compact graph context for battery-materials hypothesis generation.",
+    "url": "https://arxiv.org/abs/2605.27176",
+    "link_label": "Read preprint"
+  },
+  {
+    "date": "2026-05",
+    "date_label": "May 2026",
+    "category": "papers",
+    "title": "HAZDIAL accepted at SIGDIAL 2026",
+    "description": "\u201cEnhancing Operational Safety via Agentic Dialogue Hazard Identification Analysis\u201d accepted at SIGDIAL 2026.",
+    "url": "https://arxiv.org/abs/2606.03812",
+    "link_label": "Read paper"
+  },
+  {
+    "date": "2026-05-06",
+    "date_label": "May 6\u20137, 2026",
+    "category": "awards",
+    "title": "First Place Poster Award at the 14th ORPA Research Symposium",
+    "description": "Awarded for \u201cAI-Powered cosmological simulations for dark energy signatures.\u201d The symposium took place on May 6\u20137, 2026.",
+    "url": "",
+    "link_label": "View awards"
+  }
+]
