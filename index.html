@@ -513,9 +513,9 @@ html, body { height:100%; overflow:hidden; font-family:'Outfit',sans-serif; back
           <header class="statistics-header"><div><p class="statistics-kicker"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-statistics"/></svg> Visitor traffic</p><h2>Visitor statistics</h2><p>Explore where visitors come from and how activity changes over time.</p></div><a class="statistics-report" href="https://mapmyvisitors.com/web/1c8y8" target="_blank" rel="noopener noreferrer">Full visitor report ↗</a></header>
           <div class="statistics-comparison">
             <section class="statistics-card statistics-world"><header><span>World map</span><span class="statistics-provider">Locations &amp; pageviews</span></header><div class="statistics-map" id="visitor-map-mount"><p class="statistics-loading">Loading visitor map…</p></div></section>
-            <section class="statistics-card statistics-globe-card"><header><span>Rotating globe</span><span class="statistics-provider">Global view</span></header><div class="statistics-globe" id="visitor-globe-mount"><p class="statistics-loading">Loading globe…</p></div></section>
+            <section class="statistics-card statistics-globe-card"><header><span>Rotating globe</span><span class="statistics-provider">Pageview locations</span></header><div class="statistics-globe" id="visitor-globe-mount"><p class="statistics-loading">Loading globe…</p></div></section>
           </div>
-          <footer class="statistics-footer"><span>Visitor analytics provided by MapMyVisitors</span><span>Map and globe powered by MapMyVisitors.</span></footer>
+          <footer class="statistics-footer"><span>Visitor analytics provided by MapMyVisitors</span><span>Hover over visitor markers for location details.</span></footer>
           <noscript><a href="https://mapmyvisitors.com/web/1c8y8" title="Visit tracker"><img src="https://mapmyvisitors.com/map.png?d=BeVfHL3RDehngCkDS0D9cXWjqOLsdPx-Fg3fThQneBM&amp;cl=ffffff" alt="Visitor location map" width="300" height="150"></a><p class="statistics-note"><a href="https://mapmyvisitors.com/web/1c8y8">Open visitor statistics</a></p></noscript>
         </section>
       </div>
@@ -787,6 +787,13 @@ async function loadVisitorWidgets() {
     script.src = widget.src;
     script.type = 'text/javascript';
     script.async = true;
+    script.onload = () => {
+      // The provider registers rotation on jQuery's window-load event. This script
+      // loads after page load, so replay that handler on its isolated instance.
+      if (widget.id === 'mmvst_globe' && document.readyState === 'complete') {
+        window.globe_jq(window).triggerHandler('load');
+      }
+    };
     script.onerror = () => {
       mount.querySelector('.statistics-loading').textContent = 'Widget unavailable. Open the full visitor report above.';
     };

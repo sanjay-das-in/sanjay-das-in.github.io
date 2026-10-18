@@ -12,4 +12,3 @@ body[data-section="statistics"] .app{padding-bottom:0}body[data-section="statist
 @media(max-width:700px){.statistics-map #mapmyvisitors-widget{max-width:100%!important}.statistics-map #mapmyvisitors-widget>.mapmyvisitors-map-container>.mapmyvisitors-visitors,.statistics-map #mapmyvisitors-widget>.mapmyvisitors-map-container>.mapmyvisitors-date{font-size:10px!important;line-height:14px!important;min-height:14px;padding:1px 3px!important}.statistics-globe{width:110px;min-height:145px;padding:20px 0;display:block}.statistics-globe .mmvst_outer{transform:scale(.55);transform-origin:top left;height:110px!important}}
 /* Reserve room for both text rows while staying within the desktop viewport. */
 @media(min-width:701px){.statistics-map #mapmyvisitors-widget{max-width:calc((100dvh - 400px)*2.04)!important}}
-.statistics-globe .mmvst_inner{display:block!important;opacity:1!important}
