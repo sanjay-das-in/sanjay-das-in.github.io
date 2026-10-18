@@ -41,3 +41,9 @@ Each of the five research articles now includes roughly 250 words covering the m
 ## Consistency pass
 
 Navigation uses equal-size cells with colorful SVG icons and matching section accents (`assets/consistency.css`). All ten section buttons and the Blog link share the same spacing. Dates, role wording, section headings, and paper links are normalized. Seven awards are recorded newest first in `content/awards.json`. The antenna-design paper now also appears in Publications, and ORCHID’s workshop status matches News. Degree wording follows the ORNL staff profile: Ph.D. in Computer Engineering. Browser checks covered all sections, selection state, tab geometry, paper search, News filters, and desktop/mobile layouts.
+
+## Visitor statistics
+
+Both MapMyVisitors widgets are isolated in the gray Statistics tab (`#statistics`). About and blog pages no longer contain visitor panels. Notebook/article navigation links to the Statistics tab. The two provider IDs are retained and the map statistics link is https://mapmyvisitors.com/web/1c8y8. Styling is in `assets/visitors.css`. Widgets initialize once when the Statistics tab is first opened, after its container becomes visible. The standalone blog pages no longer load tracking scripts. The map occupies the full content width, with equal-width globe and explanatory panels below.
+
+Local previews (`file:`, localhost, and loopback addresses) do not execute visitor tracking widgets, preventing development checks from adding visits. Widget scripts are prefetched for faster opening on the live website. The compact Statistics view is side by side; the map text rows remain visible and the globe is enlarged.

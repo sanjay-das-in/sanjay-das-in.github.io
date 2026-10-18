@@ -11,3 +11,5 @@ body{background:#e8eef4;background-image:radial-gradient(ellipse at 0 0,#d4e4eb 
 .poetry-page{max-width:800px}.poem-text{max-width:640px;margin-top:28px;font-family:var(--serif);font-size:1.2rem;line-height:1.9;color:#364e5b}.poem-text p{margin:0 0 30px}.poetry-page h1{margin-bottom:12px}.poetry-page .byline{margin-bottom:24px}@media(max-width:600px){.poem-text{font-size:1.02rem;line-height:1.9}.poem-text p{margin-bottom:26px}}
 
 .poetry-page[lang="bn"] h1,.poem-text[lang="bn"]{font-family:'Noto Serif Bengali','Nirmala UI','Vrinda',serif}.poem-text[lang="bn"]{font-size:1.25rem;line-height:2}.poetry-page[lang="bn"] h1{line-height:1.5}.poem-text[lang="bn"] p{margin-bottom:30px}@media(max-width:600px){.poem-text[lang="bn"]{font-size:1.1rem}}
+
+.site-nav .statistics-nav-link{color:#66717d;background:#e5e9ee;border:1px solid #cbd2dc;border-radius:6px;padding:5px 9px;font-size:.8rem}.site-nav .statistics-nav-link:hover{background:#d7dfe8;color:#35485f}
