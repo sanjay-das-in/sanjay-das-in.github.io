@@ -8,7 +8,7 @@ Run `python3 -m http.server 8000` from this directory and open http://localhost:
 
 ## Content and styling
 
-- `index.html`: biography, research, 13 selected papers/preprints, education, experience, teaching, six supplied awards, news, service, and photography.
+- `index.html`: biography, research, 18 selected papers/preprints, education, experience, teaching, awards, news, service, and photography.
 - `assets/modern.css`: portfolio layout and section-specific refinements.
 - `blog/index.html`: notebook listing with five research notes and the existing photography post.
 - `blog/<slug>/index.html`: standalone, directly linked research notes.
