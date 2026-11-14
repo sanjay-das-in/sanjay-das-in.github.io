@@ -1,4 +1,6 @@
 [
+{"date":"2026-11-18","date_label":"November 18, 2026 · Upcoming","category":"talks","title":"SPIKE at SC26: attention through spikes","description":"Explore spiking attention, scalable neural simulation, and neuromorphic hardware in Chicago.","url":"https://sanjay-das-in.github.io/snn-spike-sc26/","link_label":"Explore the work"},
+{"date":"2026-11","date_label":"November 2026","category":"papers","title":"Can an abstract become a quantum experiment?","description":"Qatalyst explores how teams of agents reconstruct equations, Qiskit code, and simulated circuits from scientific abstracts.","url":"https://si2research.github.io/blogs/qatalyst-algorithm-discovery-for-science/","link_label":"Explore the work"},
   {
     "date": "2026-11-05",
     "date_label": "November 5, 2026",
