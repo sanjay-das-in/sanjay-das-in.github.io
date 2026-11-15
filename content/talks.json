@@ -11,5 +11,32 @@
     "end": "2026-11-05T17:00:00-05:00",
     "time_label": "4:00–5:00 PM Eastern Time",
     "abstract": "What does a research career at a U.S. national laboratory look like, and how does it differ from academia? In this talk, I shared my journey from Ph.D. research to a postdoctoral position at Oak Ridge National Laboratory (ORNL), highlighting my current work on AI for Science and Operations and trustworthy AI systems. I discussed the national laboratory research environment, interdisciplinary collaborations, and how research translates into real-world impact. I also shared insights into career pathways from postdoctoral researcher to research scientist, along with practical advice for graduate students, including international students, interested in research careers at U.S. national laboratories."
+  },
+  {
+    "id": "osdx-rag-agentic-ai-2026",
+    "title": "Practical Guide to RAG, Agentic AI, and Autonomous Decision-Making Systems",
+    "host": "ORNL Software and Data Expo (OSDX)",
+    "date": "2026-07",
+    "date_label": "July 2026",
+    "type": "Tutorial",
+    "description": "Delivered a practical tutorial on retrieval-augmented generation (RAG), agentic AI, and autonomous decision-making systems."
+  },
+  {
+    "id": "ccsd-agentic-ai-2026",
+    "title": "Agentic AI Systems Tutorial",
+    "host": "CCSD Summer Intern Summit, Oak Ridge National Laboratory",
+    "date": "2026-06",
+    "date_label": "June 2026",
+    "type": "Invited talk",
+    "description": "Invited speaker for a tutorial on agentic AI systems at the CCSD Summer Intern Summit."
+  },
+  {
+    "id": "utk-dse697-2026",
+    "title": "DSE 697: Foundations and Applications of Large Language Models",
+    "host": "University of Tennessee, Knoxville",
+    "date": "2026-04",
+    "date_label": "April 2026",
+    "type": "Guest lecture",
+    "description": "Guest lecture on deep learning, convolutional neural networks, recurrent neural networks, and transformers."
   }
 ]

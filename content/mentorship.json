@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Vyshnavi Sabbi",
+    "role": "Undergraduate student/intern",
+    "institution": "Oak Ridge National Laboratory",
+    "program": "ORNL Career Accelerator Program",
+    "years": "2026",
+    "guidance": "Guidance on graduate school goals and practical strategies for pursuing them."
+  },
+  {
+    "name": "Matilde Restelli",
+    "role": "M.S. student/intern",
+    "institution": "Oak Ridge National Laboratory",
+    "years": "2026",
+    "guidance": "Guidance on navigating research at national laboratories."
+  },
+  {
+    "name": "Swastik Bhattacharya",
+    "role": "Ph.D. student",
+    "institution": "The University of Texas at Dallas",
+    "years": "2024–2026",
+    "guidance": "Guidance on doctoral research, paper writing, rebuttals, and presentations."
+  },
+  {
+    "name": "Jonathan Lee",
+    "role": "Undergraduate student",
+    "institution": "The University of Texas at Dallas",
+    "years": "2024",
+    "guidance": "Guidance on digital circuit design and tools, including Cadence Virtuoso."
+  },
+  {
+    "name": "Omar Abiola Abioye",
+    "role": "Undergraduate student",
+    "institution": "The University of Texas at Dallas",
+    "years": "2024",
+    "guidance": "Guidance on digital circuit design and tools, including Cadence Virtuoso."
+  },
+  {
+    "name": "Afreen Fatimah Khazi-Syed",
+    "role": "Undergraduate student",
+    "institution": "The University of Texas at Dallas",
+    "years": "2024",
+    "guidance": "Guidance on digital circuit design and tools, including Cadence Virtuoso."
+  },
+  {
+    "name": "Irfan Yakub Ali Khan",
+    "role": "M.S. student",
+    "institution": "The University of Texas at Dallas",
+    "years": "2023–2024",
+    "guidance": "Guidance and support in VLSI testing research."
+  }
+]

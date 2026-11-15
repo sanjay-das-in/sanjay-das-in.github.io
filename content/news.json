@@ -1,6 +1,22 @@
 [
-{"date":"2026-11-18","date_label":"November 18, 2026 · Upcoming","category":"talks","title":"SPIKE at SC26: attention through spikes","description":"Explore spiking attention, scalable neural simulation, and neuromorphic hardware in Chicago.","url":"https://sanjay-das-in.github.io/snn-spike-sc26/","link_label":"Explore the work"},
-{"date":"2026-11","date_label":"November 2026","category":"papers","title":"Can an abstract become a quantum experiment?","description":"Qatalyst explores how teams of agents reconstruct equations, Qiskit code, and simulated circuits from scientific abstracts.","url":"https://si2research.github.io/blogs/qatalyst-algorithm-discovery-for-science/","link_label":"Explore the work"},
+  {
+    "date": "2026-11-18",
+    "date_label": "November 18, 2026 · Upcoming",
+    "category": "talks",
+    "title": "SPIKE at SC26: attention through spikes",
+    "description": "Explore spiking attention, scalable neural simulation, and neuromorphic hardware in Chicago.",
+    "url": "https://sanjay-das-in.github.io/snn-spike-sc26/",
+    "link_label": "Explore the work"
+  },
+  {
+    "date": "2026-11",
+    "date_label": "November 2026",
+    "category": "papers",
+    "title": "Can an abstract become a quantum experiment?",
+    "description": "Qatalyst explores how teams of agents reconstruct equations, Qiskit code, and simulated circuits from scientific abstracts.",
+    "url": "https://si2research.github.io/blogs/qatalyst-algorithm-discovery-for-science/",
+    "link_label": "Explore the work"
+  },
   {
     "date": "2026-11-05",
     "date_label": "November 5, 2026",
@@ -12,11 +28,11 @@
     "talk_id": "osu-national-lab-careers-2026"
   },
   {
-    "date": "2026-10",
-    "date_label": "October 2026",
+    "date": "2026-09",
+    "date_label": "September 2026",
     "category": "awards",
     "title": "ORPA All-Around Excellence Award",
-    "description": "Received the ORPA All-Around Excellence Award.",
+    "description": "Recognized by Oak Ridge Postdoctoral Association leadership for contributions to research, publications, presentations, and new-employee support.",
     "url": "",
     "link_label": "View awards"
   },
@@ -25,7 +41,7 @@
     "date_label": "September 24, 2026",
     "category": "awards",
     "title": "ORPEX President’s Award",
-    "description": "Received the ORPEX President’s Award.",
+    "description": "Recognized by Oak Ridge Postdoctoral Association leadership for contributions to research, publications, presentations, and new-employee support.",
     "url": "",
     "link_label": "View awards"
   },
@@ -39,6 +55,15 @@
     "link_label": "Read preprint"
   },
   {
+    "date": "2026",
+    "date_label": "Fall 2026",
+    "category": "awards",
+    "title": "Selected for the URA SPARC Fall 2026 cohort",
+    "description": "Selected from a competitive applicant pool for a position in the Universities Research Association (URA) SPARC Fall 2026 cohort.",
+    "url": "",
+    "link_label": "View awards"
+  },
+  {
     "date": "2026-08-18",
     "date_label": "August 18, 2026",
     "category": "papers",
@@ -46,15 +71,6 @@
     "description": "New preprint: “Do LLMs Know a Good Hypothesis When They See One?” The study compares intrinsic model scoring with prompted hypothesis ranking.",
     "url": "https://arxiv.org/abs/2608.17270",
     "link_label": "Read preprint"
-  },
-  {
-    "date": "2026-08",
-    "date_label": "August 2026",
-    "category": "awards",
-    "title": "Selected for the SC26 Early Career Program",
-    "description": "Selected participant in the SC26 Early Career Program.",
-    "url": "",
-    "link_label": "View awards"
   },
   {
     "date": "2026-08-04",
@@ -68,11 +84,30 @@
   {
     "date": "2026-07",
     "date_label": "July 2026",
+    "category": "awards",
+    "title": "Selected for the SC26 Early Career Program",
+    "description": "Selected participant in the Early Career Program at The International Conference for High Performance Computing, Networking, Storage, and Analysis (SC26).",
+    "url": "",
+    "link_label": "View awards"
+  },
+  {
+    "date": "2026-07",
+    "date_label": "July 2026",
     "category": "papers",
     "title": "Paper accepted at the IEEE VIS 2026 workshop",
     "description": "Paper accepted at Visual Analytics in the Age of Autonomous Science, held with IEEE VIS 2026.",
     "url": "",
     "link_label": "View publications"
+  },
+  {
+    "date": "2026-07",
+    "date_label": "July 2026",
+    "category": "talks",
+    "title": "Tutorial at the ORNL Software and Data Expo",
+    "description": "Presented “Practical Guide to RAG, Agentic AI, and Autonomous Decision-Making Systems” at the ORNL Software and Data Expo (OSDX).",
+    "url": "",
+    "link_label": "View talks",
+    "talk_id": "osdx-rag-agentic-ai-2026"
   },
   {
     "date": "2026-06",
@@ -151,7 +186,7 @@
     "date_label": "May 6–7, 2026",
     "category": "awards",
     "title": "First Place Poster Award at the 14th ORPA Research Symposium",
-    "description": "Awarded for “AI-Powered cosmological simulations for dark energy signatures.” The symposium took place on May 6–7, 2026.",
+    "description": "Placed first for the poster “Intelligent Parameter Space Exploration for Enabling Agentic Cosmological Simulations.” The symposium took place on May 6–7, 2026.",
     "url": "",
     "link_label": "View awards"
   }

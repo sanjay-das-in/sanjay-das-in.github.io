@@ -1,0 +1,25 @@
+{
+  "period": "2022–Present",
+  "areas": [
+    "AI",
+    "NLP",
+    "computer architecture",
+    "VLSI"
+  ],
+  "journals": [
+    "IEEE Transactions on Very Large Scale Integration (VLSI) Systems (TVLSI)",
+    "IEEE Design & Test"
+  ],
+  "conferences": [
+    "EACL",
+    "IJCNLP-AACL",
+    "ASP-DAC",
+    "ICCAD",
+    "VTS",
+    "CVPR",
+    "SOCC",
+    "ICPADS",
+    "DAC",
+    "DCAS"
+  ]
+}
