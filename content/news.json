@@ -1,22 +1,8 @@
 [
-  {
-    "date": "2026-11-18",
-    "date_label": "November 18, 2026 · Upcoming",
-    "category": "talks",
-    "title": "SPIKE at SC26: attention through spikes",
-    "description": "Explore spiking attention, scalable neural simulation, and neuromorphic hardware in Chicago.",
-    "url": "https://sanjay-das-in.github.io/snn-spike-sc26/",
-    "link_label": "Explore the work"
-  },
-  {
-    "date": "2026-11",
-    "date_label": "November 2026",
-    "category": "papers",
-    "title": "Can an abstract become a quantum experiment?",
-    "description": "Qatalyst explores how teams of agents reconstruct equations, Qiskit code, and simulated circuits from scientific abstracts.",
-    "url": "https://si2research.github.io/blogs/qatalyst-algorithm-discovery-for-science/",
-    "link_label": "Explore the work"
-  },
+{"date":"2026-11-19","date_label":"November 19, 2026","category":"talks","title":"My first SC: a week of science and connections in Chicago","description":"A photo diary from McCormick Place: AgenticAI4HPC, the Early Career Program, mentoring events, SPIKE, and catching up with NASA Flight Science Lab colleagues.","url":"blog/sc26-chicago/","link_label":"Read the photo diary"},
+{"date":"2026-11-15","date_label":"November 15, 2026","category":"papers","title":"Presenting Recall Is Not Honesty at AgenticAI4HPC’26","description":"Presented our work with Kartik Shinde at SC26, examining what makes multi-agent HPC operational analytics trustworthy. Our Trustworthy HPC poster was also on display during the week.","url":"blog/sc26-chicago/","link_label":"Workshop & poster highlights"},
+{"date":"2026-11-18","date_label":"November 18, 2026","category":"talks","title":"SPIKE at SC26: attention through spikes","description":"Shared SPIKE at the DOE booth at SC26: spiking attention, scalable neural simulation, and neuromorphic hardware, led by ORNL’s Dr. Prasanna Date.","url":"https://sanjay-das-in.github.io/snn-spike-sc26/","link_label":"Explore the work"},
+{"date":"2026-11","date_label":"November 2026","category":"papers","title":"Can an abstract become a quantum experiment?","description":"Qatalyst explores how teams of agents reconstruct equations, Qiskit code, and simulated circuits from scientific abstracts.","url":"https://si2research.github.io/blogs/qatalyst-algorithm-discovery-for-science/","link_label":"Explore the work"},
   {
     "date": "2026-11-05",
     "date_label": "November 5, 2026",
